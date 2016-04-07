@@ -12,6 +12,7 @@ import CoreLocation
 class GameScreenViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var gameScreenMap: MKMapView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let locationManager = CLLocationManager()
