@@ -7,13 +7,31 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
+        /*let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName: "Hunt")
+        
+        //3
+        do {
+            let results =
+                try managedContext.executeFetchRequest(fetchRequest)
+            var queryResult = results as! [NSManagedObject]
+            print("got a result \(queryResult)")
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }*/
+            }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -398,7 +398,7 @@
         <!--Game Screen-->
         <scene sceneID="vtM-Rm-S3u">
             <objects>
-                <viewController id="qy9-VX-zsh" sceneMemberID="viewController">
+                <viewController id="qy9-VX-zsh" customClass="GameScreenViewController" customModule="huntForTheSwampAss" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n42-38-ZJC"/>
                         <viewControllerLayoutGuide type="bottom" id="e1S-8W-on4"/>
@@ -407,27 +407,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cne-46-ZxG">
-                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem systemItem="more" id="Psh-gd-AYH"/>
-                                </items>
-                            </tabBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRe-Rl-uTh">
-                                <rect key="frame" x="215" y="529" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="hPS-AW-sgz" kind="push" id="lD8-XT-PUw"/>
-                                </connections>
-                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Wn1-D7-9li">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="e1S-8W-on4" firstAttribute="top" secondItem="Cne-46-ZxG" secondAttribute="bottom" id="O4p-Qa-bao"/>
+                            <constraint firstItem="Wn1-D7-9li" firstAttribute="top" secondItem="n42-38-ZJC" secondAttribute="bottom" id="8gB-rC-gCd"/>
+                            <constraint firstAttribute="trailing" secondItem="Wn1-D7-9li" secondAttribute="trailing" id="Phx-Bs-J1k"/>
+                            <constraint firstItem="Wn1-D7-9li" firstAttribute="bottom" secondItem="e1S-8W-on4" secondAttribute="top" id="dYk-tG-8Lq"/>
+                            <constraint firstItem="Wn1-D7-9li" firstAttribute="leading" secondItem="XxZ-NK-0Cr" secondAttribute="leading" id="zkp-PZ-ML3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Game Screen" id="1qa-Lq-4Q8"/>
+                    <connections>
+                        <outlet property="gameScreenMap" destination="Wn1-D7-9li" id="eNs-LT-aTy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFp-RO-PR7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -461,7 +456,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="alf-zu-ClF">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="alf-zu-ClF" id="Njc-Xi-vJs">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
