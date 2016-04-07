@@ -418,9 +418,7 @@
                                 <rect key="frame" x="215" y="529" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="hPS-AW-sgz" kind="popover" popoverAnchorView="fRe-Rl-uTh" id="lD8-XT-PUw">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="hPS-AW-sgz" kind="push" id="lD8-XT-PUw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -463,16 +461,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="alf-zu-ClF">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="alf-zu-ClF" id="Njc-Xi-vJs">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="WFT-BT-Ns6" kind="popover" popoverAnchorView="alf-zu-ClF" id="sMn-kZ-CzB">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="WFT-BT-Ns6" kind="push" id="sMn-kZ-CzB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
