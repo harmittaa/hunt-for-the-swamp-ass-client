@@ -11,8 +11,11 @@ import CoreData
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var teamButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         /*let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
