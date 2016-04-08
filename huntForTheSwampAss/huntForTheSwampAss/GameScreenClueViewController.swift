@@ -6,6 +6,9 @@
 //  Copyright © 2016 iosdev. All rights reserved.
 //
 
+//this class is for the clues part of the gamescreen tab view controller
+//it is datasource and delegate for the tableview element in the viewController, since the tableview is not a controller, this viewcontroller fills its place
+
 import UIKit
 
 class GameScreenClueViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -16,6 +19,7 @@ class GameScreenClueViewController: UIViewController, UITableViewDataSource, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //set the delegate and datasource of the tableView to be this controller
         cluesTableView.delegate = self
         cluesTableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -26,6 +30,7 @@ class GameScreenClueViewController: UIViewController, UITableViewDataSource, UIT
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: tableview necessary functions
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }

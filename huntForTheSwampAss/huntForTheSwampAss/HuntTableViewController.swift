@@ -41,7 +41,7 @@ class HuntTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! HuntTableViewCell
         
         let hnt = listOfHunts[indexPath.row]
-        cell.huntTitle.text = hnt.huntName
+        //cell.huntTitle.text = hnt.huntName
 
         return cell
     }

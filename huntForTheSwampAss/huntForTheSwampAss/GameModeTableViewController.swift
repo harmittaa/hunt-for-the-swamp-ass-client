@@ -10,13 +10,18 @@ import UIKit
 
 class GameModeTableViewController: UITableViewController {
 
-    var gameModes = [GameMode]()
+    var gameModes = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let coreDataManager:DataController = dataManagerSingleton
         //MARK: sample data is loaded
-        gameModes.append(GameMode(name:"Bar Crawl"))
-        gameModes.append(GameMode(name:"jeeben"))
+        let a = coreDataManager.fetchObject("GameMode")
+        gameModes = a
+        print("this is from the other controller: Size : \(a.count)  \(a)")
+        
+        //gameModes.append(GameMode(name:"Bar Crawl"))
+        //gameModes.append(GameMode(name:"jeeben"))
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -46,9 +51,11 @@ class GameModeTableViewController: UITableViewController {
         
         let cellIdentifier = "GameModeTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! GameModeTableViewCell
-        let gameMode = gameModes[indexPath.row]
-        cell.gaemModeTitle.text = gameMode.gameModeName
-        cell.gameModeDesc.text = gameMode.gameModeDesc
+        let gameMode = gameModes[indexPath.row] as! GameMode
+        print("this is the picked game mode for the cell: \(gameMode)")
+        
+        cell.gaemModeTitle.text = gameMode.gameModeTitle
+        cell.gameModeDesc.text = gameMode.gameModeDescription
         
 
         return cell
@@ -100,9 +107,9 @@ class GameModeTableViewController: UITableViewController {
         let gameModesViewController = segue.destinationViewController as! HuntTableViewController
         
         if let selectedGameModeCell = sender as? GameModeTableViewCell {
-            let indexPath = tableView.indexPathForCell(selectedGameModeCell)!
+        /*    let indexPath = tableView.indexPathForCell(selectedGameModeCell)!
             let selectedGameMode = gameModes[indexPath.row].huntList
-            gameModesViewController.listOfHunts = selectedGameMode
+            gameModesViewController.listOfHunts = selectedGameMode*/
         }
     }
     

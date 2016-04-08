@@ -15,7 +15,9 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //MARK: location manager shenanigans
         let locationManager = CLLocationManager()
+        //ask user to enable GPS
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled(){

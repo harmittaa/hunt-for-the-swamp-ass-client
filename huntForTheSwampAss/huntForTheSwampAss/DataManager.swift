@@ -9,9 +9,13 @@
 import Foundation
 import UIKit
 import CoreData
+
+let dataManagerSingleton:DataController = DataController()
+
 class DataController: NSObject {
     var managedObjectContext: NSManagedObjectContext
-     override init() {
+    
+     override private init() {
         // This resource is the same name as your xcdatamodeld contained in your project.
         guard let modelURL = NSBundle.mainBundle().URLForResource("DataModel", withExtension:"momd") else {
             fatalError("Error loading model from bundle")
@@ -36,5 +40,68 @@ class DataController: NSObject {
                 fatalError("Error migrating store: \(error)")
             }
         }
+        
+        
     }
+    //MARK: CreateGameMode 🌚
+    func createNewGameMode(gameModeTitle: String, gameModeDesc:String?)-> GameMode{
+        let gameMode = NSEntityDescription.insertNewObjectForEntityForName("GameMode", inManagedObjectContext: self.managedObjectContext) as! GameMode
+        gameMode.gameModeTitle = gameModeTitle
+        gameMode.gameModeDescription = gameModeDesc ?? ""
+        /*let set = gameMode.hunt!
+        let hunts = set.allObjects as? [Hunt]*/
+        return gameMode
+    }
+    
+    
+    //MARK: CreateHunt
+    func createNewHunt(huntTitle: String,huntDesc:String?)-> Hunt{
+        let huntteri = NSEntityDescription.insertNewObjectForEntityForName("Hunt", inManagedObjectContext: self.managedObjectContext) as! Hunt
+        huntteri.huntDescription = huntTitle
+        huntteri.huntTitle = huntDesc ?? ""
+        return huntteri
+    }
+    
+    //MARK: CreateLocation
+    func createLocation(locationTitle: String)-> Location{
+        let location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: self.managedObjectContext) as! Location
+        location.locationTitle = locationTitle
+        return location
+    }
+    
+    //MARK: CreateClue
+    /*func createMapClue(clueTier: Int, clueDesc: String) -> MapClue{
+        let clue = NSEntityDescription.insertNewObjectForEntityForName("Clue", inManagedObjectContext: self.managedObjectContext) as! Clue
+        clue. = clueTier
+        clue.clueDescription = clueDesc
+        return clue
+    }
+    //MARK: ImageClue
+    func createImageClue(clueTier: Int, clueDesc: String) -> Clue{
+        let clue = NSEntityDescription.insertNewObjectForEntityForName("Clue", inManagedObjectContext: self.managedObjectContext) as! Clue
+        clue.clueTier = clueTier
+        clue.clueDescription = clueDesc
+        return clue
+    }
+    */
+    //MARK: fetchObject
+    func fetchObject(objectClassName: String)->[NSManagedObject]{
+        let objectFetch = NSFetchRequest(entityName: objectClassName)
+        let fetchedObjects: [NSManagedObject]
+        do {
+            fetchedObjects = try self.managedObjectContext.executeFetchRequest(objectFetch) as! [NSManagedObject]
+        } catch {
+            fatalError("\(error)")
+        }
+        return fetchedObjects
+    }
+    //MARK: Save CoreData
+    func saveCoreData(){
+        do {
+            try managedObjectContext.save()
+        }catch{
+            fatalError("Failed to save CoreData")
+        }
+    }
+
 }
