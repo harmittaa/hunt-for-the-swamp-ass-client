@@ -443,15 +443,15 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="clueCell" id="HA8-iA-5H8" customClass="GameScreenCluesTableViewCell" customModule="huntForTheSwampAss" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="clueCell" id="HA8-iA-5H8" customClass="GameScreenCluesTableViewCell" customModule="huntForTheSwampAss" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HA8-iA-5H8" id="bod-Oc-xxf">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hc-f8-KZC">
-                                                    <rect key="frame" x="17" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="17" y="11" width="279" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -460,6 +460,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="clueTitle" destination="6hc-f8-KZC" id="JTg-c7-MKX"/>
+                                            <segue destination="AAd-3g-aCM" kind="push" id="MU1-L4-Bsk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -475,6 +476,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oye-iS-Uhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2143" y="1038"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bw1-kK-Mx9">
+            <objects>
+                <viewController id="AAd-3g-aCM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IM3-rv-QZc"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Yk-G4-WUU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N02-on-dwo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="I8u-2h-5F3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XPJ-FO-fal" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2557" y="1028"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="1II-Kw-Z7q">
