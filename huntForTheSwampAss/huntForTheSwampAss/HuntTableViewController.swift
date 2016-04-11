@@ -10,7 +10,8 @@ import UIKit
 
 class HuntTableViewController: UITableViewController {
 
-    var listOfHunts = [Hunt]()
+    var listOfHunts = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -18,6 +19,12 @@ class HuntTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let coreDataManager:DataController = dataManagerSingleton
+        //MARK: sample data is loaded
+        let a = coreDataManager.fetchObject("Hunt")
+        listOfHunts = a
+        print("this is from the other controller: Size : \(a.count)  \(a)")
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,8 +47,11 @@ class HuntTableViewController: UITableViewController {
         let cellIdentifier = "HuntTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! HuntTableViewCell
         
-        let hnt = listOfHunts[indexPath.row]
-        //cell.huntTitle.text = hnt.huntName
+        let hunt = listOfHunts[indexPath.row] as! Hunt
+        print("this is the picked game mode for the cell: \(hunt)")
+
+        
+        cell.huntTitle.text = hunt.huntTitle
 
         return cell
     }

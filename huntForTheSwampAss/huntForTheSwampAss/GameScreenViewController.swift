@@ -6,27 +6,43 @@
 //  Copyright © 2016 iosdev. All rights reserved.
 //
 
+// Handles the map and location on the Game Screen
+
+
 import UIKit
 import MapKit
 import CoreLocation
 class GameScreenViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var gameScreenMap: MKMapView!
+    let locationManager = CLLocationManager()
     
     
+    //MARK: location manager shenanigans
     override func viewDidLoad() {
         super.viewDidLoad()
-        //MARK: location manager shenanigans
-        let locationManager = CLLocationManager()
-        //ask user to enable GPS
+        // ask the user to auth location always
         locationManager.requestAlwaysAuthorization()
-        locationManager.requestWhenInUseAuthorization()
-        if CLLocationManager.locationServicesEnabled(){
+        // set locationManager as the delegate for CLLocationManager to receive
+        locationManager.delegate = self
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // when auth status changes this method is called
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        print("location manager delegate received notification that auth status has changed")
+        print("the status is now \(CLLocationManager.authorizationStatus().rawValue)")
+        
+        // if auth status is the AuthorizedAlways then location stuff is run
+        if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedAlways {
             //tell the map to display currenty location
             gameScreenMap.showsUserLocation = true
             //create a coordinate object, that has a longitude and latitude
             let coordinate = locationManager.location!.coordinate
             //set delegate and desired accuracy of the GPS for the locationmanagager
-            locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             //start location manager
             locationManager.startUpdatingLocation()
@@ -44,14 +60,36 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate {
             mapBlip.subtitle = "On kauppa"
             gameScreenMap.addAnnotation(mapBlip)
             
-            // Do any additional setup after loading the view.
-        }}
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+            // if the user has declined the auth poop up screen
+        } else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.NotDetermined {
+            print("Not authorised")
+            print(CLLocationManager.authorizationStatus().rawValue)
+            
+            // create an alert
+            let noAuthAlert = UIAlertController.init(title: "No authorization", message: "Please authorize Hunt for the Swamp ass to see your location on map!", preferredStyle: .ActionSheet)
+            
+            // create an action for the alert that takes the user to location settings of the app
+            let settingsAction = UIAlertAction(title: "Location settings", style: .Default, handler: { (testAction) -> Void in
+                UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+            })
+            
+            let mapImage = UIImage(named: "map")
+            
+            let imageView = UIImageView(frame: CGRect(x: 40, y: 40, width: 40, height: 40))
+            imageView.image = mapImage
+            
+            noAuthAlert.view.addSubview(imageView)
+        
+            // create an action for the alert that cancels
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            // add actions to the alert
+            noAuthAlert.addAction(cancelAction)
+            noAuthAlert.addAction(settingsAction)
+            
+            // show the alert to user
+            presentViewController(noAuthAlert, animated: true, completion: nil)
+        }
     }
-    
     
     
     func centerMapOnLocation(location: CLLocation) {

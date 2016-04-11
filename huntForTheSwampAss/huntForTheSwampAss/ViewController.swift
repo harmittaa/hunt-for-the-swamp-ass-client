@@ -19,8 +19,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //create a datacontroller, otherwise it wont init the values for use in other controllers, use moonface for maximum effect
-        let 🌚:DataController = dataManagerSingleton
+        //reate a datacontroller, otherwise it wont init the values for use in other controllers, use moonface for maximum effect
+          let 🌚:DataController = dataManagerSingleton
         
         // Do any additional setup after loading the view, typically from a nib.
         /*let appDelegate =
@@ -42,16 +42,16 @@ class ViewController: UIViewController {
         }*/
         
         //MARK: core data shenanigans
-        /*let gm1 = testManager.createNewGameMode("Test1GameMode", gameModeDesc: "Test1 Game Mode Description")
-        let hunt1 = testManager.createNewHunt("Test1Hunt", huntDesc: "testi yksi huntti jee")
+        let gm1 = 🌚.createNewGameMode("Test1GameMode", gameModeDesc: "Test1 Game Mode Description")
+        let hunt1 = 🌚.createNewHunt("Test1Hunt", huntDesc: "testi yksi huntti jee")
         gm1.setValue([hunt1] as NSSet, forKeyPath: "hunt")
         let hunttttt = gm1.hunt?.allObjects[0] as! Hunt
         hunttttt.huntTitle = "This is a custom title"
         print(gm1)
         print(gm1.hunt?.allObjects[0])
-        testManager.saveCoreData()
-        let b = testManager.fetchObject("Hunt")
-        print("Fetching from saveds:   \(b)")*/
+        //🌚.saveCoreData()
+        //let b = 🌚.fetchObject("Hunt")
+        //print("Fetching from saveds:   \(b)")
         }
 
     override func didReceiveMemoryWarning() {
