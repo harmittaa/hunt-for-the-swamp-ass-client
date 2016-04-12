@@ -1,21 +1,22 @@
 //
-//  GameScreenTabBarController.swift
+//  FullClueViewController.swift
 //  huntForTheSwampAss
 //
-//  Created by iosdev on 7.4.2016.
+//  Created by iosdev on 12.4.2016.
 //  Copyright © 2016 iosdev. All rights reserved.
 //
 
 import UIKit
 
-class GameScreenTabBarController: UITabBarController {
-
+class FullClueViewController: UIViewController {
+    var passedClue: ClueObject!
+    @IBOutlet weak var clueMedia: UIImageView!
+    @IBOutlet weak var clueDesc: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        clueDesc.text = passedClue.clueText
         // Do any additional setup after loading the view.
-        self.navigationItem.hidesBackButton = true
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,11 +24,7 @@ class GameScreenTabBarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func goToMainMenu(sender: UIBarButtonItem) {
-        print("[GameTabController] main menu pressed")
-    }
 
-    
     /*
     // MARK: - Navigation
 

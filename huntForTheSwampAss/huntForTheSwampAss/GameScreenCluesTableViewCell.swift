@@ -13,6 +13,7 @@ import UIKit
 class GameScreenCluesTableViewCell: UITableViewCell {
     //MARK: ui elements
     @IBOutlet weak var clueTitle: UILabel!
+    @IBOutlet weak var clueSubTitle: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

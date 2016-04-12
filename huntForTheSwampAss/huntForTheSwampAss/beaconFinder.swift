@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 let beaconFinderSingleton = BeaconFinder()
-
+let gameController = gameControllerSingleton
 class BeaconFinder: NSObject, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "00000000-0000-0000-0000-000000000000")!, identifier: "ble_beacon")
@@ -35,6 +35,9 @@ class BeaconFinder: NSObject, CLLocationManagerDelegate {
                 //pick out the first beacon from the list. they are automatically sorted from closest to farthest, downcast it as a CLBeacon
                 let closestBeacon = knownBeacons[0] as CLBeacon
                 print("[BeaconFinder] new closest beacon: \(closestBeacon.proximityUUID) + \(closestBeacon.proximity.rawValue) + \(closestBeacon.major)")
+            if (closestBeacon.major == gameController.currentLocation?.beacon.beaconMajor){
+                print("[BeaconFinder]!!!!! FOUND CORRECT BEACON !!!!!")
+            }
             }
         
     }

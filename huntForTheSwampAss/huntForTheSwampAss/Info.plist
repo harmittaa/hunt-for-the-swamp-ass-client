@@ -24,6 +24,8 @@
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Hunt for The Swamp Ass would like to use yor location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Hunt for the Swamp Ass would like to use your Bluetooth</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -45,9 +47,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Hunt for The Swamp Ass would like to use yor location</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Hunt for the Swamp Ass would like to use your Bluetooth</string>
 </dict>
 </plist>

@@ -15,7 +15,13 @@ class GameScreenClueViewController: UIViewController, UITableViewDataSource, UIT
 
     @IBOutlet weak var cluesTableView:UITableView!
     
-    var listOfClues = ["jeeben","huuben","zeeben","gaben"]
+    let gameController = gameControllerSingleton
+    var listOfClues: [ClueObject]!
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.listOfClues = (gameController.currentLocation?.clueList)!
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,19 +49,31 @@ class GameScreenClueViewController: UIViewController, UITableViewDataSource, UIT
         let textCellIdentifier = "clueCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! GameScreenCluesTableViewCell
         
-        cell.clueTitle.text = listOfClues[indexPath.row]
+        cell.clueTitle.text = "Clue #\(listOfClues[indexPath.row].clueTier)"
+        cell.clueSubTitle.text = listOfClues[indexPath.row].clueText
         return cell
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let fullClueViewCtrl = segue.destinationViewController as! FullClueViewController
+        
+        if (segue.identifier == "MoveToFullClue"){
+            if let selectedClueCell = sender as? UITableViewCell {
+                let indexPath = cluesTableView.indexPathForCell(selectedClueCell)!
+                let selectedClue = listOfClues[indexPath.row]
+                fullClueViewCtrl.passedClue = selectedClue
+                
+            }
+            
+        }
     }
-    */
+ 
 
 }

@@ -12,6 +12,7 @@ class HuntTableViewCell: UITableViewCell {
     @IBOutlet weak var huntImage: UIImageView!
     @IBOutlet weak var huntTitle: UILabel!
     @IBOutlet weak var huntDesc: UILabel!
+    @IBOutlet weak var huntStartDate: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

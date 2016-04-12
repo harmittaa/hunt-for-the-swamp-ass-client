@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var teamButton: UIButton!
     
-    let 🌚:DataController = DataController.dataManagerSingleton
+    //let 🌚:DataController = DataController.dataManagerSingleton
     let beaconFinder:BeaconFinder = beaconFinderSingleton
     let gameController = gameControllerSingleton
     
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         }*/
         
         //MARK: core data shenanigans
-        let gm1 = 🌚.createNewGameMode("Test1GameMode", gameModeDesc: "Test1 Game Mode Description")
+        /*let gm1 = 🌚.createNewGameMode("Test1GameMode", gameModeDesc: "Test1 Game Mode Description")
         let hunt1 = 🌚.createNewHunt("Test1Hunt", huntDesc: "testi yksi huntti jee")
         gm1.setValue([hunt1] as NSSet, forKeyPath: "hunt")
         let hunttttt = gm1.hunt?.allObjects[0] as! Hunt
@@ -53,16 +53,16 @@ class ViewController: UIViewController {
         print(gm1)
         print(gm1.hunt?.allObjects[0])
         🌚.saveCoreData()
-        
-        loadStuff(🌚)
+        */
+        //loadStuff(🌚)
  
     }
     
-    func loadStuff(dataM: DataController){
+    /*func loadStuff(dataM: DataController){
         print("[ViewController] fetch request")
         let b = dataM.fetchObject("Hunt")
         gameController.putCurrentHuntIntoMemory(b)
-    }
+    }*/
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

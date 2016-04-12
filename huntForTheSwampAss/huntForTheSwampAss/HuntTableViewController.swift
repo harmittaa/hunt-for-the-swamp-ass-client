@@ -10,10 +10,12 @@ import UIKit
 
 class HuntTableViewController: UITableViewController {
 
-    //var listOfHunts = [Hunt(),Hunt()]
-
+    let gameController = gameControllerSingleton
+    var listOfHunts: [HuntObject]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("[HuntsTableViewController] \(listOfHunts)")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -34,7 +36,7 @@ class HuntTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3//listOfHunts.count
+        return listOfHunts.count
     }
 
     
@@ -43,9 +45,16 @@ class HuntTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! HuntTableViewCell
         
         //let hnt = listOfHunts[indexPath.row]
-        cell.huntTitle.text = "test"
+        cell.huntTitle.text = listOfHunts[indexPath.row].huntTitle
+        cell.huntDesc.text = listOfHunts[indexPath.row].huntDescription
+        
+        cell.huntStartDate.text = String(listOfHunts[indexPath.row].huntStartDate)
 
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        gameController.currentHunt = listOfHunts[indexPath.row]
     }
     
 
@@ -84,14 +93,16 @@ class HuntTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+        
+        
+    }*/
+ 
 
 }
