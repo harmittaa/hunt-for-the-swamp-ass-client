@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 import CoreData
 
-let dataManagerSingleton:DataController = DataController()
+
 
 class DataController: NSObject {
-    var managedObjectContext: NSManagedObjectContext
-    
+    let managedObjectContext: NSManagedObjectContext
+    static let dataManagerSingleton:DataController = DataController()
      override private init() {
         // This resource is the same name as your xcdatamodeld contained in your project.
         guard let modelURL = NSBundle.mainBundle().URLForResource("DataModel", withExtension:"momd") else {
@@ -40,7 +40,8 @@ class DataController: NSObject {
                 fatalError("Error migrating store: \(error)")
             }
         }
-        
+        print("singleton is done")
+        print(managedObjectContext)
         
     }
     //MARK: CreateGameMode 🌚

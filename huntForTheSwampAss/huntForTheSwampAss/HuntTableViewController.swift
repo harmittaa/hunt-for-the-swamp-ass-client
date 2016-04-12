@@ -10,7 +10,7 @@ import UIKit
 
 class HuntTableViewController: UITableViewController {
 
-    var listOfHunts = [Hunt]()
+    //var listOfHunts = [Hunt(),Hunt()]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -32,7 +32,7 @@ class HuntTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listOfHunts.count
+        return 3//listOfHunts.count
     }
 
     
@@ -40,8 +40,8 @@ class HuntTableViewController: UITableViewController {
         let cellIdentifier = "HuntTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! HuntTableViewCell
         
-        let hnt = listOfHunts[indexPath.row]
-        //cell.huntTitle.text = hnt.huntName
+        //let hnt = listOfHunts[indexPath.row]
+        cell.huntTitle.text = "test"
 
         return cell
     }

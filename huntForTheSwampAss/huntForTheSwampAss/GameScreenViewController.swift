@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 class GameScreenViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var gameScreenMap: MKMapView!
-    
+    let moonface = CLLocationManager.self
     
     override func viewDidLoad() {
         super.viewDidLoad()

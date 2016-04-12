@@ -14,7 +14,7 @@ class GameModeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let coreDataManager:DataController = dataManagerSingleton
+        let coreDataManager:DataController = DataController.dataManagerSingleton
         //MARK: sample data is loaded
         let a = coreDataManager.fetchObject("GameMode")
         gameModes = a

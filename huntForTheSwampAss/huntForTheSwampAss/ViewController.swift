@@ -20,7 +20,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //create a datacontroller, otherwise it wont init the values for use in other controllers, use moonface for maximum effect
-        let 🌚:DataController = dataManagerSingleton
+        let 🌚:DataController = DataController.dataManagerSingleton
+        let beaconFinder:BeaconFinder = beaconFinderSingleton
+        let gameController = gameControllerSingleton
+        
+        beaconFinder.startScanningBeacon()
         
         // Do any additional setup after loading the view, typically from a nib.
         /*let appDelegate =
@@ -42,18 +46,26 @@ class ViewController: UIViewController {
         }*/
         
         //MARK: core data shenanigans
-        /*let gm1 = testManager.createNewGameMode("Test1GameMode", gameModeDesc: "Test1 Game Mode Description")
-        let hunt1 = testManager.createNewHunt("Test1Hunt", huntDesc: "testi yksi huntti jee")
+        /*let gm1 = 🌚.createNewGameMode("Test1GameMode", gameModeDesc: "Test1 Game Mode Description")
+        let hunt1 = 🌚.createNewHunt("Test1Hunt", huntDesc: "testi yksi huntti jee")
         gm1.setValue([hunt1] as NSSet, forKeyPath: "hunt")
         let hunttttt = gm1.hunt?.allObjects[0] as! Hunt
         hunttttt.huntTitle = "This is a custom title"
         print(gm1)
-        print(gm1.hunt?.allObjects[0])
-        testManager.saveCoreData()
-        let b = testManager.fetchObject("Hunt")
-        print("Fetching from saveds:   \(b)")*/
-        }
-
+        print(gm1.hunt?.allObjects[0])*/
+        //🌚.saveCoreData()
+        
+        loadStuff(🌚)
+ 
+    }
+    
+    func loadStuff(dataM: DataController){
+        var test1 = []
+        let b = dataM.fetchObject("GameMode")
+        test1 = b
+        print("Fetching from saveds:   \(test1)")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
