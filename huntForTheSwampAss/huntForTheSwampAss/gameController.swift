@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 let gameControllerSingleton:GameController = GameController()
 
@@ -14,22 +15,24 @@ class GameController{
     
     var currentHunt: Hunt?
     var currentLocation: Location?
-    let dataManager:DataController
+    //var dataManager:DataController
     
     
     private init(){
-        print("before gamcontroller init")
+        /*print("[gameController Init] before dataManager init")
         dataManager = DataController.dataManagerSingleton
-        print("count of objects: \(dataManager.fetchObject("Hunt").count)")
-        if dataManager.fetchObject("Hunt").count > 0{
-            let allHunts = dataManager.fetchObject("Hunt") as! [Hunt]
-            currentHunt = allHunts[0]
-            print("current Hunt: \(currentHunt)")
+        print("[gameController Init] fetch request")
+        var huntsList = dataManager.fetchObject("GameMode")
+        huntsList = dataManager.fetchObject("GameMode")
+        print("[gameController Init] count of objects in list of Hunts: \(huntsList.count)")
+        if huntsList.count > 0{
+            //currentHunt = huntsList[0] as! Hunt
+            //print("[gameController Init] current Hunt: \(currentHunt)")
         }
         else {
-            print("no data found")
+            print("[gameController Init] no data found")
             
-        }
+        }*/
     }
     
     func setCurrentHunt(newHunt: Hunt){
@@ -40,16 +43,33 @@ class GameController{
         currentLocation = newLocation
     }
     
-    /*func getCurrentHunt() -> Hunt{
-     return currentHunt
-     }*/
+    func getCurrentHunt() -> Hunt{
+     return currentHunt!
+     }
     
     func getCurrentLocation() -> Location{
         return currentLocation!
     }
     
-    func fetchCurrentHuntIntoMemory(){
-        
+    func putCurrentHuntIntoMemory(array: [NSManagedObject]){
+        /*
+        print("[gameController func] before dataManager init")
+        //dataManager = DataController.dataManagerSingleton
+        print("[gameController func] fetch request")
+        var huntsList = dataManager.fetchObject("GameMode")
+        huntsList = dataManager.fetchObject("GameMode")
+        print("[gameController func] count of objects in list of Hunts: \(huntsList.count)")
+        if huntsList.count > 0{
+            //currentHunt = huntsList[0] as! Hunt
+            //print("[gameController Init] current Hunt: \(currentHunt)")
+        }
+        else {
+            print("[gameController func] no data found")
+            
+        }
+        */
+        self.currentHunt = array[0] as! Hunt
+        print("[gameController] putintoMemory\(currentHunt!)")
         
     }
     

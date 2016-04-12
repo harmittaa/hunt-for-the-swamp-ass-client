@@ -34,18 +34,18 @@ class BeaconFinder: NSObject, CLLocationManagerDelegate {
         if (knownBeacons.count > 0) {
                 //pick out the first beacon from the list. they are automatically sorted from closest to farthest, downcast it as a CLBeacon
                 let closestBeacon = knownBeacons[0] as CLBeacon
-                print("new closest beacon: \(closestBeacon.proximityUUID) + \(closestBeacon.proximity.rawValue) + \(closestBeacon.major)")
+                print("[BeaconFinder] new closest beacon: \(closestBeacon.proximityUUID) + \(closestBeacon.proximity.rawValue) + \(closestBeacon.major)")
             }
         
     }
     func startScanningBeacon(){
-        print("starting beacon scan")
+        print("[BeaconFinder] starting beacon scan")
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse) {
             print("bluetooth not on")
             locationManager.requestWhenInUseAuthorization()
         }
         else {
-            print("bluetooth on")
+            print("[BeaconFinder] bluetooth on")
         }
         locationManager.startRangingBeaconsInRegion(region)
     }

@@ -15,6 +15,8 @@ class GameModeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let coreDataManager:DataController = DataController.dataManagerSingleton
+        print("count of objects blim blom: \(coreDataManager.fetchObject("Hunt").count)")
+
         //MARK: sample data is loaded
         let a = coreDataManager.fetchObject("GameMode")
         gameModes = a

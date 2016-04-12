@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 import CoreData
 
-
-
 class DataController: NSObject {
     let managedObjectContext: NSManagedObjectContext
     static let dataManagerSingleton:DataController = DataController()
@@ -94,6 +92,7 @@ class DataController: NSObject {
         } catch {
             fatalError("\(error)")
         }
+        print("[DataManager] return value: \(fetchedObjects)")
         return fetchedObjects
     }
     //MARK: Save CoreData

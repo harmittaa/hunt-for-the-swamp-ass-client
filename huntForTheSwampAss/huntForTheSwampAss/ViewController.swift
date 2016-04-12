@@ -13,6 +13,10 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var teamButton: UIButton!
     
+    let 🌚:DataController = DataController.dataManagerSingleton
+    let beaconFinder:BeaconFinder = beaconFinderSingleton
+    let gameController = gameControllerSingleton
+    
     @IBAction func testButton(sender: UIButton) {
         
     }
@@ -20,10 +24,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //create a datacontroller, otherwise it wont init the values for use in other controllers, use moonface for maximum effect
-        let 🌚:DataController = DataController.dataManagerSingleton
-        let beaconFinder:BeaconFinder = beaconFinderSingleton
-        let gameController = gameControllerSingleton
-        
         beaconFinder.startScanningBeacon()
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -60,10 +60,9 @@ class ViewController: UIViewController {
     }
     
     func loadStuff(dataM: DataController){
-        var test1 = []
-        let b = dataM.fetchObject("GameMode")
-        test1 = b
-        print("Fetching from saveds:   \(test1)")
+        print("[ViewController] fetch request")
+        let b = dataM.fetchObject("Hunt")
+        gameController.putCurrentHuntIntoMemory(b)
     }
     
     override func didReceiveMemoryWarning() {
