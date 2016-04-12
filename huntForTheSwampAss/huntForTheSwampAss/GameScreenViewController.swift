@@ -33,8 +33,8 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate {
     
     // when auth status changes this method is called
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        print("location manager delegate received notification that auth status has changed")
-        print("the status is now \(CLLocationManager.authorizationStatus().rawValue)")
+        print("[GameScreenViewController] Location manager delegate received notification that auth status has changed")
+        print("[GameScreenViewController] Auth status is \(CLLocationManager.authorizationStatus().rawValue)")
         
         // if auth status is the AuthorizedAlways then location stuff is run
         if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedAlways {
@@ -62,7 +62,7 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate {
             
             // if the user has declined the auth poop up screen
         } else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.NotDetermined {
-            print("Not authorised")
+            print("[GameScreenViewController] Location has not been authorized")
             print(CLLocationManager.authorizationStatus().rawValue)
             
             // create an alert
