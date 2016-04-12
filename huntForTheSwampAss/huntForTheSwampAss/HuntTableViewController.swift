@@ -11,6 +11,7 @@ import UIKit
 class HuntTableViewController: UITableViewController {
 
     //var listOfHunts = [Hunt(),Hunt()]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -18,6 +19,7 @@ class HuntTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        //MARK: sample data is loaded
     }
 
     override func didReceiveMemoryWarning() {

@@ -25,7 +25,6 @@ class ViewController: UIViewController {
         
         //create a datacontroller, otherwise it wont init the values for use in other controllers, use moonface for maximum effect
         beaconFinder.startScanningBeacon()
-        
         // Do any additional setup after loading the view, typically from a nib.
         /*let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
@@ -46,14 +45,14 @@ class ViewController: UIViewController {
         }*/
         
         //MARK: core data shenanigans
-        /*let gm1 = 🌚.createNewGameMode("Test1GameMode", gameModeDesc: "Test1 Game Mode Description")
+        let gm1 = 🌚.createNewGameMode("Test1GameMode", gameModeDesc: "Test1 Game Mode Description")
         let hunt1 = 🌚.createNewHunt("Test1Hunt", huntDesc: "testi yksi huntti jee")
         gm1.setValue([hunt1] as NSSet, forKeyPath: "hunt")
         let hunttttt = gm1.hunt?.allObjects[0] as! Hunt
         hunttttt.huntTitle = "This is a custom title"
         print(gm1)
-        print(gm1.hunt?.allObjects[0])*/
-        //🌚.saveCoreData()
+        print(gm1.hunt?.allObjects[0])
+        🌚.saveCoreData()
         
         loadStuff(🌚)
  
