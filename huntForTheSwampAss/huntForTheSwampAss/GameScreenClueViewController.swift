@@ -11,8 +11,8 @@
 
 import UIKit
 
-class GameScreenClueViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+class GameScreenClueViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ViewObserverProtocol {
+    
     @IBOutlet weak var cluesTableView:UITableView!
     
     let gameController = gameControllerSingleton
@@ -20,17 +20,18 @@ class GameScreenClueViewController: UIViewController, UITableViewDataSource, UIT
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.listOfClues = (gameController.currentLocation?.clueList)!
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.listOfClues = gameController.currentLocation!.clueList
         //set the delegate and datasource of the tableView to be this controller
         cluesTableView.delegate = self
         cluesTableView.dataSource = self
+        registerAsObserver()
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -44,20 +45,57 @@ class GameScreenClueViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listOfClues.count
     }
-    
+    //MARK: populating table view
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let textCellIdentifier = "clueCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! GameScreenCluesTableViewCell
+        //check if clue is locked or not
+        if (!listOfClues[indexPath.row].lockedStatus){
+            print("[GameClueScreen] this cell is not locked")
+            let textCellIdentifier = "clueCell"
+            let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! GameScreenCluesTableViewCell
+            cell.clueTitle.text = "Clue #\(listOfClues[indexPath.row].clueTier)"
+            cell.clueSubTitle.text = listOfClues[indexPath.row].clueText
+            return cell
+        }else{
+            print("[GameClueScreen] this cell IS locked")
+            let textCellIdentifier = "clueCellLocked"
+            let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! GameScreenCluesLockedTableViewCell
+            cell.clueTitle.text = "Clue #\(listOfClues[indexPath.row].clueTier)"
+            return cell
+        }
+    }
+    //MARK: unlock button for a locked cell
+    @IBAction func unlockClue(sender: UIButton) {
+        //get position of the button on the screen
+        var buttonPosition = sender.convertPoint(CGPointZero, toView: cluesTableView)
+        //get the row the button is on using the coordinate
+        var rowOfButton = self.cluesTableView.indexPathForRowAtPoint(buttonPosition)?.row
+        listOfClues[rowOfButton!].lockedStatus = false
+        print("[GameCluesScreen] ListOfClues: \(listOfClues[rowOfButton!].lockedStatus) GameCTRL: \(gameController.currentLocation!.clueList[rowOfButton!].lockedStatus)")
+        cluesTableView.reloadData()
         
-        cell.clueTitle.text = "Clue #\(listOfClues[indexPath.row].clueTier)"
-        cell.clueSubTitle.text = listOfClues[indexPath.row].clueText
-        return cell
     }
     
-
+    //MARK: Obeserver functions
+    func registerAsObserver() {
+        beaconFinderSingleton.registerAsObserver(self)
+    }
+    
+    func receiveNotification() {
+        let noAuthAlert = UIAlertController.init(title: "gameController.currentLocation!.locationTitle", message: "Found a thing", preferredStyle: .Alert)
+        print("[ViewController] received notification as observer")
+        //custom action with a segue
+        let settingsAction = UIAlertAction(title: "Continue", style: .Default, handler: { (testAction) -> Void in
+            self.performSegueWithIdentifier("LocationDiscoveredSegue", sender: self)
+            self.gameController.currentLocation!.isFound = true
+        })
+        // add actions to the alert
+        noAuthAlert.addAction(settingsAction)
+        presentViewController(noAuthAlert, animated: true, completion: nil)
+    }
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
@@ -74,6 +112,6 @@ class GameScreenClueViewController: UIViewController, UITableViewDataSource, UIT
             
         }
     }
- 
-
+    
+    
 }

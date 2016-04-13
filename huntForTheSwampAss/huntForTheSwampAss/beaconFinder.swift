@@ -14,7 +14,7 @@ let gameController = gameControllerSingleton
 class BeaconFinder: NSObject, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "00000000-0000-0000-0000-000000000000")!, identifier: "ble_beacon")
-    
+    var listOfObservers = [ViewObserverProtocol]()
     
     private override init(){
         super.init()
@@ -34,11 +34,17 @@ class BeaconFinder: NSObject, CLLocationManagerDelegate {
         if (knownBeacons.count > 0) {
                 //pick out the first beacon from the list. they are automatically sorted from closest to farthest, downcast it as a CLBeacon
                 let closestBeacon = knownBeacons[0] as CLBeacon
-                print("[BeaconFinder] new closest beacon: \(closestBeacon.proximityUUID) + \(closestBeacon.proximity.rawValue) + \(closestBeacon.major)")
+                //print("[BeaconFinder] new closest beacon: \(closestBeacon.proximityUUID) + \(closestBeacon.proximity.rawValue) + \(closestBeacon.major)")
             if (closestBeacon.major == gameController.currentLocation?.beacon.beaconMajor){
-                print("[BeaconFinder]!!!!! FOUND CORRECT BEACON !!!!!")
+                if let g = gameController.currentLocation{
+                    //print("[BeaconFinder] current location of GC: \(g)")
+                    if(!g.isFound){
+                        print("[BeaconFinder]!!!!! FOUND CORRECT BEACON !!!!!")
+                        updateObservers()
+                    }
+                }
             }
-            }
+        }
         
     }
     func startScanningBeacon(){
@@ -51,5 +57,16 @@ class BeaconFinder: NSObject, CLLocationManagerDelegate {
             print("[BeaconFinder] bluetooth on")
         }
         locationManager.startRangingBeaconsInRegion(region)
+    }
+    
+    func registerAsObserver(observer: ViewObserverProtocol){
+        self.listOfObservers.append(observer)
+    }
+    
+    func updateObservers(){
+        for a in listOfObservers{
+            a.receiveNotification()
+            print("[BeaconFinder] sending notification to: \(a)")
+        }
     }
 }

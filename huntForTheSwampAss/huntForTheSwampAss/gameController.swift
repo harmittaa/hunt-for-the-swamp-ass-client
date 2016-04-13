@@ -39,11 +39,11 @@ class GameController{
     }
     
     func setCurrentHunt(newHunt: HuntObject){
-        currentHunt = newHunt
+        self.currentHunt = newHunt
     }
     
     func setCurrentLocation(newLocation: LocationObject){
-        currentLocation = newLocation
+        self.currentLocation = newLocation
     }
     
     func getCurrentHunt() -> HuntObject{
@@ -77,14 +77,13 @@ class GameController{
     }
     
     func generatePlaceHolders(){
-        currentLocation = LocationObject(title: "place #1", beacon: BeaconObject(beaconmajor: 148, beaconminor: 148, beaconuuid: "00000000-0000-0000-0000-000000000000"))
+        let testLocation = LocationObject(title: "place #1", beacon: BeaconObject(beaconmajor: 148, beaconminor: 148, beaconuuid: "00000000-0000-0000-0000-000000000000"))
         
-        allHunts = [HuntObject(title: "hunt 1", desc: "this is a hunt placeholder #1", locations: [currentLocation!,currentLocation!,currentLocation!]),HuntObject(title: "hunt 2", desc: "this is a hunt placeholder #2", locations: [currentLocation!,currentLocation!,currentLocation!]),HuntObject(title: "hunt 3", desc: "this is a hunt placeholder #3", locations: [currentLocation!,currentLocation!,currentLocation!])]
+        allHunts = [HuntObject(title: "hunt 1", desc: "this is a hunt placeholder #1", locations: [testLocation,testLocation,testLocation]),HuntObject(title: "hunt 2", desc: "this is a hunt placeholder #2", locations: [testLocation,testLocation,testLocation]),HuntObject(title: "hunt 3", desc: "this is a hunt placeholder #3", locations: [testLocation,testLocation,testLocation])]
         
         allGameModes = [GameModeObject(gameDesc: "This is a GameMode #1", gameTitle: "GameMode 1", huntsInGame: allHunts!),GameModeObject(gameDesc: "This is a GameMode #2", gameTitle: "GameMode 2", huntsInGame: allHunts!),GameModeObject(gameDesc: "This is a GameMode #3", gameTitle: "GameMode 3", huntsInGame: allHunts!)]
         
-        currentHunt = allHunts![0]
-        
     }
+    
     
 }

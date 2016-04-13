@@ -8,13 +8,16 @@
 
 import UIKit
 
-class GameScreenTabBarController: UITabBarController {
+class GameScreenTabBarController: UITabBarController, ViewObserverProtocol {
 
+    let gameController = gameControllerSingleton
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //disable back button so user can only go to main menu now
         self.navigationItem.hidesBackButton = true
+        registerAsObserver()
         
     }
 
@@ -25,6 +28,24 @@ class GameScreenTabBarController: UITabBarController {
     
     @IBAction func goToMainMenu(sender: UIBarButtonItem) {
         print("[GameTabController] main menu pressed")
+    }
+    
+    //MARK: Obeserver functions
+    func registerAsObserver() {
+        beaconFinderSingleton.registerAsObserver(self)
+    }
+    
+    func receiveNotification() {
+        let noAuthAlert = UIAlertController.init(title: "gameController.currentLocation!.locationTitle", message: "Found a thing", preferredStyle: .Alert)
+        print("[ViewController] received notification as observer")
+        //custom action with a segue
+        let settingsAction = UIAlertAction(title: "Continue", style: .Default, handler: { (testAction) -> Void in
+            self.performSegueWithIdentifier("LocationDiscoveredSegue", sender: self)
+            self.gameController.currentLocation!.isFound = true
+        })
+        // add actions to the alert
+        noAuthAlert.addAction(settingsAction)
+        presentViewController(noAuthAlert, animated: true, completion: nil)
     }
 
     

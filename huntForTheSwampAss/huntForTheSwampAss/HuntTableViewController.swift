@@ -8,20 +8,22 @@
 
 import UIKit
 
-class HuntTableViewController: UITableViewController {
+class HuntTableViewController: UITableViewController, ViewObserverProtocol {
 
     let gameController = gameControllerSingleton
     var listOfHunts: [HuntObject]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("[HuntsTableViewController] \(listOfHunts)")
+        //print("[HuntsTableViewController] \(listOfHunts)")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         //MARK: sample data is loaded
+        
+        registerAsObserver()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,18 +45,44 @@ class HuntTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "HuntTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! HuntTableViewCell
-        
-        //let hnt = listOfHunts[indexPath.row]
+        print("[HuntTableViewCtrl]cell : \(cell)")
         cell.huntTitle.text = listOfHunts[indexPath.row].huntTitle
         cell.huntDesc.text = listOfHunts[indexPath.row].huntDescription
-        
         cell.huntStartDate.text = String(listOfHunts[indexPath.row].huntStartDate)
 
         return cell
     }
     
+    /*override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        print("delegate \(tableView.delegate)")
+        print("[HuntTableView] help pls \(indexPath.row)")
+        let cell = tableView.dequeueReusableCellWithIdentifier("HuntTableViewCell", forIndexPath: indexPath) as? HuntTableViewCell
+        //print(cell)
+        return indexPath
+    }*/
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        gameController.currentHunt = listOfHunts[indexPath.row]
+        print("[HuntTableView] exiting hunt table view")
+        gameController.currentHunt = gameController.allHunts![indexPath.row]
+        gameController.currentLocation = gameController.currentHunt!.locationList[0]
+    }
+    
+    //MARK: Obeserver functions
+    func registerAsObserver() {
+        beaconFinderSingleton.registerAsObserver(self)
+    }
+    
+    func receiveNotification() {
+        let noAuthAlert = UIAlertController.init(title: "gameController.currentLocation!.locationTitle", message: "Found a thing", preferredStyle: .Alert)
+        print("[ViewController] received notification as observer")
+        //custom action with a segue
+        let settingsAction = UIAlertAction(title: "Continue", style: .Default, handler: { (testAction) -> Void in
+            self.performSegueWithIdentifier("LocationDiscoveredSegue", sender: self)
+            self.gameController.currentLocation!.isFound = true
+        })
+        // add actions to the alert
+        noAuthAlert.addAction(settingsAction)
+        presentViewController(noAuthAlert, animated: true, completion: nil)
     }
     
 
@@ -97,11 +125,18 @@ class HuntTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+   /* override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        
+        //let gameScreenController = segue.destinationViewController as! GameScreenTabBarController
+        if let selectedHuntCell = sender as? HuntTableViewCell {
+            //let indexPath = tableView.indexPathForCell(selectedHuntCell)!
+            let newCurrentHunt = gameController.currentHunt//gameController.allHunts![indexPath.row]
+            //gameController.setCurrentHunt(newCurrentHunt)
+            print("[HuntTableViewController] current hunt set as: \(newCurrentHunt)")
+            //gameController.currentLocation = gameController.currentHunt?.locationList[0]
+        }
+ 
     }*/
  
 

@@ -8,20 +8,41 @@
 
 import UIKit
 
-class FullClueViewController: UIViewController {
+class FullClueViewController: UIViewController, ViewObserverProtocol {
     var passedClue: ClueObject!
     @IBOutlet weak var clueMedia: UIImageView!
     @IBOutlet weak var clueDesc: UITextView!
+    
+    let gameController = gameControllerSingleton
+    let beaconFinder = beaconFinderSingleton
     
     override func viewDidLoad() {
         super.viewDidLoad()
         clueDesc.text = passedClue.clueText
         // Do any additional setup after loading the view.
+        registerAsObserver()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func receiveNotification() {
+        let noAuthAlert = UIAlertController.init(title: "gameController.currentLocation!.locationTitle", message: "Found a thing", preferredStyle: .Alert)
+        print("[ViewController] received notification as observer")
+        //custom action with a segue
+        let settingsAction = UIAlertAction(title: "Continue", style: .Default, handler: { (testAction) -> Void in
+            self.performSegueWithIdentifier("LocationDiscoveredSegue", sender: self)
+            self.gameController.currentLocation!.isFound = true
+        })
+        // add actions to the alert
+        noAuthAlert.addAction(settingsAction)
+        presentViewController(noAuthAlert, animated: true, completion: nil)
+    }
+    
+    func registerAsObserver() {
+        beaconFinder.registerAsObserver(self)
     }
     
 

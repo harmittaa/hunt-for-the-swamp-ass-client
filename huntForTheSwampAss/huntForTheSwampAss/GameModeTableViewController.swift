@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameModeTableViewController: UITableViewController {
+class GameModeTableViewController: UITableViewController,ViewObserverProtocol {
     let gameController = gameControllerSingleton
     var gameModes: [GameModeObject]!
     var passedIndex: Int?
@@ -35,6 +35,7 @@ class GameModeTableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        registerAsObserver()
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,13 +61,31 @@ class GameModeTableViewController: UITableViewController {
         let cellIdentifier = "GameModeTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! GameModeTableViewCell
         let gameMode = gameModes[indexPath.row]
-        print("this is the picked game mode for the cell: \(gameMode)")
+        //print("this is the picked game mode for the cell: \(gameMode)")
         
         cell.gaemModeTitle.text = gameMode.gameModeTitle
         cell.gameModeDesc.text = gameMode.gameModeDescription
         
         
         return cell
+    }
+    
+    //MARK: Obeserver functions
+    func registerAsObserver() {
+        beaconFinderSingleton.registerAsObserver(self)
+    }
+    
+    func receiveNotification() {
+        let noAuthAlert = UIAlertController.init(title: "gameController.currentLocation!.locationTitle", message: "Found a thing", preferredStyle: .Alert)
+        print("[ViewController] received notification as observer")
+        //custom action with a segue
+        let settingsAction = UIAlertAction(title: "Continue", style: .Default, handler: { (testAction) -> Void in
+            self.performSegueWithIdentifier("LocationDiscoveredSegue", sender: self)
+            self.gameController.currentLocation!.isFound = true
+        })
+        // add actions to the alert
+        noAuthAlert.addAction(settingsAction)
+        presentViewController(noAuthAlert, animated: true, completion: nil)
     }
     
     //MARK: when a cell is selected

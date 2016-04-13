@@ -12,10 +12,11 @@
 import UIKit
 import MapKit
 import CoreLocation
-class GameScreenViewController: UIViewController, CLLocationManagerDelegate {
+class GameScreenViewController: UIViewController, CLLocationManagerDelegate, ViewObserverProtocol{
     @IBOutlet weak var gameScreenMap: MKMapView!
 
     let locationManager = CLLocationManager()
+    let gameController = gameControllerSingleton
     
     //MARK: location manager shenanigans
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestAlwaysAuthorization()
         // set locationManager as the delegate for CLLocationManager to receive
         locationManager.delegate = self
+        registerAsObserver()
     }
     
     override func didReceiveMemoryWarning() {
@@ -97,6 +99,24 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
                                                                   regionRadius * 2.0, regionRadius * 2.0)
         gameScreenMap.setRegion(coordinateRegion, animated: true)
+    }
+    
+    //MARK: Obeserver functions
+    func registerAsObserver() {
+        beaconFinderSingleton.registerAsObserver(self)
+    }
+    
+    func receiveNotification() {
+        let noAuthAlert = UIAlertController.init(title: "Location Discovered", message: "Found a thing", preferredStyle: .Alert)
+        print("[ViewController] received notification as observer")
+        //custom action with a segue
+        let settingsAction = UIAlertAction(title: "Continue", style: .Default, handler: { (testAction) -> Void in
+            self.performSegueWithIdentifier("LocationDiscoveredSegue", sender: self)
+            self.gameController.currentLocation!.isFound = true
+        })
+        // add actions to the alert
+        noAuthAlert.addAction(settingsAction)
+        presentViewController(noAuthAlert, animated: true, completion: nil)
     }
     
     /*

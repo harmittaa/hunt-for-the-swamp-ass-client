@@ -11,9 +11,11 @@ import Foundation
 class ClueObject{
     let clueText: String
     let clueTier: Int
+    var lockedStatus: Bool
     
     init(cluetext: String, cluetier:Int){
         self.clueText = cluetext
         self.clueTier = cluetier
+        self.lockedStatus = true
     }
 }

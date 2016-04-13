@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ViewObserverProtocol {
 
     @IBOutlet weak var teamButton: UIButton!
     
@@ -22,7 +22,8 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("[ViewController] init values of GC: \(gameController.currentHunt)")
+        self.navigationItem.hidesBackButton = true
         //create a datacontroller, otherwise it wont init the values for use in other controllers, use moonface for maximum effect
         beaconFinder.startScanningBeacon()
         // Do any additional setup after loading the view, typically from a nib.
@@ -55,6 +56,7 @@ class ViewController: UIViewController {
         🌚.saveCoreData()
         */
         //loadStuff(🌚)
+        registerAsObserver()
  
     }
     
@@ -64,10 +66,39 @@ class ViewController: UIViewController {
         gameController.putCurrentHuntIntoMemory(b)
     }*/
     
+    //MARK: Obeserver functions
+    func registerAsObserver() {
+        beaconFinderSingleton.registerAsObserver(self)
+    }
+    
+    func receiveNotification() {
+        let noAuthAlert = UIAlertController.init(title: "\(gameController.currentLocation!.locationTitle)", message: "Found a thing", preferredStyle: .Alert)
+        print("[ViewController] received notification as observer")
+        //custom action with a segue
+        let settingsAction = UIAlertAction(title: "Continue", style: .Default, handler: { (testAction) -> Void in
+            self.performSegueWithIdentifier("LocationDiscoveredSegue", sender: self)
+            self.gameController.currentLocation!.isFound = true
+        })
+        // add actions to the alert
+        noAuthAlert.addAction(settingsAction)
+        presentViewController(noAuthAlert, animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         }
+    
+    @IBAction func gameButtonAction(sender: UIButton) {
+        var segueId: String
+        if let z = gameController.currentHunt{
+            segueId = "MainMenuToGameScreen"
+        }
+        else{
+            segueId = "MainMenuToGameModes"
+        }
+        performSegueWithIdentifier(segueId, sender: self)
+    }
 
 }
 
