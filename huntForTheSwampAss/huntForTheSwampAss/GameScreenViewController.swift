@@ -17,7 +17,7 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate, Vie
 
     let locationManager = CLLocationManager()
     let gameController = gameControllerSingleton
-    
+    var isDisplayingPopup = false
     //MARK: location manager shenanigans
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,16 +107,22 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate, Vie
     }
     
     func receiveNotification() {
-        let noAuthAlert = UIAlertController.init(title: "Location Discovered", message: "Found a thing", preferredStyle: .Alert)
-        print("[ViewController] received notification as observer")
-        //custom action with a segue
-        let settingsAction = UIAlertAction(title: "Continue", style: .Default, handler: { (testAction) -> Void in
-            self.performSegueWithIdentifier("LocationDiscoveredSegue", sender: self)
-            self.gameController.currentLocation!.isFound = true
-        })
-        // add actions to the alert
-        noAuthAlert.addAction(settingsAction)
-        presentViewController(noAuthAlert, animated: true, completion: nil)
+        if(!isDisplayingPopup){
+            isDisplayingPopup = true
+            let noAuthAlert = UIAlertController.init(title: gameController.currentLocation!.locationTitle, message: "Found a thing", preferredStyle: .Alert)
+            print("[ViewController] received notification as observer")
+            //custom action with a segue
+            
+            let settingsAction = UIAlertAction(title: "Continue", style: .Default, handler: { (testAction) -> Void in
+                self.performSegueWithIdentifier("LocationDiscoveredSegue", sender: self)
+                self.gameController.currentLocation!.isFound = true
+            })
+            // add actions to the alert
+            noAuthAlert.addAction(settingsAction)
+            //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            self.presentViewController(noAuthAlert, animated: true, completion: nil)
+            //})
+        }
     }
     
     /*

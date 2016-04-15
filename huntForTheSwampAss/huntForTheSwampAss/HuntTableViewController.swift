@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HuntTableViewController: UITableViewController, ViewObserverProtocol {
+class HuntTableViewController: UITableViewController{
 
     let gameController = gameControllerSingleton
     var listOfHunts: [HuntObject]!
@@ -22,8 +22,6 @@ class HuntTableViewController: UITableViewController, ViewObserverProtocol {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         //MARK: sample data is loaded
-        
-        registerAsObserver()
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,25 +65,6 @@ class HuntTableViewController: UITableViewController, ViewObserverProtocol {
         gameController.currentLocation = gameController.currentHunt!.locationList[0]
     }
     
-    //MARK: Obeserver functions
-    func registerAsObserver() {
-        beaconFinderSingleton.registerAsObserver(self)
-    }
-    
-    func receiveNotification() {
-        let noAuthAlert = UIAlertController.init(title: "gameController.currentLocation!.locationTitle", message: "Found a thing", preferredStyle: .Alert)
-        print("[ViewController] received notification as observer")
-        //custom action with a segue
-        let settingsAction = UIAlertAction(title: "Continue", style: .Default, handler: { (testAction) -> Void in
-            self.performSegueWithIdentifier("LocationDiscoveredSegue", sender: self)
-            self.gameController.currentLocation!.isFound = true
-        })
-        // add actions to the alert
-        noAuthAlert.addAction(settingsAction)
-        presentViewController(noAuthAlert, animated: true, completion: nil)
-    }
-    
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

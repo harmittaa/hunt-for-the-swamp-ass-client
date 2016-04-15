@@ -14,7 +14,7 @@ import UIKit
 class GameScreenClueViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ViewObserverProtocol {
     
     @IBOutlet weak var cluesTableView:UITableView!
-    
+    var isDisplayingPopup = false
     let gameController = gameControllerSingleton
     var listOfClues: [ClueObject]!
     
@@ -81,16 +81,22 @@ class GameScreenClueViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func receiveNotification() {
-        let noAuthAlert = UIAlertController.init(title: "gameController.currentLocation!.locationTitle", message: "Found a thing", preferredStyle: .Alert)
-        print("[ViewController] received notification as observer")
-        //custom action with a segue
-        let settingsAction = UIAlertAction(title: "Continue", style: .Default, handler: { (testAction) -> Void in
-            self.performSegueWithIdentifier("LocationDiscoveredSegue", sender: self)
-            self.gameController.currentLocation!.isFound = true
-        })
-        // add actions to the alert
-        noAuthAlert.addAction(settingsAction)
-        presentViewController(noAuthAlert, animated: true, completion: nil)
+        if(!isDisplayingPopup){
+            isDisplayingPopup = true
+            let noAuthAlert = UIAlertController.init(title: gameController.currentLocation!.locationTitle, message: "Found a thing", preferredStyle: .Alert)
+            print("[ViewController] received notification as observer")
+            //custom action with a segue
+            
+            let settingsAction = UIAlertAction(title: "Continue", style: .Default, handler: { (testAction) -> Void in
+                self.performSegueWithIdentifier("LocationDiscoveredSegue", sender: self)
+                self.gameController.currentLocation!.isFound = true
+            })
+            // add actions to the alert
+            noAuthAlert.addAction(settingsAction)
+            //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            self.presentViewController(noAuthAlert, animated: true, completion: nil)
+            //})
+        }
     }
     
     

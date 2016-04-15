@@ -53,6 +53,19 @@ class GameController{
     func getCurrentLocation() -> LocationObject{
         return currentLocation!
     }
+    func isAllLocationFound() -> Bool{
+        if (currentHunt!.locationList[(currentHunt?.locationList.count)!-1].isFound){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+    
+    func completeHunt(){
+        currentHunt = nil
+        currentLocation = nil
+    }
     
     func putCurrentHuntIntoMemory(array: [NSManagedObject]){
         /*
@@ -78,8 +91,9 @@ class GameController{
     
     func generatePlaceHolders(){
         let testLocation = LocationObject(title: "place #1", beacon: BeaconObject(beaconmajor: 148, beaconminor: 148, beaconuuid: "00000000-0000-0000-0000-000000000000"))
-        
-        allHunts = [HuntObject(title: "hunt 1", desc: "this is a hunt placeholder #1", locations: [testLocation,testLocation,testLocation]),HuntObject(title: "hunt 2", desc: "this is a hunt placeholder #2", locations: [testLocation,testLocation,testLocation]),HuntObject(title: "hunt 3", desc: "this is a hunt placeholder #3", locations: [testLocation,testLocation,testLocation])]
+        let testLocation2 = LocationObject(title: "place #2", beacon: BeaconObject(beaconmajor: 96, beaconminor: 96, beaconuuid: "00000000-0000-0000-0000-000000000000"))
+        let testLocation3 = LocationObject(title: "place #3", beacon: BeaconObject(beaconmajor: 66, beaconminor: 66, beaconuuid: "00000000-0000-0000-0000-000000000000"))
+        allHunts = [HuntObject(title: "hunt 1", desc: "this is a hunt placeholder #1", locations: [testLocation,testLocation2,testLocation3]),HuntObject(title: "hunt 2", desc: "this is a hunt placeholder #2", locations: [testLocation,testLocation2,testLocation3]),HuntObject(title: "hunt 3", desc: "this is a hunt placeholder #3", locations: [testLocation,testLocation2,testLocation3])]
         
         allGameModes = [GameModeObject(gameDesc: "This is a GameMode #1", gameTitle: "GameMode 1", huntsInGame: allHunts!),GameModeObject(gameDesc: "This is a GameMode #2", gameTitle: "GameMode 2", huntsInGame: allHunts!),GameModeObject(gameDesc: "This is a GameMode #3", gameTitle: "GameMode 3", huntsInGame: allHunts!)]
         
