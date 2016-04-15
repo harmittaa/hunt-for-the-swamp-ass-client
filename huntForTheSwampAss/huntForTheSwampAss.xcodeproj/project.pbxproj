@@ -67,7 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6A0876C51CB3AD9400A66047 /* huntForTheSwampAss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = huntForTheSwampAss.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A0876C51CB3AD9400A66047 /* Hunt for the Swamp Ass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hunt for the Swamp Ass.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0876C81CB3AD9400A66047 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = huntForTheSwampAss/AppDelegate.swift; sourceTree = "<group>"; };
 		6A0876CA1CB3AD9400A66047 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = huntForTheSwampAss/ViewController.swift; sourceTree = "<group>"; };
 		6A0876CD1CB3AD9400A66047 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 		6A0876C61CB3AD9400A66047 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6A0876C51CB3AD9400A66047 /* huntForTheSwampAss.app */,
+				6A0876C51CB3AD9400A66047 /* Hunt for the Swamp Ass.app */,
 				6A0876DC1CB3AD9400A66047 /* huntForTheSwampAssTests.xctest */,
 			);
 			name = Products;
@@ -308,7 +308,7 @@
 			);
 			name = huntForTheSwampAss;
 			productName = huntForTheSwampAss;
-			productReference = 6A0876C51CB3AD9400A66047 /* huntForTheSwampAss.app */;
+			productReference = 6A0876C51CB3AD9400A66047 /* Hunt for the Swamp Ass.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6A0876DB1CB3AD9400A66047 /* huntForTheSwampAssTests */ = {
@@ -575,7 +575,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = isodev.example.huntForTheSwampAss;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Hunt for the Swamp Ass";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -590,7 +590,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = isodev.example.huntForTheSwampAss;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Hunt for the Swamp Ass";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;

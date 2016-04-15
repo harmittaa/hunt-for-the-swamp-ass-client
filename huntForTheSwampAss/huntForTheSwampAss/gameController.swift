@@ -61,8 +61,9 @@ class GameController{
             return false
         }
     }
-    
+    //MARK: completion of hunt
     func completeHunt(){
+        currentHunt?.resetAllLocations()
         currentHunt = nil
         currentLocation = nil
     }

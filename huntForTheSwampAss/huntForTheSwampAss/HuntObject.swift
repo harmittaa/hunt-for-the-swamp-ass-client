@@ -26,5 +26,10 @@ class HuntObject{
         self.huntStartDate = NSDate()
         self.locationList = locations
     }
+    func resetAllLocations(){
+        for a in self.locationList{
+            a.resetLocation()
+        }
+    }
     
 }

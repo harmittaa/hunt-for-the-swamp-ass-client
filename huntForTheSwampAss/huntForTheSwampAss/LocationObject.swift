@@ -23,6 +23,9 @@ class LocationObject:Equatable{
         self.isFound = false
     }
     
+    func resetLocation(){
+        self.isFound = false
+    }
 }
 
 func ==(lhs: LocationObject, rhs: LocationObject) -> Bool {
