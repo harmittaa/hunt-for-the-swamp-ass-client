@@ -12,6 +12,7 @@ import CoreData
 class ViewController: UIViewController, ViewObserverProtocol {
 
     @IBOutlet weak var teamButton: UIButton!
+    @IBOutlet weak var quitHuntButton: UIButton!
     
     //let 🌚:DataController = DataController.dataManagerSingleton
     let beaconFinder:BeaconFinder = beaconFinderSingleton
@@ -23,9 +24,14 @@ class ViewController: UIViewController, ViewObserverProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("[ViewController] init values of GC: \(gameController.currentHunt)")
+        //hide back button for the main menu
         self.navigationItem.hidesBackButton = true
-        //create a datacontroller, otherwise it wont init the values for use in other controllers, use moonface for maximum effect
-        beaconFinder.startScanningBeacon()
+        //hide the abandon hunt button if no hunt is currently going
+        if let a = gameController.currentHunt{
+            quitHuntButton.hidden = false
+        }else{
+            quitHuntButton.hidden = true
+        }
         // Do any additional setup after loading the view, typically from a nib.
         /*let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
@@ -73,20 +79,10 @@ class ViewController: UIViewController, ViewObserverProtocol {
     
     func receiveNotification() {
         if(!isDisplayingPopup){
+            //print("[GameScreen] Jeeben huuben this is popup je je")
             isDisplayingPopup = true
-            let noAuthAlert = UIAlertController.init(title: gameController.currentLocation!.locationTitle, message: "Found a thing", preferredStyle: .Alert)
-            print("[ViewController] received notification as observer")
-            //custom action with a segue
-            
-            let settingsAction = UIAlertAction(title: "Continue", style: .Default, handler: { (testAction) -> Void in
-                self.performSegueWithIdentifier("LocationDiscoveredSegue", sender: self)
-                self.gameController.currentLocation!.isFound = true
-            })
-            // add actions to the alert
-            noAuthAlert.addAction(settingsAction)
-            //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            self.presentViewController(noAuthAlert, animated: true, completion: nil)
-            //})
+            let popCreator = PopupCreator()
+            popCreator.createClueFoundPopup(self)
         }
     }
     
@@ -94,6 +90,11 @@ class ViewController: UIViewController, ViewObserverProtocol {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         }
+    
+    @IBAction func quitCurrentHunt(sender: UIButton) {
+        let popCreator = PopupCreator()
+        popCreator.createQuitHuntPopup(self, buton: quitHuntButton)
+    }
     
     @IBAction func gameButtonAction(sender: UIButton) {
         var segueId: String

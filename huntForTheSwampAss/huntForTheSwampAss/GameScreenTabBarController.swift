@@ -36,21 +36,11 @@ class GameScreenTabBarController: UITabBarController, ViewObserverProtocol {
     }
     
     func receiveNotification() {
-        isDisplayingPopup = true
         if(!isDisplayingPopup){
-            let noAuthAlert = UIAlertController.init(title: "gameController.currentLocation!.locationTitle", message: "Found a thing", preferredStyle: .Alert)
-            print("[ViewController] received notification as observer")
-            //custom action with a segue
-            
-            let settingsAction = UIAlertAction(title: "Continue", style: .Default, handler: { (testAction) -> Void in
-                self.performSegueWithIdentifier("LocationDiscoveredSegue", sender: self)
-                self.gameController.currentLocation!.isFound = true
-            })
-            // add actions to the alert
-            noAuthAlert.addAction(settingsAction)
-            //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            self.presentViewController(noAuthAlert, animated: true, completion: nil)
-            //})
+            //print("[GameScreen] Jeeben huuben this is popup je je")
+            isDisplayingPopup = true
+            let popCreator = PopupCreator()
+            popCreator.createClueFoundPopup(self)
         }
     }
     

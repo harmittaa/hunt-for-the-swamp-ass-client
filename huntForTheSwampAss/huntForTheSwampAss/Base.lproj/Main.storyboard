@@ -63,7 +63,7 @@
         <!--Hunt for the Swamp Ass-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="huntForTheSwampAss" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -208,15 +208,25 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNh-2K-dkb">
+                                <rect key="frame" x="20" y="518" width="85" height="30"/>
+                                <state key="normal" title="Cancel Hunt"/>
+                                <connections>
+                                    <action selector="quitCurrentHunt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H5H-y0-NbE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="MNh-2K-dkb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="3I7-Gx-2Oo"/>
                             <constraint firstItem="bqe-zR-3fe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="29" id="5Mv-Pg-c6i"/>
                             <constraint firstItem="bqe-zR-3fe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y5Q-Vf-eWX"/>
+                            <constraint firstAttribute="bottom" secondItem="MNh-2K-dkb" secondAttribute="bottom" constant="20" symbolic="YES" id="bj1-Gp-uoU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hunt for the Swamp Ass" id="efp-1c-dR6"/>
                     <connections>
+                        <outlet property="quitHuntButton" destination="MNh-2K-dkb" id="pAp-P5-avb"/>
                         <outlet property="teamButton" destination="ir6-MN-XLd" id="1yB-Db-Ebr"/>
                         <segue destination="W5O-J3-E5f" kind="push" identifier="MainMenuToGameModes" id="vEO-Dq-B6V"/>
                         <segue destination="DZv-cf-fVT" kind="push" identifier="MainMenuToGameScreen" id="vI2-ZL-lSz"/>
@@ -308,7 +318,7 @@
         <!--New Location View Controller-->
         <scene sceneID="hA6-B7-vLQ">
             <objects>
-                <viewController id="gil-vj-rtF" customClass="NewLocationViewController" customModule="huntForTheSwampAss" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gil-vj-rtF" customClass="NewLocationViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="97V-f3-PBc"/>
                         <viewControllerLayoutGuide type="bottom" id="nyf-2g-E0f"/>
@@ -366,10 +376,10 @@
             </objects>
             <point key="canvasLocation" x="1259" y="-576"/>
         </scene>
-        <!--View Controller-->
+        <!--New Location View Controller-->
         <scene sceneID="dRh-Ha-UTz">
             <objects>
-                <viewController id="yrv-B1-xw0" sceneMemberID="viewController">
+                <viewController id="yrv-B1-xw0" customClass="NewLocationViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9vY-pN-CDB"/>
                         <viewControllerLayoutGuide type="bottom" id="33W-7O-5Wn"/>
@@ -427,13 +437,13 @@
         <!--Choose Game Mode-->
         <scene sceneID="orG-pS-99M">
             <objects>
-                <tableViewController id="W5O-J3-E5f" customClass="GameModeTableViewController" customModule="huntForTheSwampAss" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="W5O-J3-E5f" customClass="GameModeTableViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uhh-Ww-2aw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="90" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GameModeTableViewCell" rowHeight="90" id="Hi6-pC-UWA" customClass="GameModeTableViewCell" customModule="huntForTheSwampAss" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="90" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GameModeTableViewCell" rowHeight="90" id="Hi6-pC-UWA" customClass="GameModeTableViewCell" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hi6-pC-UWA" id="2he-lL-uUw">
@@ -479,13 +489,13 @@
         <!--Choose a Hunt-->
         <scene sceneID="h0r-sh-V87">
             <objects>
-                <tableViewController id="2ha-2Q-lsJ" customClass="HuntTableViewController" customModule="huntForTheSwampAss" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="2ha-2Q-lsJ" customClass="HuntTableViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="J0S-a1-fo0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HuntTableViewCell" rowHeight="90" id="h28-bP-F8W" customClass="HuntTableViewCell" customModule="huntForTheSwampAss" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HuntTableViewCell" rowHeight="90" id="h28-bP-F8W" customClass="HuntTableViewCell" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h28-bP-F8W" id="aZe-qQ-7U0">
@@ -566,7 +576,7 @@
         <!--Item 2-->
         <scene sceneID="rBf-yq-fTv">
             <objects>
-                <viewController id="U4o-9f-Nw6" customClass="GameScreenClueViewController" customModule="huntForTheSwampAss" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="U4o-9f-Nw6" customClass="GameScreenClueViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mqc-7O-9kb"/>
                         <viewControllerLayoutGuide type="bottom" id="j6I-IL-9G6"/>
@@ -579,7 +589,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="clueCell" rowHeight="90" id="HA8-iA-5H8" customClass="GameScreenCluesTableViewCell" customModule="huntForTheSwampAss" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="clueCell" rowHeight="90" id="HA8-iA-5H8" customClass="GameScreenCluesTableViewCell" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HA8-iA-5H8" id="bod-Oc-xxf">
@@ -616,7 +626,7 @@
                                             <segue destination="AAd-3g-aCM" kind="push" identifier="MoveToFullClue" id="MU1-L4-Bsk"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="clueCellLocked" rowHeight="90" id="uYS-qY-PS7" customClass="GameScreenCluesLockedTableViewCell" customModule="huntForTheSwampAss" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="clueCellLocked" rowHeight="90" id="uYS-qY-PS7" customClass="GameScreenCluesLockedTableViewCell" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="118" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uYS-qY-PS7" id="g2Q-Oh-NBC">
@@ -677,7 +687,7 @@
         <!--Full Clue View Controller-->
         <scene sceneID="bw1-kK-Mx9">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="AAd-3g-aCM" customClass="FullClueViewController" customModule="huntForTheSwampAss" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="AAd-3g-aCM" customClass="FullClueViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IM3-rv-QZc"/>
                         <viewControllerLayoutGuide type="bottom" id="6Yk-G4-WUU"/>
@@ -723,7 +733,7 @@
         <!--Item 1-->
         <scene sceneID="1II-Kw-Z7q">
             <objects>
-                <viewController id="W2F-VG-vdP" customClass="GameScreenViewController" customModule="huntForTheSwampAss" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="W2F-VG-vdP" customClass="GameScreenViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ocN-gt-YZ9"/>
                         <viewControllerLayoutGuide type="bottom" id="tae-0j-oDg"/>
@@ -757,7 +767,7 @@
         <!--Game Screen Tab Bar Controller-->
         <scene sceneID="BcP-Hi-27o">
             <objects>
-                <tabBarController id="DZv-cf-fVT" customClass="GameScreenTabBarController" customModule="huntForTheSwampAss" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="DZv-cf-fVT" customClass="GameScreenTabBarController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="3y4-v0-msU">
                         <barButtonItem key="leftBarButtonItem" title="Main Menu" id="sRi-Vu-EI0">
                             <connections>
@@ -843,8 +853,8 @@
         <image name="test" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Cx5-ZO-ONX"/>
-        <segue reference="N0W-GU-jA6"/>
         <segue reference="vI2-ZL-lSz"/>
+        <segue reference="N0W-GU-jA6"/>
+        <segue reference="xSD-WU-n2L"/>
     </inferredMetricsTieBreakers>
 </document>
