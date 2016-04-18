@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 protocol ViewObserverProtocol{
     func registerAsObserver()
     func receiveNotification()

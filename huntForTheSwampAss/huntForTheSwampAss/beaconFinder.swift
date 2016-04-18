@@ -24,6 +24,7 @@ class BeaconFinder: NSObject, CLLocationManagerDelegate {
         }
         locationManager.delegate = self
         locationManager.startRangingBeaconsInRegion(region)
+        startScanningBeacon()
     }
     //MARK: beacon found
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
