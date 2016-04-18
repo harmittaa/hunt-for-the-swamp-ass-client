@@ -4,7 +4,10 @@
 //
 //  Created by iosdev on 5.4.2016.
 //  Copyright © 2016 iosdev. All rights reserved.
-//
+
+
+// Daniel: isodev.example.huntForTheSwampAss
+// matti: fi.metropolia.huntForTheSwampAss
 
 import UIKit
 import CoreData
@@ -17,6 +20,7 @@ class ViewController: UIViewController, ViewObserverProtocol {
     //let 🌚:DataController = DataController.dataManagerSingleton
     let beaconFinder:BeaconFinder = beaconFinderSingleton
     let gameController = gameControllerSingleton
+    let httpController = httpRequestControllerSingleton
     var isDisplayingPopup = false
     @IBAction func testButton(sender: UIButton) {
         
@@ -32,6 +36,10 @@ class ViewController: UIViewController, ViewObserverProtocol {
         }else{
             quitHuntButton.hidden = true
         }
+    
+        httpController.getGameModes()
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         /*let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate

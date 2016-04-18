@@ -44,6 +44,8 @@
 		6A6D98381CB7B34800C7989D /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D98241CB7B34800C7989D /* Location+CoreDataProperties.swift */; };
 		6A6D98391CB7B34800C7989D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D98251CB7B34800C7989D /* Location.swift */; };
 		6A6D983E1CB7C24E00C7989D /* Hunt+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D983D1CB7C24E00C7989D /* Hunt+CoreDataProperties.swift */; };
+		6A82CA6D1CC4FB7400707D01 /* HTTPRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82CA6C1CC4FB7400707D01 /* HTTPRequestController.swift */; };
+		6A82CA6F1CC5023100707D01 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82CA6E1CC5023100707D01 /* JsonParser.swift */; };
 		6A9076151CB5354C00068792 /* GameModeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9076141CB5354C00068792 /* GameModeTableViewCell.swift */; };
 		6A9076171CB537BE00068792 /* GameModeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9076161CB537BE00068792 /* GameModeTableViewController.swift */; };
 		6A90761F1CB53C3600068792 /* HuntTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A90761E1CB53C3600068792 /* HuntTableViewCell.swift */; };
@@ -109,6 +111,8 @@
 		6A6D98241CB7B34800C7989D /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6A6D98251CB7B34800C7989D /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		6A6D983D1CB7C24E00C7989D /* Hunt+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hunt+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6A82CA6C1CC4FB7400707D01 /* HTTPRequestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestController.swift; sourceTree = "<group>"; };
+		6A82CA6E1CC5023100707D01 /* JsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		6A9076141CB5354C00068792 /* GameModeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModeTableViewCell.swift; sourceTree = "<group>"; };
 		6A9076161CB537BE00068792 /* GameModeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModeTableViewController.swift; sourceTree = "<group>"; };
 		6A90761E1CB53C3600068792 /* HuntTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuntTableViewCell.swift; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 				6AF847801CBE1D59008DB3AE /* Singletons */,
 				6A6D7C261CBE366800C14BA1 /* viewObeserverProtocol.swift */,
 				6A65EA321CC4DADB006D7408 /* popupCreator.swift */,
+				6A82CA6E1CC5023100707D01 /* JsonParser.swift */,
 			);
 			name = "Main Stufs";
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 				6A6C5CA61CB664B400841E40 /* DataManager.swift */,
 				6A30C51D1CBB8FAA00C28AC6 /* gameController.swift */,
 				6A30C51F1CBBA62200C28AC6 /* beaconFinder.swift */,
+				6A82CA6C1CC4FB7400707D01 /* HTTPRequestController.swift */,
 			);
 			name = Singletons;
 			sourceTree = "<group>";
@@ -344,7 +350,7 @@
 				TargetAttributes = {
 					6A0876C41CB3AD9400A66047 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 395RX3A9NB;
+						DevelopmentTeam = BLU3VGRB8H;
 					};
 					6A0876DB1CB3AD9400A66047 = {
 						CreatedOnToolsVersion = 7.3;
@@ -427,6 +433,7 @@
 				6A6C5CB71CB68D5900841E40 /* GameScreenClueViewController.swift in Sources */,
 				6A6D7C291CBE4F0800C14BA1 /* NewLocationViewController.swift in Sources */,
 				6A6C5CB11CB6893800841E40 /* GameScreenCluesTableViewCell.swift in Sources */,
+				6A82CA6F1CC5023100707D01 /* JsonParser.swift in Sources */,
 				6A6D98271CB7B34800C7989D /* HuntCompletion.swift in Sources */,
 				6A6D98371CB7B34800C7989D /* Clue.swift in Sources */,
 				6A6D98391CB7B34800C7989D /* Location.swift in Sources */,
@@ -438,6 +445,7 @@
 				6A6D98281CB7B34800C7989D /* ImageClue+CoreDataProperties.swift in Sources */,
 				6A6D982C1CB7B34800C7989D /* GameMode+CoreDataProperties.swift in Sources */,
 				6AF847821CBE23E8008DB3AE /* GameScreenCluesLockedTableViewCell.swift in Sources */,
+				6A82CA6D1CC4FB7400707D01 /* HTTPRequestController.swift in Sources */,
 				6A6D983E1CB7C24E00C7989D /* Hunt+CoreDataProperties.swift in Sources */,
 				6A90761F1CB53C3600068792 /* HuntTableViewCell.swift in Sources */,
 				6A30C5201CBBA62200C28AC6 /* beaconFinder.swift in Sources */,
@@ -578,7 +586,7 @@
 				INFOPLIST_FILE = huntForTheSwampAss/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = isodev.example.huntForTheSwampAss;
+				PRODUCT_BUNDLE_IDENTIFIER = fi.metropolia.huntForTheSwampAss;
 				PRODUCT_NAME = "Hunt for the Swamp Ass";
 				PROVISIONING_PROFILE = "";
 			};
@@ -593,7 +601,7 @@
 				INFOPLIST_FILE = huntForTheSwampAss/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = isodev.example.huntForTheSwampAss;
+				PRODUCT_BUNDLE_IDENTIFIER = fi.metropolia.huntForTheSwampAss;
 				PRODUCT_NAME = "Hunt for the Swamp Ass";
 				PROVISIONING_PROFILE = "";
 			};
