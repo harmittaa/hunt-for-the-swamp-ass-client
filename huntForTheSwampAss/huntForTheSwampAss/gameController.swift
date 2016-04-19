@@ -74,7 +74,7 @@ class GameController{
         let testLocation3 = LocationObject(title: "place #3", beacon: BeaconObject(beaconmajor: 148, beaconminor: 148, beaconuuid: "00000000-0000-0000-0000-000000000000"))
         allHunts = [HuntObject(title: "hunt 1", desc: "this is a hunt placeholder #1", locations: [testLocation,testLocation2,testLocation3]),HuntObject(title: "hunt 2", desc: "this is a hunt placeholder #2", locations: [testLocation,testLocation2,testLocation3]),HuntObject(title: "hunt 3", desc: "this is a hunt placeholder #3", locations: [testLocation,testLocation2,testLocation3])]
         
-        allGameModes = [GameModeObject(gameDesc: "This is a GameMode #1", gameTitle: "GameMode 1", huntsInGame: allHunts!),GameModeObject(gameDesc: "This is a GameMode #2", gameTitle: "GameMode 2", huntsInGame: allHunts!),GameModeObject(gameDesc: "This is a GameMode #3", gameTitle: "GameMode 3", huntsInGame: allHunts!)]
+        allGameModes = [GameModeObject(gameDesc: "This is a GameMode #1", gameTitle: "GameMode 1", huntsInGame: allHunts!, id: 10),GameModeObject(gameDesc: "This is a GameMode #2", gameTitle: "GameMode 2", huntsInGame: allHunts!, id: 11),GameModeObject(gameDesc: "This is a GameMode #3", gameTitle: "GameMode 3", huntsInGame: allHunts!, id:12)]
         
     }
     

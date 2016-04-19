@@ -12,6 +12,8 @@ class GameModeTableViewController: UITableViewController {
     let gameController = gameControllerSingleton
     var gameModes: [GameModeObject]!
     var passedIndex: Int?
+    
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.gameModes = gameController.allGameModes!

@@ -36,8 +36,12 @@ class ViewController: UIViewController, ViewObserverProtocol {
         }else{
             quitHuntButton.hidden = true
         }
-    
-        httpController.getGameModes()
+        if let a = gameControllerSingleton.currentHunt {
+            print("[MainViewController] game is running")
+        } else {
+            gameControllerSingleton.allGameModes = []
+            httpController.getGameModes()
+        }
         
         
         // Do any additional setup after loading the view, typically from a nib.
