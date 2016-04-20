@@ -545,34 +545,6 @@
             </objects>
             <point key="canvasLocation" x="229" y="530"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="UTt-Sw-AGA">
-            <objects>
-                <tableViewController id="26W-Vn-n6Q" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="S47-wx-GVp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="029-FS-fIA">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="029-FS-fIA" id="tlY-Hw-uur">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="26W-Vn-n6Q" id="5Gx-13-aLo"/>
-                            <outlet property="delegate" destination="26W-Vn-n6Q" id="Hge-gt-9iL"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dlI-Pr-fIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="229" y="1202"/>
-        </scene>
         <!--Item 2-->
         <scene sceneID="rBf-yq-fTv">
             <objects>
@@ -622,23 +594,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zX0-cp-aeU">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zX0-cp-aeU">
                                 <rect key="frame" x="20" y="28" width="280" height="522"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nxq-KC-ZRI">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="223"/>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxq-KC-ZRI">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="178"/>
                                         <connections>
                                             <segue destination="bjK-bh-bZw" kind="embed" identifier="clueMediaSegue" id="1V0-qB-gux"/>
                                         </connections>
                                     </containerView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xdt-Q8-a8C">
-                                        <rect key="frame" x="0.0" y="238" width="280" height="284"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB9-2G-Crx">
+                                        <rect key="frame" x="0.0" y="193" width="280" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xdt-Q8-a8C">
+                                        <rect key="frame" x="0.0" y="229" width="280" height="293"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="PB9-2G-Crx" firstAttribute="top" secondItem="zX0-cp-aeU" secondAttribute="top" constant="193" id="AIN-QR-zFD"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -652,6 +633,7 @@
                     <navigationItem key="navigationItem" id="I8u-2h-5F3"/>
                     <connections>
                         <outlet property="clueDesc" destination="Xdt-Q8-a8C" id="jhu-us-yEy"/>
+                        <outlet property="clueTitle" destination="PB9-2G-Crx" id="fFZ-37-dcX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XPJ-FO-fal" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -904,8 +886,8 @@
         <image name="test" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Cx5-ZO-ONX"/>
         <segue reference="N0W-GU-jA6"/>
-        <segue reference="irJ-SN-LN1"/>
-        <segue reference="EKk-IK-R0n"/>
+        <segue reference="vI2-ZL-lSz"/>
     </inferredMetricsTieBreakers>
 </document>

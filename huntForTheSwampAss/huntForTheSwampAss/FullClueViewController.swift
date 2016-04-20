@@ -11,6 +11,7 @@ import UIKit
 class FullClueViewController: UIViewController, ViewObserverProtocol {
     var passedClue: ClueObject!
     
+    @IBOutlet weak var clueTitle: UILabel!
     @IBOutlet weak var clueMediaView: UIView!
     @IBOutlet weak var clueDesc: UITextView!
     let gameController = gameControllerSingleton
@@ -19,6 +20,7 @@ class FullClueViewController: UIViewController, ViewObserverProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         clueDesc.text = passedClue.clueText
+        clueTitle.text = passedClue.clueTitle
         // Do any additional setup after loading the view.
         registerAsObserver()
         
