@@ -26,10 +26,10 @@ class NewLocationViewController: UIViewController {
     
     @IBAction func contienuButtonAction(sender: UIButton) {
         if(!gameController.isAllLocationFound()){
-        let newLocationIndex = gameController.currentHunt?.locationList.indexOf(gameController.currentLocation!)
+        let newLocationIndex = gameController.currentHunt?.locationList!.indexOf(gameController.currentLocation!)
         print("[newLocation] index is: \(newLocationIndex!)")
-        gameController.currentLocation = gameController.currentHunt?.locationList[newLocationIndex!+1]
-        print("[newLocation] new location is \(gameController.currentLocation?.locationTitle)")
+        gameController.currentLocation = gameController.currentHunt?.locationList![newLocationIndex!+1]
+        print("[newLocation] new location is \(gameController.currentLocation?.locationId)")
         performSegueWithIdentifier("LocationCompleteSegue", sender: self)
         }
         else{

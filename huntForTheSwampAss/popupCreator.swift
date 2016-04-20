@@ -32,7 +32,7 @@ class PopupCreator{
     }
     
     func createClueFoundPopup(view: UIViewController){
-        let noAuthAlert = UIAlertController.init(title: gameController.currentLocation!.locationTitle, message: "Found a thing", preferredStyle: .Alert)
+        let noAuthAlert = UIAlertController.init(title: "Hey!", message: "You found your destination!", preferredStyle: .Alert)
         print("[ViewController] received notification as observer")
         //custom action with a segue
         

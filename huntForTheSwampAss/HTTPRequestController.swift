@@ -14,7 +14,7 @@ let httpRequestControllerSingleton = HTTPRequestController()
 
 class HTTPRequestController {
    // var url: String = "http://23.227.190.85:8080/webApp/path/generic/getGamemodesJson"
-    var url: String = "http://23.227.190.85:8080/webApp/path/generic/getGamemodesNew"
+    var url: String = "http://23.227.190.85:8080/webApp/path/generic/getAll"
     
     private init() {
         print("[HTTPRequestController] Singleton created")

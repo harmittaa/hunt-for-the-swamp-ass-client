@@ -9,18 +9,19 @@
 import Foundation
 
 class LocationObject:Equatable{
-    var locationTitle: String
-    var beacon: BeaconObject
+    var beacon: BeaconObject?
     var clueList: [ClueObject]
-    var completion: Completion?
+    var winDesc: String
+    var winTitle: String
     var isFound: Bool
+    var locationId: Int
     
-    init(title: String, beacon: BeaconObject){
-        self.locationTitle = title
-        self.beacon = beacon
-        clueList = [ClueObject(cluetext: "Liirum Laarum Peruna Tier 1 clue", cluetier: 1),ClueObject(cluetext: "Liirum Laarum Peruna Tier 2 clue", cluetier: 2),ClueObject(cluetext: "Liirum Laarum Peruna Tier 3 clue", cluetier: 3)]
-        clueList[0].lockedStatus = false
+    init(winTit:String,windDes: String, id: Int){
         self.isFound = false
+        self.winDesc = windDes
+        self.winTitle = winTit
+        clueList = [ClueObject]()
+        locationId = id
     }
     
     func resetLocation(){
@@ -29,5 +30,5 @@ class LocationObject:Equatable{
 }
 
 func ==(lhs: LocationObject, rhs: LocationObject) -> Bool {
-    return lhs.locationTitle == rhs.locationTitle
+    return lhs.locationId == rhs.locationId
 }

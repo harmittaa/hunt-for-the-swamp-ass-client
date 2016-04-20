@@ -853,8 +853,8 @@
         <image name="test" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vI2-ZL-lSz"/>
         <segue reference="N0W-GU-jA6"/>
         <segue reference="xSD-WU-n2L"/>
+        <segue reference="EKk-IK-R0n"/>
     </inferredMetricsTieBreakers>
 </document>

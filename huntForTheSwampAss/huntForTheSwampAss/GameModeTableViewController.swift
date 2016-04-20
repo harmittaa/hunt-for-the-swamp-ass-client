@@ -121,15 +121,18 @@ class GameModeTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if (segue.identifier == "MoveToHuntsScreen"){
-            let huntsViewController = segue.destinationViewController as! HuntTableViewController
+        //if (segue.identifier == "MoveToHuntsScreen"){
+            //let huntsViewController = segue.destinationViewController as! HuntTableViewController
             //cast the sender as a GamModeTableViewCell to access the index path
             if let selectedGameModeCell = sender as? GameModeTableViewCell {
                 let indexPath = tableView.indexPathForCell(selectedGameModeCell)!
-                let selectedGameModesHunts = gameController.allGameModes![indexPath.row].huntList
-                huntsViewController.listOfHunts = selectedGameModesHunts
+                /*let selectedGameModesHunts = gameController.allGameModes![indexPath.row].huntList
+                huntsViewController.listOfHunts = selectedGameModesHunts*/
+                print("[index] \(indexPath.row)")
+                print(gameControllerSingleton.allGameModes![indexPath.row].huntList)
+                gameControllerSingleton.selectedGameMode = gameControllerSingleton.allGameModes![indexPath.row]
             }
-        }
+        //}
     }
     
     
