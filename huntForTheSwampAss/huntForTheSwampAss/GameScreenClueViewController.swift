@@ -12,12 +12,10 @@
 import UIKit
 
 class GameScreenClueViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ViewObserverProtocol {
-    
-    @IBOutlet weak var cluesTableView:UITableView!
     var isDisplayingPopup = false
     let gameController = gameControllerSingleton
     var listOfClues: [ClueObject]!
-    
+    var tableIndex: Int?
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -26,8 +24,6 @@ class GameScreenClueViewController: UIViewController, UITableViewDataSource, UIT
         super.viewDidLoad()
         self.listOfClues = gameController.currentLocation!.clueList
         //set the delegate and datasource of the tableView to be this controller
-        cluesTableView.delegate = self
-        cluesTableView.dataSource = self
         registerAsObserver()
         // Do any additional setup after loading the view.
     }
@@ -64,7 +60,7 @@ class GameScreenClueViewController: UIViewController, UITableViewDataSource, UIT
         }
     }
     //MARK: unlock button for a locked cell
-    @IBAction func unlockClue(sender: UIButton) {
+    /*@IBAction func unlockClue(sender: UIButton) {
         //get position of the button on the screen
         var buttonPosition = sender.convertPoint(CGPointZero, toView: cluesTableView)
         //get the row the button is on using the coordinate
@@ -73,7 +69,7 @@ class GameScreenClueViewController: UIViewController, UITableViewDataSource, UIT
         print("[GameCluesScreen] ListOfClues: \(listOfClues[rowOfButton!].lockedStatus) GameCTRL: \(gameController.currentLocation!.clueList[rowOfButton!].lockedStatus)")
         cluesTableView.reloadData()
         
-    }
+    }*/
     
     //MARK: Obeserver functions
     func registerAsObserver() {
@@ -96,17 +92,27 @@ class GameScreenClueViewController: UIViewController, UITableViewDataSource, UIT
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let fullClueViewCtrl = segue.destinationViewController as! FullClueViewController
         
+        if(segue.identifier == "ClueTableContainerSegue"){
+            let destinationCtrl = segue.destinationViewController as! CluesTableViewController
+            destinationCtrl.parentController = self
+        }else if(segue.identifier == "MoveToFullClue"){
+            let fullClueViewCtrl = segue.destinationViewController as! FullClueViewController
+                let selectedClue = gameController.currentLocation!.clueList[self.tableIndex!]
+                fullClueViewCtrl.passedClue = selectedClue
+        }
+        /*
         if (segue.identifier == "MoveToFullClue"){
+            let fullClueViewCtrl = segue.destinationViewController as! FullClueViewController
             if let selectedClueCell = sender as? UITableViewCell {
                 let indexPath = cluesTableView.indexPathForCell(selectedClueCell)!
                 let selectedClue = gameController.currentLocation!.clueList[indexPath.row]
                 fullClueViewCtrl.passedClue = selectedClue
                 
             }
-            
-        }
+        }else if(segue.identifier == "ClueTableContainerSegue"){
+            print("container")
+        }*/
     }
     
     

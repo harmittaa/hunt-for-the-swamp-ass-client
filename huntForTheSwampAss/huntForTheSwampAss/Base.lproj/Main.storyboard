@@ -585,104 +585,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rxs-YE-1gz">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="clueCell" rowHeight="90" id="HA8-iA-5H8" customClass="GameScreenCluesTableViewCell" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="90"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HA8-iA-5H8" id="bod-Oc-xxf">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="89"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hc-f8-KZC">
-                                                    <rect key="frame" x="8" y="8" width="279" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F0S-td-mu3">
-                                                    <rect key="frame" x="8" y="37" width="279" height="44"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="6hc-f8-KZC" firstAttribute="top" secondItem="bod-Oc-xxf" secondAttribute="topMargin" id="2Ig-vJ-mWg"/>
-                                                <constraint firstItem="6hc-f8-KZC" firstAttribute="leading" secondItem="F0S-td-mu3" secondAttribute="leading" id="3IJ-Wj-Fvd"/>
-                                                <constraint firstItem="F0S-td-mu3" firstAttribute="top" secondItem="6hc-f8-KZC" secondAttribute="bottom" constant="8" symbolic="YES" id="HC0-fD-2Se"/>
-                                                <constraint firstItem="F0S-td-mu3" firstAttribute="bottom" secondItem="bod-Oc-xxf" secondAttribute="bottomMargin" id="Zeq-CQ-KDM"/>
-                                                <constraint firstAttribute="trailing" secondItem="6hc-f8-KZC" secondAttribute="trailing" id="fOj-2D-kYo"/>
-                                                <constraint firstItem="6hc-f8-KZC" firstAttribute="leading" secondItem="bod-Oc-xxf" secondAttribute="leadingMargin" id="ktS-5C-idX"/>
-                                                <constraint firstItem="6hc-f8-KZC" firstAttribute="trailing" secondItem="F0S-td-mu3" secondAttribute="trailing" id="vQf-h9-1ZQ"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="clueSubTitle" destination="F0S-td-mu3" id="G2Q-p8-EWR"/>
-                                            <outlet property="clueTitle" destination="6hc-f8-KZC" id="JTg-c7-MKX"/>
-                                            <segue destination="AAd-3g-aCM" kind="push" identifier="MoveToFullClue" id="MU1-L4-Bsk"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="clueCellLocked" rowHeight="90" id="uYS-qY-PS7" customClass="GameScreenCluesLockedTableViewCell" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="118" width="320" height="90"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uYS-qY-PS7" id="g2Q-Oh-NBC">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="89"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9y-11-51F">
-                                                    <rect key="frame" x="8" y="8" width="279" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uqj-t5-dMU">
-                                                    <rect key="frame" x="111" y="37" width="65" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="65" id="3CG-hm-yGi"/>
-                                                        <constraint firstAttribute="height" constant="44" id="EKB-Of-Nzf"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                    <state key="normal" title="🔓"/>
-                                                    <connections>
-                                                        <action selector="unlockButtonAction:" destination="uYS-qY-PS7" eventType="touchUpInside" id="P8Y-Xm-liw"/>
-                                                        <action selector="unlockClue:" destination="U4o-9f-Nw6" eventType="touchUpInside" id="s9B-lF-EMk"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Uqj-t5-dMU" firstAttribute="centerX" secondItem="g2Q-Oh-NBC" secondAttribute="centerX" id="T0q-L7-dou"/>
-                                                <constraint firstItem="Uqj-t5-dMU" firstAttribute="top" secondItem="b9y-11-51F" secondAttribute="bottom" constant="8" symbolic="YES" id="qC0-Sq-iyN"/>
-                                                <constraint firstItem="Uqj-t5-dMU" firstAttribute="bottom" secondItem="g2Q-Oh-NBC" secondAttribute="bottomMargin" id="z1n-8d-2Xj"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="clueTitle" destination="b9y-11-51F" id="1k0-25-Gh0"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Wf-xK-kiZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <connections>
+                                    <segue destination="cKV-I4-VWB" kind="embed" identifier="ClueTableContainerSegue" id="6kL-jd-Fl0"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rxs-YE-1gz" firstAttribute="leading" secondItem="7gE-W9-L60" secondAttribute="leading" id="7Wg-AW-jHs"/>
-                            <constraint firstAttribute="trailing" secondItem="rxs-YE-1gz" secondAttribute="trailing" id="eO5-0T-Ro7"/>
-                            <constraint firstItem="rxs-YE-1gz" firstAttribute="top" secondItem="Mqc-7O-9kb" secondAttribute="bottom" id="zCF-XD-g0R"/>
-                            <constraint firstItem="rxs-YE-1gz" firstAttribute="bottom" secondItem="j6I-IL-9G6" secondAttribute="top" id="zjS-HC-HsX"/>
+                            <constraint firstAttribute="trailing" secondItem="1Wf-xK-kiZ" secondAttribute="trailing" id="Rp3-s8-s3R"/>
+                            <constraint firstItem="1Wf-xK-kiZ" firstAttribute="leading" secondItem="7gE-W9-L60" secondAttribute="leading" id="Vdz-ON-pEm"/>
+                            <constraint firstItem="1Wf-xK-kiZ" firstAttribute="top" secondItem="7gE-W9-L60" secondAttribute="top" id="oCb-Jh-CmZ"/>
+                            <constraint firstItem="1Wf-xK-kiZ" firstAttribute="bottom" secondItem="j6I-IL-9G6" secondAttribute="top" id="w2k-iW-Zzg"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="fDY-VU-4kn"/>
                     <connections>
-                        <outlet property="cluesTableView" destination="rxs-YE-1gz" id="AVm-69-ymg"/>
                         <segue destination="gil-vj-rtF" kind="push" identifier="LocationDiscoveredSegue" id="irJ-SN-LN1"/>
+                        <segue destination="AAd-3g-aCM" kind="push" identifier="MoveToFullClue" id="jh7-l4-GbF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oye-iS-Uhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1259" y="842"/>
+            <point key="canvasLocation" x="1239" y="869"/>
         </scene>
         <!--Full Clue View Controller-->
         <scene sceneID="bw1-kK-Mx9">
@@ -696,17 +622,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zX0-cp-aeU">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zX0-cp-aeU">
                                 <rect key="frame" x="20" y="28" width="280" height="522"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nxq-KC-ZRI">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="223"/>
                                         <connections>
                                             <segue destination="bjK-bh-bZw" kind="embed" identifier="clueMediaSegue" id="1V0-qB-gux"/>
                                         </connections>
                                     </containerView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xdt-Q8-a8C">
-                                        <rect key="frame" x="0.0" y="295" width="280" height="227"/>
+                                        <rect key="frame" x="0.0" y="238" width="280" height="284"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -730,7 +656,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XPJ-FO-fal" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669" y="842"/>
+            <point key="canvasLocation" x="1745" y="881"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="1II-Kw-Z7q">
@@ -847,15 +773,19 @@
         <scene sceneID="lZ2-Yv-xkQ">
             <objects>
                 <viewController id="bjK-bh-bZw" customClass="FullClueMediaViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="biH-DO-Bpt"/>
+                        <viewControllerLayoutGuide type="bottom" id="xvx-mY-IuN"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="N3Q-WO-l1R">
-                        <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="223"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EFA-mM-vc7">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="223"/>
                             </mapView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="xtz-Ci-85z">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="223"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -889,7 +819,78 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hqf-I9-PL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669" y="1464"/>
+            <point key="canvasLocation" x="1745" y="1374.5"/>
+        </scene>
+        <!--Clues Table View Controller-->
+        <scene sceneID="qDA-u2-8ik">
+            <objects>
+                <tableViewController id="cKV-I4-VWB" customClass="CluesTableViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="K2a-gy-Nsr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="clueCell" rowHeight="90" id="ZhW-jL-GJb" customClass="GameScreenCluesTableViewCell" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZhW-jL-GJb" id="RyD-X4-2pn">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="89"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agA-Ia-yZ9">
+                                            <rect key="frame" x="8" y="16" width="304" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgw-bO-CJ9">
+                                            <rect key="frame" x="8" y="45" width="304" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="clueSubTitle" destination="pgw-bO-CJ9" id="jem-SA-yPM"/>
+                                    <outlet property="clueTitle" destination="agA-Ia-yZ9" id="GJb-QJ-1FH"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="clueCellLocked" rowHeight="90" id="8g6-bK-p5N" customClass="GameScreenCluesLockedTableViewCell" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="118" width="320" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8g6-bK-p5N" id="Xps-Il-Zba">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QE0-BP-4P6">
+                                            <rect key="frame" x="8" y="16" width="304" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Touch to Unlock Clue!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUw-va-Qyy">
+                                            <rect key="frame" x="8" y="60" width="304" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="clueTitle" destination="QE0-BP-4P6" id="Jem-KG-jFl"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cKV-I4-VWB" id="9Ak-1P-zon"/>
+                            <outlet property="delegate" destination="cKV-I4-VWB" id="ma1-w5-D8o"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kb7-xX-Dg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1239" y="1574.5"/>
         </scene>
     </scenes>
     <resources>
