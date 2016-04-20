@@ -46,21 +46,7 @@ class BeaconFinder: NSObject, CLLocationManagerDelegate {
                     }
                 }
             }
-            /*
-             //pick out the first beacon from the list. they are automatically sorted from closest to farthest, downcast it as a CLBeacon
-             let closestBeacon = knownBeacons[0] as CLBeacon
-             //print("[BeaconFinder] new closest beacon: \(closestBeacon.proximityUUID) + \(closestBeacon.proximity.rawValue) + \(closestBeacon.major)")
-             if (closestBeacon.major == gameController.currentLocation?.beacon.beaconMajor && closestBeacon.proximity.rawValue < 3){
-             if let g = gameController.currentLocation{
-             //print("[BeaconFinder] current location of GC: \(g)")
-             if(!g.isFound){
-             print("[BeaconFinder]!!!!! FOUND CORRECT BEACON !!!!!")
-             updateObservers()
-             }
-             }
-             }*/
         }
-        
     }
     func startScanningBeacon(){
         print("[BeaconFinder] starting beacon scan")

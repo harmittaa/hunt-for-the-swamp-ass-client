@@ -12,10 +12,16 @@ class ClueObject{
     let clueText: String
     let clueTier: Int
     var lockedStatus: Bool
+    let clueTitle: String
     
-    init(cluetext: String, cluetier:Int){
+    init(clueTitle: String, cluetext: String, cluetier:Int){
         self.clueText = cluetext
         self.clueTier = cluetier
-        self.lockedStatus = true
+        self.clueTitle = clueTitle
+        if(clueTier < 1){
+            self.lockedStatus = false
+        }else{
+            self.lockedStatus = true
+        }
     }
 }

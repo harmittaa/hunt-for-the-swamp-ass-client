@@ -56,9 +56,8 @@ class JsonParser {
                             if let locationsList = hunt["Locations"] as? [Payload]{
                                 print("[json] locations get")
                                 for locationn in locationsList{
-                                    //parse for single beacon
                                     let newLocation = LocationObject(winTit: locationn["winTitle"]! as! String, windDes: locationn["winDescription"]! as! String, id: locationn["id"]!.integerValue)
-                                    print("[json] for in locations")
+                                    //parse for single beacon
                                     if let beeconi = locationn["Beacon"] as? [Payload]{
                                         print("[json] beacon get")
                                         for beecon in beeconi{
@@ -68,6 +67,14 @@ class JsonParser {
                                             let newBeacon = BeaconObject(beaconmajor: major, beaconminor: minor, beaconuuid: uuid as! String)
                                             print("[json] Made a beacon \(newBeacon.beaconUUID)")
                                             newLocation.beacon = newBeacon
+                                        }
+                                    }
+                                    if let clues = locationn["Clues"] as? [Payload]{
+                                        var clueTier = 0
+                                        for clue in clues{
+                                            let newClue = ClueObject(clueTitle: clue["title"] as! String, cluetext: clue["description"] as! String, cluetier: clueTier)
+                                            newLocation.clueList.append(newClue)
+                                            clueTier += 1
                                         }
                                     }
                                     newHunt.locationList!.append(newLocation)

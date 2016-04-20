@@ -16,6 +16,7 @@
 		6A148DD71CB64A7400D994D4 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A148DD51CB64A7400D994D4 /* DataModel.xcdatamodeld */; };
 		6A30C51E1CBB8FAA00C28AC6 /* gameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A30C51D1CBB8FAA00C28AC6 /* gameController.swift */; };
 		6A30C5201CBBA62200C28AC6 /* beaconFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A30C51F1CBBA62200C28AC6 /* beaconFinder.swift */; };
+		6A3FC38F1CC77C5800B69E4F /* FullClueMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3FC38E1CC77C5800B69E4F /* FullClueMediaViewController.swift */; };
 		6A65EA331CC4DADB006D7408 /* popupCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A65EA321CC4DADB006D7408 /* popupCreator.swift */; };
 		6A6C5CA71CB664B400841E40 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C5CA61CB664B400841E40 /* DataManager.swift */; };
 		6A6C5CAA1CB6719500841E40 /* GameScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C5CA91CB6719500841E40 /* GameScreenViewController.swift */; };
@@ -83,6 +84,7 @@
 		6A148DD61CB64A7400D994D4 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		6A30C51D1CBB8FAA00C28AC6 /* gameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = gameController.swift; path = huntForTheSwampAss/gameController.swift; sourceTree = "<group>"; };
 		6A30C51F1CBBA62200C28AC6 /* beaconFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = beaconFinder.swift; path = huntForTheSwampAss/beaconFinder.swift; sourceTree = "<group>"; };
+		6A3FC38E1CC77C5800B69E4F /* FullClueMediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullClueMediaViewController.swift; sourceTree = "<group>"; };
 		6A65EA321CC4DADB006D7408 /* popupCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = popupCreator.swift; sourceTree = "<group>"; };
 		6A6C5CA61CB664B400841E40 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = huntForTheSwampAss/DataManager.swift; sourceTree = "<group>"; };
 		6A6C5CA91CB6719500841E40 /* GameScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScreenViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,15 @@
 			path = huntForTheSwampAssTests;
 			sourceTree = "<group>";
 		};
+		6A3FC38D1CC77C0700B69E4F /* FullClue */ = {
+			isa = PBXGroup;
+			children = (
+				6A9FAF011CBD23F000D74C8B /* FullClueViewController.swift */,
+				6A3FC38E1CC77C5800B69E4F /* FullClueMediaViewController.swift */,
+			);
+			name = FullClue;
+			sourceTree = "<group>";
+		};
 		6A6C5CA81CB6717200841E40 /* GameScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,9 +209,9 @@
 		6A6C5CAD1CB688FE00841E40 /* GameScreenClues */ = {
 			isa = PBXGroup;
 			children = (
+				6A3FC38D1CC77C0700B69E4F /* FullClue */,
 				6A6C5CB01CB6893800841E40 /* GameScreenCluesTableViewCell.swift */,
 				6A6C5CB61CB68D5900841E40 /* GameScreenClueViewController.swift */,
-				6A9FAF011CBD23F000D74C8B /* FullClueViewController.swift */,
 				6AF847811CBE23E8008DB3AE /* GameScreenCluesLockedTableViewCell.swift */,
 			);
 			name = GameScreenClues;
@@ -427,6 +438,7 @@
 				6A6D98291CB7B34800C7989D /* ImageClue.swift in Sources */,
 				6A9FAEFF1CBD0F8700D74C8B /* GameModeObject.swift in Sources */,
 				6A9FAF021CBD23F000D74C8B /* FullClueViewController.swift in Sources */,
+				6A3FC38F1CC77C5800B69E4F /* FullClueMediaViewController.swift in Sources */,
 				6A6C5CA71CB664B400841E40 /* DataManager.swift in Sources */,
 				6A6C5CAC1CB6854000841E40 /* GameScreenTabBarController.swift in Sources */,
 				6A9FAEF51CBD037600D74C8B /* HuntObject.swift in Sources */,

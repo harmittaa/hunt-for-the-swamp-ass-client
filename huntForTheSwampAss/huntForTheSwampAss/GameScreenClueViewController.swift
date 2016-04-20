@@ -52,8 +52,8 @@ class GameScreenClueViewController: UIViewController, UITableViewDataSource, UIT
             print("[GameClueScreen] this cell is not locked")
             let textCellIdentifier = "clueCell"
             let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! GameScreenCluesTableViewCell
-            cell.clueTitle.text = "Clue #\(listOfClues[indexPath.row].clueTier)"
-            cell.clueSubTitle.text = listOfClues[indexPath.row].clueText
+            cell.clueTitle.text = "Clue #\(listOfClues[indexPath.row].clueTier+1)"
+            cell.clueSubTitle.text = listOfClues[indexPath.row].clueTitle
             return cell
         }else{
             print("[GameClueScreen] this cell IS locked")
@@ -101,7 +101,7 @@ class GameScreenClueViewController: UIViewController, UITableViewDataSource, UIT
         if (segue.identifier == "MoveToFullClue"){
             if let selectedClueCell = sender as? UITableViewCell {
                 let indexPath = cluesTableView.indexPathForCell(selectedClueCell)!
-                let selectedClue = listOfClues[indexPath.row]
+                let selectedClue = gameController.currentLocation!.clueList[indexPath.row]
                 fullClueViewCtrl.passedClue = selectedClue
                 
             }

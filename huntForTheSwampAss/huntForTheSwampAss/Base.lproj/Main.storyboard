@@ -401,7 +401,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcz-bh-i84">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcz-bh-i84">
                                 <rect key="frame" x="95" y="485" width="131" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="AuU-rX-BwW"/>
@@ -696,14 +696,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H54-H5-wFR">
-                                <rect key="frame" x="20" y="72" width="280" height="527"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zX0-cp-aeU">
+                                <rect key="frame" x="20" y="28" width="280" height="522"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="vYr-Fd-xZM">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="160"/>
-                                    </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bBg-X0-cFE">
-                                        <rect key="frame" x="0.0" y="170" width="280" height="357"/>
+                                    <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nxq-KC-ZRI">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                                        <connections>
+                                            <segue destination="bjK-bh-bZw" kind="embed" identifier="clueMediaSegue" id="1V0-qB-gux"/>
+                                        </connections>
+                                    </containerView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xdt-Q8-a8C">
+                                        <rect key="frame" x="0.0" y="295" width="280" height="227"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -714,21 +717,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="H54-H5-wFR" firstAttribute="centerX" secondItem="N02-on-dwo" secondAttribute="centerX" id="823-XH-OhR"/>
-                            <constraint firstItem="6Yk-G4-WUU" firstAttribute="top" secondItem="H54-H5-wFR" secondAttribute="bottom" constant="13" id="8eW-ud-p2a"/>
-                            <constraint firstItem="H54-H5-wFR" firstAttribute="leading" secondItem="N02-on-dwo" secondAttribute="leadingMargin" constant="4" id="Dwf-Sb-8DH"/>
-                            <constraint firstItem="H54-H5-wFR" firstAttribute="top" secondItem="IM3-rv-QZc" secondAttribute="bottom" constant="8" symbolic="YES" id="gUG-dN-Ox4"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="zX0-cp-aeU" secondAttribute="bottom" constant="18" id="TfD-Bq-0kn"/>
+                            <constraint firstItem="zX0-cp-aeU" firstAttribute="top" secondItem="IM3-rv-QZc" secondAttribute="bottom" constant="8" symbolic="YES" id="p0N-6t-A8r"/>
+                            <constraint firstItem="zX0-cp-aeU" firstAttribute="centerX" secondItem="N02-on-dwo" secondAttribute="centerX" id="pKb-Mc-Ikb"/>
+                            <constraint firstItem="zX0-cp-aeU" firstAttribute="leading" secondItem="N02-on-dwo" secondAttribute="leadingMargin" constant="4" id="w08-KU-a7F"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I8u-2h-5F3"/>
                     <connections>
-                        <outlet property="clueDesc" destination="bBg-X0-cFE" id="Dbr-Zn-Pbd"/>
-                        <outlet property="clueMedia" destination="vYr-Fd-xZM" id="SgQ-I8-feV"/>
+                        <outlet property="clueDesc" destination="Xdt-Q8-a8C" id="jhu-us-yEy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XPJ-FO-fal" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1668" y="867"/>
+            <point key="canvasLocation" x="1669" y="842"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="1II-Kw-Z7q">
@@ -841,6 +843,54 @@
             </objects>
             <point key="canvasLocation" x="-1117" y="145"/>
         </scene>
+        <!--Full Clue Media View Controller-->
+        <scene sceneID="lZ2-Yv-xkQ">
+            <objects>
+                <viewController id="bjK-bh-bZw" customClass="FullClueMediaViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N3Q-WO-l1R">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EFA-mM-vc7">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                            </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="xtz-Ci-85z">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xtz-Ci-85z" firstAttribute="bottom" secondItem="EFA-mM-vc7" secondAttribute="bottom" id="353-N7-3VA"/>
+                            <constraint firstItem="xtz-Ci-85z" firstAttribute="leading" secondItem="EFA-mM-vc7" secondAttribute="leading" id="4zj-lt-jMq"/>
+                            <constraint firstItem="EFA-mM-vc7" firstAttribute="leading" secondItem="N3Q-WO-l1R" secondAttribute="leading" id="5HE-FM-pL7"/>
+                            <constraint firstItem="EFA-mM-vc7" firstAttribute="top" secondItem="N3Q-WO-l1R" secondAttribute="top" id="CX4-rQ-25A"/>
+                            <constraint firstAttribute="bottom" secondItem="EFA-mM-vc7" secondAttribute="bottom" id="DWx-aO-Hyf"/>
+                            <constraint firstItem="EFA-mM-vc7" firstAttribute="centerX" secondItem="N3Q-WO-l1R" secondAttribute="centerX" id="IFc-TK-3c6"/>
+                            <constraint firstItem="EFA-mM-vc7" firstAttribute="top" secondItem="N3Q-WO-l1R" secondAttribute="topMargin" id="JVI-gW-KGf"/>
+                            <constraint firstItem="EFA-mM-vc7" firstAttribute="bottom" secondItem="N3Q-WO-l1R" secondAttribute="bottomMargin" id="LhI-Bp-zlK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EFA-mM-vc7" secondAttribute="trailing" constant="-16" id="PIM-VJ-k6M"/>
+                            <constraint firstItem="EFA-mM-vc7" firstAttribute="top" secondItem="N3Q-WO-l1R" secondAttribute="top" id="Spa-DN-aTI"/>
+                            <constraint firstItem="EFA-mM-vc7" firstAttribute="centerY" secondItem="N3Q-WO-l1R" secondAttribute="centerY" id="TIg-wD-ohu"/>
+                            <constraint firstItem="EFA-mM-vc7" firstAttribute="leading" secondItem="N3Q-WO-l1R" secondAttribute="leading" id="aHq-Bf-QKN"/>
+                            <constraint firstItem="xtz-Ci-85z" firstAttribute="top" secondItem="EFA-mM-vc7" secondAttribute="top" id="hts-B3-sAA"/>
+                            <constraint firstItem="EFA-mM-vc7" firstAttribute="top" secondItem="N3Q-WO-l1R" secondAttribute="topMargin" id="inY-LC-2N2"/>
+                            <constraint firstItem="xtz-Ci-85z" firstAttribute="trailing" secondItem="EFA-mM-vc7" secondAttribute="trailing" id="l8v-Og-NrD"/>
+                            <constraint firstAttribute="trailing" secondItem="EFA-mM-vc7" secondAttribute="trailing" id="rsS-qG-ZGU"/>
+                            <constraint firstItem="EFA-mM-vc7" firstAttribute="top" secondItem="N3Q-WO-l1R" secondAttribute="top" id="sGD-qT-xou"/>
+                            <constraint firstItem="EFA-mM-vc7" firstAttribute="leading" secondItem="N3Q-WO-l1R" secondAttribute="leadingMargin" constant="-16" id="ufS-vd-jlZ"/>
+                            <constraint firstItem="EFA-mM-vc7" firstAttribute="leading" secondItem="N3Q-WO-l1R" secondAttribute="leading" id="v2O-9i-Cf4"/>
+                            <constraint firstItem="EFA-mM-vc7" firstAttribute="bottom" secondItem="N3Q-WO-l1R" secondAttribute="bottomMargin" id="z0a-Pu-1Ek"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="clueViewImage" destination="xtz-Ci-85z" id="uVM-iS-CDj"/>
+                        <outlet property="clueViewMap" destination="EFA-mM-vc7" id="mdk-dr-b3z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hqf-I9-PL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1669" y="1464"/>
+        </scene>
     </scenes>
     <resources>
         <image name="achievements" width="24" height="24"/>
@@ -854,7 +904,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="N0W-GU-jA6"/>
-        <segue reference="xSD-WU-n2L"/>
+        <segue reference="irJ-SN-LN1"/>
         <segue reference="EKk-IK-R0n"/>
     </inferredMetricsTieBreakers>
 </document>

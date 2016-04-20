@@ -10,9 +10,9 @@ import UIKit
 
 class FullClueViewController: UIViewController, ViewObserverProtocol {
     var passedClue: ClueObject!
-    @IBOutlet weak var clueMedia: UIImageView!
-    @IBOutlet weak var clueDesc: UITextView!
     
+    @IBOutlet weak var clueMediaView: UIView!
+    @IBOutlet weak var clueDesc: UITextView!
     let gameController = gameControllerSingleton
     let beaconFinder = beaconFinderSingleton
     
@@ -21,6 +21,14 @@ class FullClueViewController: UIViewController, ViewObserverProtocol {
         clueDesc.text = passedClue.clueText
         // Do any additional setup after loading the view.
         registerAsObserver()
+        
+        if let filePath = NSBundle.mainBundle().pathForResource("imageName", ofType: "jpg"), image = UIImage(contentsOfFile: filePath) {
+            let imageView = UIImageView(image: image)
+            imageView.contentMode = .ScaleAspectFit
+            imageView.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
+            clueMediaView.addSubview(imageView)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +42,7 @@ class FullClueViewController: UIViewController, ViewObserverProtocol {
         //custom action with a segue
         let settingsAction = UIAlertAction(title: "Continue", style: .Default, handler: { (testAction) -> Void in
             self.performSegueWithIdentifier("LocationDiscoveredSegue", sender: self)
-            self.gameController.currentLocation!.isFound = true
+            gameControllerSingleton.currentLocation!.isFound = true
         })
         // add actions to the alert
         noAuthAlert.addAction(settingsAction)
@@ -46,14 +54,19 @@ class FullClueViewController: UIViewController, ViewObserverProtocol {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "clueMediaSegue"){
+            let mediaContainer = segue.destinationViewController as! FullClueMediaViewController
+            mediaContainer
+            mediaContainer.passedClue = self.passedClue
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
