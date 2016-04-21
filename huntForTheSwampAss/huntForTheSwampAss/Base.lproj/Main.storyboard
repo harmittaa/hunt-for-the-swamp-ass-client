@@ -72,173 +72,201 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bqe-zR-3fe">
-                                <rect key="frame" x="15" y="93" width="290" height="190"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4hP-mn-iqQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="290" height="90"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ir6-MN-XLd">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                                                <color key="backgroundColor" red="0.093152166980000006" green="0.13153571580000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="90" id="6X8-e7-8G5"/>
-                                                    <constraint firstAttribute="height" constant="90" id="JMA-Pa-DZv"/>
-                                                </constraints>
-                                                <state key="normal" backgroundImage="team">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <segue destination="Gxg-pQ-nkS" kind="push" id="4dM-JT-goS"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7D-8n-ecC">
-                                                <rect key="frame" x="100" y="0.0" width="90" height="90"/>
-                                                <color key="backgroundColor" red="0.093152166980000006" green="0.13153571580000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="90" id="OXo-Kd-lSl"/>
-                                                    <constraint firstAttribute="height" constant="90" id="XQZ-rf-aCw"/>
-                                                </constraints>
-                                                <state key="normal" backgroundImage="game">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="gameButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IWu-xl-CY5"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ms5-kk-GpX">
-                                                <rect key="frame" x="200" y="0.0" width="90" height="90"/>
-                                                <color key="backgroundColor" red="0.093152166980000006" green="0.13153571580000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="90" id="D54-n6-T2e"/>
-                                                    <constraint firstAttribute="width" constant="90" id="QRz-wv-1Bl"/>
-                                                </constraints>
-                                                <state key="normal" backgroundImage="leaderboard">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <segue destination="VhP-Zh-tKY" kind="push" id="hxS-i2-u5R"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xq6-s6-Uzr">
-                                        <rect key="frame" x="0.0" y="100" width="290" height="90"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8g-e4-4i4">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                                                <color key="backgroundColor" red="0.093152166980000006" green="0.13153571580000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="90" id="6Tz-4h-eoe"/>
-                                                    <constraint firstAttribute="height" constant="90" id="ZCL-Rz-hS3"/>
-                                                </constraints>
-                                                <state key="normal" backgroundImage="profile">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <segue destination="hSU-Ul-Nhl" kind="push" id="SLx-R2-Kh0"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAU-3e-moQ">
-                                                <rect key="frame" x="100" y="0.0" width="90" height="90"/>
-                                                <color key="backgroundColor" red="0.093152166980000006" green="0.13153571580000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="90" id="Eyq-lE-Kip"/>
-                                                    <constraint firstAttribute="width" constant="90" id="hiV-8z-mIG"/>
-                                                </constraints>
-                                                <state key="normal" backgroundImage="settings">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <segue destination="jtf-NC-0je" kind="push" id="Kvt-wR-wPU"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjH-ZV-UGI">
-                                                <rect key="frame" x="200" y="0.0" width="90" height="90"/>
-                                                <color key="backgroundColor" red="0.093152166980000006" green="0.13153571580000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="90" id="YAl-VK-W5Q"/>
-                                                    <constraint firstAttribute="width" constant="90" id="n5K-1a-W1i"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <state key="normal" backgroundImage="achievements">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <segue destination="hEg-1I-NZ2" kind="push" id="FEr-8Z-UXy"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNh-2K-dkb">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNh-2K-dkb">
                                 <rect key="frame" x="20" y="518" width="85" height="30"/>
                                 <state key="normal" title="Cancel Hunt"/>
                                 <connections>
                                     <action selector="quitCurrentHunt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H5H-y0-NbE"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JOi-Vq-g1r">
-                                <rect key="frame" x="15" y="291" width="290" height="128"/>
-                                <connections>
-                                    <segue destination="gb9-QN-6dA" kind="embed" identifier="TestSegue" id="uDP-EY-yQw"/>
-                                </connections>
-                            </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6lK-pz-Y5w">
+                                <rect key="frame" x="20" y="81" width="288" height="263"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0du-Jb-Bsl">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="81"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0KP-kB-Bkc">
+                                                <rect key="frame" x="0.0" y="0.0" width="139" height="81"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ir6-MN-XLd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="139" height="50"/>
+                                                        <state key="normal" backgroundImage="team"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="45"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <segue destination="Gxg-pQ-nkS" kind="push" id="4dM-JT-goS"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hp4-gY-EtI">
+                                                        <rect key="frame" x="0.0" y="60" width="139" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="taF-LO-Z5u">
+                                                <rect key="frame" x="149" y="0.0" width="139" height="81"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjH-ZV-UGI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="139" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <state key="normal" backgroundImage="achievements">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="45"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <segue destination="hEg-1I-NZ2" kind="push" id="FEr-8Z-UXy"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Achievements" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGs-Ca-AJS">
+                                                        <rect key="frame" x="0.0" y="60" width="139" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fDs-wn-8Pj">
+                                        <rect key="frame" x="0.0" y="91" width="288" height="81"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cBz-cZ-TT5">
+                                                <rect key="frame" x="0.0" y="0.0" width="139" height="81"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAU-3e-moQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="139" height="50"/>
+                                                        <state key="normal" backgroundImage="settings">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="45"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <segue destination="jtf-NC-0je" kind="push" id="Kvt-wR-wPU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rax-xJ-n3p">
+                                                        <rect key="frame" x="0.0" y="60" width="139" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Wp-NB-CRg">
+                                                <rect key="frame" x="149" y="0.0" width="139" height="81"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8g-e4-4i4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="139" height="50"/>
+                                                        <state key="normal" backgroundImage="profile">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="45"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <segue destination="hSU-Ul-Nhl" kind="push" id="SLx-R2-Kh0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cp2-J4-i3P">
+                                                        <rect key="frame" x="0.0" y="60" width="139" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="J3Z-pw-KOU">
+                                        <rect key="frame" x="0.0" y="182" width="288" height="81"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0BC-PR-b35">
+                                                <rect key="frame" x="0.0" y="0.0" width="139" height="81"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7D-8n-ecC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="139" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <state key="normal" backgroundImage="game">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="45"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="gameButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IWu-xl-CY5"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyW-AR-Bn2">
+                                                        <rect key="frame" x="0.0" y="60" width="139" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hNf-sc-K25">
+                                                <rect key="frame" x="149" y="0.0" width="139" height="81"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ms5-kk-GpX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="139" height="50"/>
+                                                        <state key="normal" backgroundImage="leaderboard">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="45"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <segue destination="VhP-Zh-tKY" kind="push" id="hxS-i2-u5R"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="LeaderBoards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glR-A3-5Bk">
+                                                        <rect key="frame" x="0.0" y="60" width="139" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MNh-2K-dkb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="3I7-Gx-2Oo"/>
-                            <constraint firstItem="bqe-zR-3fe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="29" id="5Mv-Pg-c6i"/>
-                            <constraint firstItem="JOi-Vq-g1r" firstAttribute="top" secondItem="bqe-zR-3fe" secondAttribute="bottom" constant="8" symbolic="YES" id="7S8-Z3-i9K"/>
-                            <constraint firstItem="JOi-Vq-g1r" firstAttribute="leading" secondItem="bqe-zR-3fe" secondAttribute="leading" id="9XD-uo-R6U"/>
-                            <constraint firstItem="bqe-zR-3fe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y5Q-Vf-eWX"/>
-                            <constraint firstAttribute="bottom" secondItem="MNh-2K-dkb" secondAttribute="bottom" constant="20" symbolic="YES" id="bj1-Gp-uoU"/>
-                            <constraint firstItem="MNh-2K-dkb" firstAttribute="top" secondItem="JOi-Vq-g1r" secondAttribute="bottom" constant="99" id="bt6-NJ-TGQ"/>
-                            <constraint firstItem="JOi-Vq-g1r" firstAttribute="trailing" secondItem="bqe-zR-3fe" secondAttribute="trailing" id="zy9-nd-gJI"/>
+                            <constraint firstItem="6lK-pz-Y5w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="MPV-6s-Deh"/>
+                            <constraint firstItem="6lK-pz-Y5w" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="S3r-ep-Bi0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6lK-pz-Y5w" secondAttribute="trailing" id="nmi-Qj-Ntu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hunt for the Swamp Ass" id="efp-1c-dR6"/>
                     <connections>
                         <outlet property="quitHuntButton" destination="MNh-2K-dkb" id="pAp-P5-avb"/>
                         <outlet property="teamButton" destination="ir6-MN-XLd" id="1yB-Db-Ebr"/>
-                        <outlet property="testContainer" destination="JOi-Vq-g1r" id="U9f-VK-5eR"/>
                         <segue destination="W5O-J3-E5f" kind="push" identifier="MainMenuToGameModes" id="vEO-Dq-B6V"/>
                         <segue destination="DZv-cf-fVT" kind="push" identifier="MainMenuToGameScreen" id="vI2-ZL-lSz"/>
                         <segue destination="gil-vj-rtF" kind="push" identifier="LocationDiscoveredSegue" id="Cx5-ZO-ONX"/>
@@ -599,7 +627,7 @@
                             <constraint firstItem="1Wf-xK-kiZ" firstAttribute="bottom" secondItem="j6I-IL-9G6" secondAttribute="top" id="w2k-iW-Zzg"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Clues" image="achievements" id="fDY-VU-4kn"/>
+                    <tabBarItem key="tabBarItem" title="Clues" image="clue_icon" id="fDY-VU-4kn"/>
                     <connections>
                         <segue destination="gil-vj-rtF" kind="push" identifier="LocationDiscoveredSegue" id="irJ-SN-LN1"/>
                         <segue destination="AAd-3g-aCM" kind="push" identifier="MoveToFullClue" id="jh7-l4-GbF"/>
@@ -691,7 +719,7 @@
                             <constraint firstItem="tpt-Va-cRZ" firstAttribute="top" secondItem="ocN-gt-YZ9" secondAttribute="bottom" id="xcg-Pe-jrc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="game" id="QJ0-Wg-PdA"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map_icon" id="QJ0-Wg-PdA"/>
                     <connections>
                         <outlet property="gameScreenMap" destination="tpt-Va-cRZ" id="4bA-y4-JKl"/>
                         <segue destination="gil-vj-rtF" kind="push" identifier="LocationDiscoveredSegue" id="Y9X-UD-0pz"/>
@@ -901,34 +929,22 @@
             </objects>
             <point key="canvasLocation" x="301" y="1022"/>
         </scene>
-        <!--Test Image Container View Controller-->
-        <scene sceneID="X3b-n6-TOa">
-            <objects>
-                <viewController id="gb9-QN-6dA" customClass="TestImageContainerViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="low-Hy-1Ln">
-                        <rect key="frame" x="0.0" y="0.0" width="290" height="128"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EAU-ml-EXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1604" y="163"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="achievements" width="24" height="24"/>
-        <image name="game" width="24" height="24"/>
-        <image name="leaderboard" width="24" height="24"/>
+        <image name="achievements" width="50" height="50"/>
+        <image name="clue_icon" width="25" height="25"/>
+        <image name="game" width="50" height="50"/>
+        <image name="leaderboard" width="50" height="50"/>
         <image name="map" width="447" height="450"/>
-        <image name="profile" width="24" height="24"/>
-        <image name="settings" width="24" height="24"/>
-        <image name="team" width="48" height="48"/>
+        <image name="map_icon" width="25" height="25"/>
+        <image name="profile" width="50" height="50"/>
+        <image name="settings" width="50" height="50"/>
+        <image name="team" width="50" height="50"/>
         <image name="test" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="N0W-GU-jA6"/>
-        <segue reference="Y9X-UD-0pz"/>
-        <segue reference="gq6-zr-jp6"/>
+        <segue reference="Cx5-ZO-ONX"/>
+        <segue reference="vI2-ZL-lSz"/>
     </inferredMetricsTieBreakers>
 </document>
