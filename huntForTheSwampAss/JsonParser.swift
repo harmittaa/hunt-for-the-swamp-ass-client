@@ -20,22 +20,6 @@ class JsonParser {
     
     // called from HTTPRequestController once some data has been fetched
     func parseGameModes(data: NSData) {
-        /*       do {
-         // turn data into JSON that can be parsed, cast as Array of Payload type objects
-         var json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as! Array<Payload>
-         
-         // loop through the array
-         for item in json {
-         print("[JSON] parsed: ")
-         print(item)
-         // turn the item into an NSDictionary object so that data can be parsed easier
-         var item2 = item as NSDictionary
-         print(item2.objectForKey("id")!)
-         }
-         } catch {
-         print("[JSON] error: ")
-         print(error)
-         } */
         
         do {
             print("[JSON] parsing should start")
@@ -72,7 +56,7 @@ class JsonParser {
                                     if let clues = locationn["Clues"] as? [Payload]{
                                         var clueTier = 0
                                         for clue in clues{
-                                            let newClue = ClueObject(clueTitle: clue["title"] as! String, cluetext: clue["description"] as! String, cluetier: clueTier)
+                                            let newClue = ClueObject(clueTitle: clue["title"] as! String, cluetext: clue["description"] as! String, cluetier: clueTier, clueMedia: clue["media"] as! String)
                                             newLocation.clueList.append(newClue)
                                             clueTier += 1
                                         }

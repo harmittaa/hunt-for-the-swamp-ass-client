@@ -14,10 +14,11 @@ import MapKit
 import CoreLocation
 class GameScreenViewController: UIViewController, CLLocationManagerDelegate, ViewObserverProtocol{
     @IBOutlet weak var gameScreenMap: MKMapView!
-
+    
     let locationManager = CLLocationManager()
     let gameController = gameControllerSingleton
     var isDisplayingPopup = false
+    
     //MARK: location manager shenanigans
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +82,7 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate, Vie
             imageView.image = mapImage
             
             noAuthAlert.view.addSubview(imageView)
-        
+            
             // create an action for the alert that cancels
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
             // add actions to the alert

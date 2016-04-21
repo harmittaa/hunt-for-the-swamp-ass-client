@@ -23,14 +23,6 @@ class FullClueViewController: UIViewController, ViewObserverProtocol {
         clueTitle.text = passedClue.clueTitle
         // Do any additional setup after loading the view.
         registerAsObserver()
-        
-        if let filePath = NSBundle.mainBundle().pathForResource("imageName", ofType: "jpg"), image = UIImage(contentsOfFile: filePath) {
-            let imageView = UIImageView(image: image)
-            imageView.contentMode = .ScaleAspectFit
-            imageView.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
-            clueMediaView.addSubview(imageView)
-        }
-        
     }
 
     override func didReceiveMemoryWarning() {
