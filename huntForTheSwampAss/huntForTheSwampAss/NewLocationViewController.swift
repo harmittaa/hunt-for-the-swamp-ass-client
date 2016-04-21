@@ -33,7 +33,6 @@ class NewLocationViewController: UIViewController {
         performSegueWithIdentifier("LocationCompleteSegue", sender: self)
         }
         else{
-            gameController.completeHunt()
             performSegueWithIdentifier("HuntCompleteSegue", sender: self)
         }
     }

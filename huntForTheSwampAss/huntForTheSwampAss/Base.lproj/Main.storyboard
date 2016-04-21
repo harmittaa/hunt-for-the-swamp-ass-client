@@ -26,7 +26,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AL8-Fn-hxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-651" y="-678"/>
+            <point key="canvasLocation" x="-1589" y="-1230"/>
         </scene>
         <!--LeaderBoard-->
         <scene sceneID="L3M-Ba-IY4">
@@ -38,7 +38,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8l5-CI-mTS">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8l5-CI-mTS" id="MTx-Q2-Azc">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -58,7 +58,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aef-IJ-a78" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-131" y="-725"/>
+            <point key="canvasLocation" x="-1069" y="-1277"/>
         </scene>
         <!--Hunt for the Swamp Ass-->
         <scene sceneID="tne-QT-ifu">
@@ -72,7 +72,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bqe-zR-3fe">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bqe-zR-3fe">
                                 <rect key="frame" x="15" y="93" width="290" height="190"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4hP-mn-iqQ">
@@ -215,19 +215,30 @@
                                     <action selector="quitCurrentHunt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H5H-y0-NbE"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JOi-Vq-g1r">
+                                <rect key="frame" x="15" y="291" width="290" height="128"/>
+                                <connections>
+                                    <segue destination="gb9-QN-6dA" kind="embed" identifier="TestSegue" id="uDP-EY-yQw"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MNh-2K-dkb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="3I7-Gx-2Oo"/>
                             <constraint firstItem="bqe-zR-3fe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="29" id="5Mv-Pg-c6i"/>
+                            <constraint firstItem="JOi-Vq-g1r" firstAttribute="top" secondItem="bqe-zR-3fe" secondAttribute="bottom" constant="8" symbolic="YES" id="7S8-Z3-i9K"/>
+                            <constraint firstItem="JOi-Vq-g1r" firstAttribute="leading" secondItem="bqe-zR-3fe" secondAttribute="leading" id="9XD-uo-R6U"/>
                             <constraint firstItem="bqe-zR-3fe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y5Q-Vf-eWX"/>
                             <constraint firstAttribute="bottom" secondItem="MNh-2K-dkb" secondAttribute="bottom" constant="20" symbolic="YES" id="bj1-Gp-uoU"/>
+                            <constraint firstItem="MNh-2K-dkb" firstAttribute="top" secondItem="JOi-Vq-g1r" secondAttribute="bottom" constant="99" id="bt6-NJ-TGQ"/>
+                            <constraint firstItem="JOi-Vq-g1r" firstAttribute="trailing" secondItem="bqe-zR-3fe" secondAttribute="trailing" id="zy9-nd-gJI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hunt for the Swamp Ass" id="efp-1c-dR6"/>
                     <connections>
                         <outlet property="quitHuntButton" destination="MNh-2K-dkb" id="pAp-P5-avb"/>
                         <outlet property="teamButton" destination="ir6-MN-XLd" id="1yB-Db-Ebr"/>
+                        <outlet property="testContainer" destination="JOi-Vq-g1r" id="U9f-VK-5eR"/>
                         <segue destination="W5O-J3-E5f" kind="push" identifier="MainMenuToGameModes" id="vEO-Dq-B6V"/>
                         <segue destination="DZv-cf-fVT" kind="push" identifier="MainMenuToGameScreen" id="vI2-ZL-lSz"/>
                         <segue destination="gil-vj-rtF" kind="push" identifier="LocationDiscoveredSegue" id="Cx5-ZO-ONX"/>
@@ -235,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-651" y="145"/>
+            <point key="canvasLocation" x="-1589" y="-407"/>
         </scene>
         <!--Settings-->
         <scene sceneID="xG9-Do-heG">
@@ -254,7 +265,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LpP-Ta-qFC">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LpP-Ta-qFC" id="rQQ-p0-2BI">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -281,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gj3-oP-izb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-833" y="1155"/>
+            <point key="canvasLocation" x="-1918" y="529"/>
         </scene>
         <!--Team View-->
         <scene sceneID="aeC-LX-Cy9">
@@ -293,7 +304,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LYF-gk-wPa">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LYF-gk-wPa" id="9JL-h1-C72">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -313,7 +324,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMI-gH-aE2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-131" y="-98"/>
+            <point key="canvasLocation" x="-1069" y="-650"/>
         </scene>
         <!--New Location View Controller-->
         <scene sceneID="hA6-B7-vLQ">
@@ -338,13 +349,13 @@
                                     <action selector="contienuButtonAction:" destination="gil-vj-rtF" eventType="touchUpInside" id="lbz-gc-ivE"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="7af-VA-rxn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="7af-VA-rxn">
                                 <rect key="frame" x="6" y="54" width="309" height="164"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="164" id="aLQ-xi-LH8"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Soa-Qn-cKH">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Soa-Qn-cKH">
                                 <rect key="frame" x="6" y="226" width="309" height="239"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -374,12 +385,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRg-oO-4bx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1259" y="-576"/>
+            <point key="canvasLocation" x="321" y="-1128"/>
         </scene>
-        <!--New Location View Controller-->
+        <!--Hunt Completion View Controller-->
         <scene sceneID="dRh-Ha-UTz">
             <objects>
-                <viewController id="yrv-B1-xw0" customClass="NewLocationViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yrv-B1-xw0" customClass="HuntCompletionViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9vY-pN-CDB"/>
                         <viewControllerLayoutGuide type="bottom" id="33W-7O-5Wn"/>
@@ -388,20 +399,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="achievements" translatesAutoresizingMaskIntoConstraints="NO" id="Hih-2F-gB1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="achievements" translatesAutoresizingMaskIntoConstraints="NO" id="Hih-2F-gB1">
                                 <rect key="frame" x="9" y="72" width="302" height="187"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="187" id="H7R-vd-vTW"/>
-                                </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Ch-Hc-Dy7">
-                                <rect key="frame" x="9" y="267" width="302" height="210"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Ch-Hc-Dy7">
+                                <rect key="frame" x="9" y="302" width="302" height="175"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="Fkd-68-MLN"/>
+                                </constraints>
                                 <string key="text">Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcz-bh-i84">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcz-bh-i84">
                                 <rect key="frame" x="95" y="485" width="131" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="AuU-rX-BwW"/>
@@ -413,26 +424,42 @@
                                     <segue destination="BYZ-38-t0r" kind="push" id="N0W-GU-jA6"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ren-zL-Eg4">
+                                <rect key="frame" x="9" y="267" width="302" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="14y-QL-2IY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Kcz-bh-i84" firstAttribute="top" secondItem="4Ch-Hc-Dy7" secondAttribute="bottom" constant="8" symbolic="YES" id="1LI-m5-u2W"/>
                             <constraint firstItem="33W-7O-5Wn" firstAttribute="top" secondItem="Kcz-bh-i84" secondAttribute="bottom" constant="8" symbolic="YES" id="5Jh-Uh-Fc4"/>
-                            <constraint firstItem="Hih-2F-gB1" firstAttribute="trailing" secondItem="4Ch-Hc-Dy7" secondAttribute="trailing" id="Kfi-ff-Olj"/>
-                            <constraint firstItem="Hih-2F-gB1" firstAttribute="leading" secondItem="DfA-00-gEh" secondAttribute="leadingMargin" constant="-7" id="MRb-vV-3C5"/>
-                            <constraint firstItem="4Ch-Hc-Dy7" firstAttribute="centerX" secondItem="Kcz-bh-i84" secondAttribute="centerX" id="P0a-ho-g4h"/>
+                            <constraint firstItem="ren-zL-Eg4" firstAttribute="top" secondItem="Hih-2F-gB1" secondAttribute="bottom" constant="8" symbolic="YES" id="5Ju-gc-Y0B"/>
+                            <constraint firstItem="Kcz-bh-i84" firstAttribute="top" secondItem="4Ch-Hc-Dy7" secondAttribute="bottom" constant="8" symbolic="YES" id="EbT-X3-mlf"/>
+                            <constraint firstItem="Hih-2F-gB1" firstAttribute="leading" secondItem="ren-zL-Eg4" secondAttribute="leading" id="FV3-dm-2l5"/>
+                            <constraint firstItem="Hih-2F-gB1" firstAttribute="top" secondItem="9vY-pN-CDB" secondAttribute="bottom" constant="8" symbolic="YES" id="NAi-jL-OXz"/>
                             <constraint firstItem="Kcz-bh-i84" firstAttribute="leading" secondItem="DfA-00-gEh" secondAttribute="leadingMargin" constant="79" id="QmC-xV-gR6"/>
-                            <constraint firstItem="Hih-2F-gB1" firstAttribute="top" secondItem="9vY-pN-CDB" secondAttribute="bottom" constant="8" symbolic="YES" id="SRk-Sr-eeU"/>
-                            <constraint firstItem="4Ch-Hc-Dy7" firstAttribute="top" secondItem="Hih-2F-gB1" secondAttribute="bottom" constant="8" symbolic="YES" id="XQg-3n-eFs"/>
-                            <constraint firstItem="Hih-2F-gB1" firstAttribute="leading" secondItem="4Ch-Hc-Dy7" secondAttribute="leading" id="dqh-ai-tn2"/>
-                            <constraint firstItem="Hih-2F-gB1" firstAttribute="centerX" secondItem="DfA-00-gEh" secondAttribute="centerX" id="xIn-Ah-n0w"/>
+                            <constraint firstItem="Hih-2F-gB1" firstAttribute="centerX" secondItem="DfA-00-gEh" secondAttribute="centerX" id="SPr-cy-OxC"/>
+                            <constraint firstItem="4Ch-Hc-Dy7" firstAttribute="top" secondItem="ren-zL-Eg4" secondAttribute="bottom" constant="8" symbolic="YES" id="X8R-cE-MZT"/>
+                            <constraint firstItem="Hih-2F-gB1" firstAttribute="trailing" secondItem="ren-zL-Eg4" secondAttribute="trailing" id="gxB-b0-52H"/>
+                            <constraint firstItem="4Ch-Hc-Dy7" firstAttribute="centerX" secondItem="Kcz-bh-i84" secondAttribute="centerX" id="lAp-be-WNL"/>
+                            <constraint firstItem="ren-zL-Eg4" firstAttribute="trailing" secondItem="4Ch-Hc-Dy7" secondAttribute="trailing" id="mek-2o-0bz"/>
+                            <constraint firstItem="Hih-2F-gB1" firstAttribute="leading" secondItem="DfA-00-gEh" secondAttribute="leadingMargin" constant="-7" id="oIx-Sd-tVM"/>
+                            <constraint firstItem="ren-zL-Eg4" firstAttribute="leading" secondItem="4Ch-Hc-Dy7" secondAttribute="leading" id="sIZ-cA-5SE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="l3l-jt-hjy"/>
+                    <connections>
+                        <outlet property="huntCompletionText" destination="4Ch-Hc-Dy7" id="cq6-Fv-48Q"/>
+                        <outlet property="huntCompletionTitle" destination="ren-zL-Eg4" id="w2I-yw-y6O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="61i-gv-fTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1689" y="-576"/>
+            <point key="canvasLocation" x="751" y="-1128"/>
         </scene>
         <!--Choose Game Mode-->
         <scene sceneID="orG-pS-99M">
@@ -444,7 +471,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="90" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GameModeTableViewCell" rowHeight="90" id="Hi6-pC-UWA" customClass="GameModeTableViewCell" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="90"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hi6-pC-UWA" id="2he-lL-uUw">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="89"/>
@@ -484,7 +511,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OxE-wo-cQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-157" y="528"/>
+            <point key="canvasLocation" x="-1095" y="-24"/>
         </scene>
         <!--Choose a Hunt-->
         <scene sceneID="h0r-sh-V87">
@@ -543,9 +570,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqE-kl-8Pt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="229" y="530"/>
+            <point key="canvasLocation" x="-709" y="-22"/>
         </scene>
-        <!--Item 2-->
+        <!--Clues-->
         <scene sceneID="rBf-yq-fTv">
             <objects>
                 <viewController id="U4o-9f-Nw6" customClass="GameScreenClueViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
@@ -572,7 +599,7 @@
                             <constraint firstItem="1Wf-xK-kiZ" firstAttribute="bottom" secondItem="j6I-IL-9G6" secondAttribute="top" id="w2k-iW-Zzg"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="fDY-VU-4kn"/>
+                    <tabBarItem key="tabBarItem" title="Clues" image="achievements" id="fDY-VU-4kn"/>
                     <connections>
                         <segue destination="gil-vj-rtF" kind="push" identifier="LocationDiscoveredSegue" id="irJ-SN-LN1"/>
                         <segue destination="AAd-3g-aCM" kind="push" identifier="MoveToFullClue" id="jh7-l4-GbF"/>
@@ -580,7 +607,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oye-iS-Uhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1239" y="869"/>
+            <point key="canvasLocation" x="301" y="317"/>
         </scene>
         <!--Full Clue View Controller-->
         <scene sceneID="bw1-kK-Mx9">
@@ -594,8 +621,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zX0-cp-aeU">
-                                <rect key="frame" x="20" y="28" width="280" height="522"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zX0-cp-aeU">
+                                <rect key="frame" x="20" y="28" width="280" height="478"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxq-KC-ZRI">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="178"/>
@@ -603,17 +630,17 @@
                                             <segue destination="bjK-bh-bZw" kind="embed" identifier="clueMediaSegue" id="1V0-qB-gux"/>
                                         </connections>
                                     </containerView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB9-2G-Crx">
-                                        <rect key="frame" x="0.0" y="193" width="280" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB9-2G-Crx">
+                                        <rect key="frame" x="0.0" y="193" width="280" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xdt-Q8-a8C">
-                                        <rect key="frame" x="0.0" y="229" width="280" height="293"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xdt-Q8-a8C">
+                                        <rect key="frame" x="0.0" y="208" width="280" height="270"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -638,9 +665,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XPJ-FO-fal" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="881"/>
+            <point key="canvasLocation" x="807" y="329"/>
         </scene>
-        <!--Item 1-->
+        <!--Map-->
         <scene sceneID="1II-Kw-Z7q">
             <objects>
                 <viewController id="W2F-VG-vdP" customClass="GameScreenViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
@@ -652,7 +679,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tpt-Va-cRZ">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tpt-Va-cRZ">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                             </mapView>
                         </subviews>
@@ -664,7 +691,7 @@
                             <constraint firstItem="tpt-Va-cRZ" firstAttribute="top" secondItem="ocN-gt-YZ9" secondAttribute="bottom" id="xcg-Pe-jrc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="nsc-0J-ugp"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="game" id="QJ0-Wg-PdA"/>
                     <connections>
                         <outlet property="gameScreenMap" destination="tpt-Va-cRZ" id="4bA-y4-JKl"/>
                         <segue destination="gil-vj-rtF" kind="push" identifier="LocationDiscoveredSegue" id="Y9X-UD-0pz"/>
@@ -672,7 +699,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nEX-hm-m5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1259" y="214"/>
+            <point key="canvasLocation" x="321" y="-338"/>
         </scene>
         <!--Game Screen Tab Bar Controller-->
         <scene sceneID="BcP-Hi-27o">
@@ -699,7 +726,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nu2-o6-vlK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="695" y="528"/>
+            <point key="canvasLocation" x="-243" y="-24"/>
         </scene>
         <!--Achievements-->
         <scene sceneID="I4e-XU-1Kq">
@@ -711,7 +738,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1OV-eO-XqL">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1OV-eO-XqL" id="Qat-oL-uQP">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -731,7 +758,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deC-bn-D8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-468" y="1155"/>
+            <point key="canvasLocation" x="-1336" y="606"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oDY-Ib-gJb">
@@ -749,7 +776,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sR6-NY-Wag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1117" y="145"/>
+            <point key="canvasLocation" x="-2055" y="-407"/>
         </scene>
         <!--Full Clue Media View Controller-->
         <scene sceneID="lZ2-Yv-xkQ">
@@ -760,13 +787,13 @@
                         <viewControllerLayoutGuide type="bottom" id="xvx-mY-IuN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="N3Q-WO-l1R">
-                        <rect key="frame" x="0.0" y="0.0" width="280" height="223"/>
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="178"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EFA-mM-vc7">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EFA-mM-vc7">
                                 <rect key="frame" x="0.0" y="0.0" width="280" height="223"/>
                             </mapView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="xtz-Ci-85z">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="xtz-Ci-85z">
                                 <rect key="frame" x="0.0" y="0.0" width="280" height="223"/>
                             </imageView>
                         </subviews>
@@ -801,7 +828,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hqf-I9-PL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="1374.5"/>
+            <point key="canvasLocation" x="807" y="1084"/>
         </scene>
         <!--Clues Table View Controller-->
         <scene sceneID="qDA-u2-8ik">
@@ -872,7 +899,21 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kb7-xX-Dg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1239" y="1574.5"/>
+            <point key="canvasLocation" x="301" y="1022"/>
+        </scene>
+        <!--Test Image Container View Controller-->
+        <scene sceneID="X3b-n6-TOa">
+            <objects>
+                <viewController id="gb9-QN-6dA" customClass="TestImageContainerViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="low-Hy-1Ln">
+                        <rect key="frame" x="0.0" y="0.0" width="290" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EAU-ml-EXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1604" y="163"/>
         </scene>
     </scenes>
     <resources>
@@ -886,8 +927,8 @@
         <image name="test" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Cx5-ZO-ONX"/>
         <segue reference="N0W-GU-jA6"/>
-        <segue reference="vI2-ZL-lSz"/>
+        <segue reference="Y9X-UD-0pz"/>
+        <segue reference="gq6-zr-jp6"/>
     </inferredMetricsTieBreakers>
 </document>

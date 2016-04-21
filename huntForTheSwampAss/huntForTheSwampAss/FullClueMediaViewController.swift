@@ -17,7 +17,7 @@ class FullClueMediaViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         if let a = passedClue{
-            if(passedClue?.clueTier > 2){
+            if(passedClue!.clueTier < 1){
                 clueViewImage.hidden = true
             }else{
                 clueViewMap.hidden = true

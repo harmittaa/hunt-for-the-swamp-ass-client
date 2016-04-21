@@ -14,9 +14,7 @@ class JsonParser {
     // make it easier for your fingers
     typealias Payload = [String: AnyObject]
     
-    init () {
-        print("[JSON] new parser created")
-    }
+    init () {}
     
     // called from HTTPRequestController once some data has been fetched
     func parseGameModes(data: NSData) {
@@ -38,34 +36,34 @@ class JsonParser {
          } */
         
         do {
-            print("[JSON] parsing should start")
+            //print("[JSON] parsing should start")
             // Turns JSON data into a foundation objects
             let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
             // makes a String:Anyobject list of the value from GameModes : [] pair
             //parse for gamemode
             if let gameModes = json["GameModes"] as? [Payload] {
-                print("[json] gamemodes get \(gameModes)")
+                //print("[json] gamemodes get \(gameModes)")
                 for gameMode in gameModes {
                     //parse for hunts in gamemode
                     let newGameModeObject = GameModeObject(gameDesc: gameMode["description"] as! String, gameTitle: (gameMode["title"] as? String)!, id: (gameMode["id"] as? Int)!)
                     if let huntsOfGamemode = gameMode["Hunts"] as? [Payload]{
-                        print("[json] hunts get")
+                        //print("[json] hunts get")
                         for hunt in huntsOfGamemode{
                             let newHunt = HuntObject(title: hunt["title"] as! String, desc: hunt["description"] as! String, winTit: hunt["winTitle"] as! String, winDes: hunt["winDescription"] as! String)
                             //parse for locations in hunt
                             if let locationsList = hunt["Locations"] as? [Payload]{
-                                print("[json] locations get")
+                                //print("[json] locations get")
                                 for locationn in locationsList{
                                     let newLocation = LocationObject(winTit: locationn["winTitle"]! as! String, windDes: locationn["winDescription"]! as! String, id: locationn["id"]!.integerValue)
                                     //parse for single beacon
                                     if let beeconi = locationn["Beacon"] as? [Payload]{
-                                        print("[json] beacon get")
+                                        //print("[json] beacon get")
                                         for beecon in beeconi{
                                             let minor = beecon["minor"]!.integerValue
                                             let major = beecon["major"]!.integerValue
                                             let uuid = beecon["uuid"]!
                                             let newBeacon = BeaconObject(beaconmajor: major, beaconminor: minor, beaconuuid: uuid as! String)
-                                            print("[json] Made a beacon \(newBeacon.beaconUUID)")
+                                            //print("[json] Made a beacon \(newBeacon.beaconUUID)")
                                             newLocation.beacon = newBeacon
                                         }
                                     }
@@ -82,7 +80,7 @@ class JsonParser {
                             }
                             gameControllerSingleton.allHunts.append(newHunt)
                             newGameModeObject.huntList.append(newHunt)
-                            print("[json] size of gameMode Hunt list: \(newGameModeObject.huntList.count)")
+                            //print("[json] size of gameMode Hunt list: \(newGameModeObject.huntList.count)")
                         }
                     }
                     gameControllerSingleton.allGameModes!.append(newGameModeObject)

@@ -59,6 +59,8 @@
 		6A9FAEFF1CBD0F8700D74C8B /* GameModeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9FAEFE1CBD0F8700D74C8B /* GameModeObject.swift */; };
 		6A9FAF021CBD23F000D74C8B /* FullClueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9FAF011CBD23F000D74C8B /* FullClueViewController.swift */; };
 		6AF847821CBE23E8008DB3AE /* GameScreenCluesLockedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF847811CBE23E8008DB3AE /* GameScreenCluesLockedTableViewCell.swift */; };
+		6AFADF001CC8BE9800F0B38C /* TestImageContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFADEFF1CC8BE9800F0B38C /* TestImageContainerViewController.swift */; };
+		6AFADF021CC8E4BC00F0B38C /* HuntCompletionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFADF011CC8E4BC00F0B38C /* HuntCompletionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,8 @@
 		6A9FAEFE1CBD0F8700D74C8B /* GameModeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModeObject.swift; sourceTree = "<group>"; };
 		6A9FAF011CBD23F000D74C8B /* FullClueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullClueViewController.swift; sourceTree = "<group>"; };
 		6AF847811CBE23E8008DB3AE /* GameScreenCluesLockedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScreenCluesLockedTableViewCell.swift; sourceTree = "<group>"; };
+		6AFADEFF1CC8BE9800F0B38C /* TestImageContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestImageContainerViewController.swift; sourceTree = "<group>"; };
+		6AFADF011CC8E4BC00F0B38C /* HuntCompletionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuntCompletionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				6A6D7C281CBE4F0800C14BA1 /* NewLocationViewController.swift */,
+				6AFADF011CC8E4BC00F0B38C /* HuntCompletionViewController.swift */,
 			);
 			name = NewLocation;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 				6A6D7C261CBE366800C14BA1 /* viewObeserverProtocol.swift */,
 				6A65EA321CC4DADB006D7408 /* popupCreator.swift */,
 				6A82CA6E1CC5023100707D01 /* JsonParser.swift */,
+				6AFADEFF1CC8BE9800F0B38C /* TestImageContainerViewController.swift */,
 			);
 			name = "Main Stufs";
 			sourceTree = "<group>";
@@ -440,6 +446,7 @@
 				6A6D982F1CB7B34800C7989D /* Hunt.swift in Sources */,
 				6A6D982B1CB7B34800C7989D /* Beacon.swift in Sources */,
 				6A6D98291CB7B34800C7989D /* ImageClue.swift in Sources */,
+				6AFADF021CC8E4BC00F0B38C /* HuntCompletionViewController.swift in Sources */,
 				6A9FAEFF1CBD0F8700D74C8B /* GameModeObject.swift in Sources */,
 				6A9FAF021CBD23F000D74C8B /* FullClueViewController.swift in Sources */,
 				6A3FC38F1CC77C5800B69E4F /* FullClueMediaViewController.swift in Sources */,
@@ -452,6 +459,7 @@
 				6A82CA6F1CC5023100707D01 /* JsonParser.swift in Sources */,
 				6A6D98271CB7B34800C7989D /* HuntCompletion.swift in Sources */,
 				6A6D98371CB7B34800C7989D /* Clue.swift in Sources */,
+				6AFADF001CC8BE9800F0B38C /* TestImageContainerViewController.swift in Sources */,
 				6A6D98391CB7B34800C7989D /* Location.swift in Sources */,
 				6A6D98341CB7B34800C7989D /* MapClue+CoreDataProperties.swift in Sources */,
 				6A0876C91CB3AD9400A66047 /* AppDelegate.swift in Sources */,
