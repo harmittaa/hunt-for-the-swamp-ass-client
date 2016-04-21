@@ -13,15 +13,31 @@ class FullClueMediaViewController: UIViewController {
     @IBOutlet weak var clueViewMap: MKMapView!
     @IBOutlet weak var clueViewImage: UIImageView!
     var passedClue: ClueObject?
+    var clueImage: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        if let a = passedClue{
-            if(passedClue!.clueTier < 1){
-                clueViewImage.hidden = true
-            }else{
-                clueViewMap.hidden = true
-            }
+
+
+        // if the clue doesn't have an image
+        if passedClue?.hasImage != true {
+            // hide the clueViewImage
+            clueViewImage.hidden = true
+            // parse the coordinates from the clueMedia string
+            let coordinates: String = (passedClue?.clueMedia)!
+            let coordArr = coordinates.componentsSeparatedByString("/")
+            // center the map
+            clueViewMap.centerCoordinate = CLLocationCoordinate2D(latitude: Double(coordArr[0])!, longitude: Double(coordArr[1])!)
+            let location = CLLocation(latitude: Double(coordArr[0])!, longitude: Double(coordArr[1])!)
+            // define the zoom distance
+            let regionRadius: CLLocationDistance = 250
+            let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius * 2.0, regionRadius * 2.0)
+            // set the map on the certain location and zoom it.
+            clueViewMap.setRegion(coordinateRegion, animated: true)
+        } else {
+            // the clue has an image
+            clueViewMap.hidden = true
+            clueViewImage.image = passedClue?.clueImage
         }
     }
     

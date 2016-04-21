@@ -5,6 +5,7 @@
 //  Created by iosdev on 6.4.2016.
 //  Copyright © 2016 iosdev. All rights reserved.
 //
+// used for populating the Hunt table view as well as getting images for clues for the selected hunt
 
 import UIKit
 
@@ -62,6 +63,8 @@ class HuntTableViewController: UITableViewController{
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("[HuntTableView] exiting hunt table view")
         gameController.currentHunt = gameController.allHunts[indexPath.row]
+        // get images for all of the clues in this hunt
+        httpRequestControllerSingleton.getImages((gameControllerSingleton.currentHunt?.locationList)!)
         gameController.currentLocation = gameController.currentHunt!.locationList![0]
     }
     
