@@ -47,7 +47,6 @@ class JsonParser {
                                             let major = beecon["major"]!.integerValue
                                             let uuid = beecon["uuid"]!
                                             let newBeacon = BeaconObject(beaconmajor: major, beaconminor: minor, beaconuuid: uuid as! String)
-                                            //print("[json] Made a beacon \(newBeacon.beaconUUID)")
                                             newLocation.beacon = newBeacon
                                         }
                                     }
