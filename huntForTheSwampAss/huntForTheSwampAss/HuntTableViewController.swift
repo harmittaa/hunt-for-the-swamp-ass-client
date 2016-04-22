@@ -45,8 +45,10 @@ class HuntTableViewController: UITableViewController{
         let cellIdentifier = "HuntTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! HuntTableViewCell
         print("[HuntTableViewCtrl]cell : \(cell)")
+        // set data for the hunt cells
         cell.huntTitle.text = gameControllerSingleton.selectedGameMode!.huntList[indexPath.row].huntTitle
         cell.huntDesc.text = gameControllerSingleton.selectedGameMode!.huntList[indexPath.row].huntDescription
+        cell.huntImage.image = gameControllerSingleton.selectedGameMode!.huntList[indexPath.row].huntImage
         cell.huntStartDate.text = "Start Date Here"//String(listOfHunts[indexPath.row].huntStartDate)
         
         return cell

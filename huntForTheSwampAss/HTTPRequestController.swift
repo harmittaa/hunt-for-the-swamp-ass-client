@@ -48,7 +48,7 @@ class HTTPRequestController {
             }.resume()
     }
     
-    // gets images for the selected hunt's locations
+    // gets images for the selected hunt's locations clues
     func getImages(locationList: [LocationObject]) {
         print("[HTTP] getting images for all clues!")
         let downloadConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -77,6 +77,49 @@ class HTTPRequestController {
             }
         }
     }
+    
+    // gets images for the selected hunt's locations clues
+    func getImagesForHunts(huntList: [HuntObject]) {
+        print("[HTTP] getting images for all hunts!")
+        let downloadConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: downloadConfig)
+        for hunt in huntList {
+            let downloadTask = session.dataTaskWithURL(NSURL(string: hunt.huntMedia)!, completionHandler: {(data, response, error) -> Void in
+                let addImageToHunt = NSBlockOperation(block: {
+                    // set the image for the clue
+                    hunt.setImage(UIImage(data: data!)!)
+                    print("[HTTP] setting image for Hunt \(hunt.huntTitle)")
+                })
+                let queue = NSOperationQueue()
+                queue.maxConcurrentOperationCount = 1
+                queue.addOperation(addImageToHunt)
+            })
+            // start the downloadTask
+            downloadTask.resume()
+        }
+    }
+    
+    // gets images for the gameModes
+    func getImagesForGameModes(gameModeList: [GameModeObject]) {
+        print("[HTTP] getting images for all hunts!")
+        let downloadConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: downloadConfig)
+        for gameMode in gameModeList {
+            let downloadTask = session.dataTaskWithURL(NSURL(string: gameMode.gameModeMedia)!, completionHandler: {(data, response, error) -> Void in
+                let addImageToGameMode = NSBlockOperation(block: {
+                    // set the image for the clue
+                    gameMode.setImage(UIImage(data: data!)!)
+                    print("[HTTP] setting image for Hunt \(gameMode.gameModeTitle)")
+                })
+                let queue = NSOperationQueue()
+                queue.maxConcurrentOperationCount = 1
+                queue.addOperation(addImageToGameMode)
+            })
+            // start the downloadTask
+            downloadTask.resume()
+        }
+    }
+
     
     // get image from url
     func getImageFromUrl(url:String) -> UIImage {

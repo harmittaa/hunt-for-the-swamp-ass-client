@@ -63,11 +63,10 @@ class GameModeTableViewController: UITableViewController {
         let cellIdentifier = "GameModeTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! GameModeTableViewCell
         let gameMode = gameModes[indexPath.row]
-        //print("this is the picked game mode for the cell: \(gameMode)")
-        
+        // set data for the hunt cells
         cell.gaemModeTitle.text = gameMode.gameModeTitle
         cell.gameModeDesc.text = gameMode.gameModeDescription
-        
+        cell.gameModeImage.image = gameMode.gameModeImage
         
         return cell
     }

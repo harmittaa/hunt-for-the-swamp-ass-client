@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class HuntObject{
     
@@ -18,19 +19,27 @@ class HuntObject{
     var winTitle: String
     var winDesc: String
     var locationList: [LocationObject]?
+    var huntMedia: String
+    var huntImage: UIImage?
     
-    init(title: String, desc: String,winTit: String, winDes: String){
+    init(title: String, desc: String,winTit: String, winDes: String, huntMedia: String){
         self.huntTitle = title
         self.huntDescription = desc
         self.huntStartDate = NSDate()
         self.winTitle = winTit
         self.winDesc = winDes
+        self.huntMedia = huntMedia
         self.locationList = [LocationObject]()
     }
+    
     func resetAllLocations(){
         for a in self.locationList!{
             a.resetLocation()
         }
     }
     
+    // set image for the hunt
+    func setImage(image: UIImage) {
+        self.huntImage = image
+    }
 }
