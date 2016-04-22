@@ -45,6 +45,7 @@ class ClueObject{
 
     func resetClue(){
         if self.clueTier > 0{
+            print("[CLUE] resetted clue!")
             self.lockedStatus = true
         }
     }

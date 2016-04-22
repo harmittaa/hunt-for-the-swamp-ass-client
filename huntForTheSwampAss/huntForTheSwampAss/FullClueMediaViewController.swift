@@ -14,11 +14,12 @@ class FullClueMediaViewController: UIViewController {
     @IBOutlet weak var clueViewImage: UIImageView!
     var passedClue: ClueObject?
     var clueImage: UIImage?
+    var marker:MKPointAnnotation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // if the clue doesn't have an image
-        if passedClue?.hasImage != true {
+        if passedClue?.hasImage == false {
             // hide the clueViewImage
             clueViewImage.hidden = true
             // parse the coordinates from the clueMedia string
@@ -32,17 +33,36 @@ class FullClueMediaViewController: UIViewController {
             let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius * 2.0, regionRadius * 2.0)
             // set the map on the certain location and zoom it.
             clueViewMap.setRegion(coordinateRegion, animated: true)
-            // set maptype as satellite
-            clueViewMap.mapType = MKMapType.Satellite
-            // with these settings user can't interact with the map
-            clueViewMap.zoomEnabled = false
-            clueViewMap.scrollEnabled = false
-            clueViewMap.pitchEnabled = false
-            clueViewMap.rotateEnabled = false
-            clueViewMap.showsPointsOfInterest = false
-            clueViewMap.userInteractionEnabled = false
+            if passedClue?.clueTier == 0 {
+                // set maptype as satellite
+                clueViewMap.mapType = MKMapType.Satellite
+                // with these settings user can't interact with the map
+                clueViewMap.zoomEnabled = false
+                clueViewMap.scrollEnabled = false
+                clueViewMap.pitchEnabled = false
+                clueViewMap.rotateEnabled = false
+                clueViewMap.showsPointsOfInterest = false
+                clueViewMap.userInteractionEnabled = false
+            } else {
+                // set maptype as satellite
+                clueViewMap.mapType = MKMapType.HybridFlyover
+                // with these settings user can't interact with the map
+                marker = MKPointAnnotation()
+                marker!.coordinate = CLLocationCoordinate2D(
+                    latitude: Double(coordArr[0])!,
+                    longitude: Double(coordArr[1])!
+                )
+                marker!.title = "name here"
+                clueViewMap.addAnnotation(marker!)
+                clueViewMap.zoomEnabled = false
+                clueViewMap.scrollEnabled = false
+                clueViewMap.pitchEnabled = false
+                clueViewMap.rotateEnabled = false
+                clueViewMap.showsPointsOfInterest = false
+                clueViewMap.userInteractionEnabled = false
+            }
             
-        } else {
+        } else if passedClue?.hasImage == true {
             // the clue has an image
             clueViewMap.hidden = true
             clueViewImage.image = passedClue?.clueImage

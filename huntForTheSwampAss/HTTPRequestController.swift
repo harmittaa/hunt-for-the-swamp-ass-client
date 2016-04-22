@@ -101,7 +101,7 @@ class HTTPRequestController {
     
     // gets images for the gameModes
     func getImagesForGameModes(gameModeList: [GameModeObject]) {
-        print("[HTTP] getting images for all hunts!")
+        print("[HTTP] getting images for all GameMode!")
         let downloadConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: downloadConfig)
         for gameMode in gameModeList {
@@ -109,7 +109,7 @@ class HTTPRequestController {
                 let addImageToGameMode = NSBlockOperation(block: {
                     // set the image for the clue
                     gameMode.setImage(UIImage(data: data!)!)
-                    print("[HTTP] setting image for Hunt \(gameMode.gameModeTitle)")
+                    print("[HTTP] setting image for GameMode \(gameMode.gameModeTitle)")
                 })
                 let queue = NSOperationQueue()
                 queue.maxConcurrentOperationCount = 1

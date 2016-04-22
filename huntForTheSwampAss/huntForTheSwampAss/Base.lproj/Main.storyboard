@@ -82,7 +82,6 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6lK-pz-Y5w">
                                 <rect key="frame" x="20" y="81" width="288" height="263"/>
                                 <subviews>
-
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0du-Jb-Bsl">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="81"/>
                                         <subviews>
@@ -948,8 +947,8 @@
         <image name="test" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="N0W-GU-jA6"/>
-        <segue reference="Cx5-ZO-ONX"/>
+        <segue reference="xSD-WU-n2L"/>
         <segue reference="vI2-ZL-lSz"/>
+        <segue reference="fss-vp-0Lm"/>
     </inferredMetricsTieBreakers>
 </document>

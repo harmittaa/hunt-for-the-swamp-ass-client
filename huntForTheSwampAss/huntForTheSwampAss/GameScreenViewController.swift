@@ -12,26 +12,50 @@
 import UIKit
 import MapKit
 import CoreLocation
-class GameScreenViewController: UIViewController, CLLocationManagerDelegate, ViewObserverProtocol{
+class GameScreenViewController: UIViewController, CLLocationManagerDelegate, UITabBarControllerDelegate, ViewObserverProtocol{
     @IBOutlet weak var gameScreenMap: MKMapView!
     
     let locationManager = CLLocationManager()
     let gameController = gameControllerSingleton
     var isDisplayingPopup = false
+    var marker: MKPointAnnotation?
     
     //MARK: location manager shenanigans
     override func viewDidLoad() {
         super.viewDidLoad()
+        // register as a delegate
+        let asd = GameScreenTabBarController()
+        asd.delegate = self
         // ask the user to auth location always
         locationManager.requestAlwaysAuthorization()
         // set locationManager as the delegate for CLLocationManager to receive
         locationManager.delegate = self
         registerAsObserver()
+        // checks if the third clue has been unlocked, and drops a pin if it has been
+        checkClueStatus()
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func checkClueStatus() {
+        print("[GameScreenViewController] checking the clue status!")
+        print("[GameScreenViewController] the status is \(gameControllerSingleton.currentLocation?.clueList[2].lockedStatus)")
+        if gameControllerSingleton.currentLocation?.clueList[2].lockedStatus == false {
+            // with these settings user can't interact with the map
+            marker = MKPointAnnotation()
+            let coordinates: String = (gameControllerSingleton.currentLocation?.clueList[2].clueMedia)!
+            let coordArr = coordinates.componentsSeparatedByString("/")
+            marker!.coordinate = CLLocationCoordinate2D(
+                latitude: Double(coordArr[0])!,
+                longitude: Double(coordArr[1])!
+            )
+            marker!.title = "name here"
+            gameScreenMap.addAnnotation(marker!)
+        }
     }
     
     // when auth status changes this method is called

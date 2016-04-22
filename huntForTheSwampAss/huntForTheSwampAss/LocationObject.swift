@@ -27,6 +27,7 @@ class LocationObject:Equatable{
     func resetLocation(){
         self.isFound = false
         for c in clueList{
+            print("[LOCATION] resetting clues from location")
             c.resetClue()
         }
     }

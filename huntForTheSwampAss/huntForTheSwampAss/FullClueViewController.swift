@@ -47,8 +47,6 @@ class FullClueViewController: UIViewController, ViewObserverProtocol {
         beaconFinder.registerAsObserver(self)
     }
     
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

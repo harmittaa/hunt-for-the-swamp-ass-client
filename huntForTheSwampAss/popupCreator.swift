@@ -17,6 +17,7 @@ class PopupCreator{
         print("[ViewController] received notification as observer")
         //custom action with a segue
         let yesAction = UIAlertAction(title: "Yes", style: .Default, handler: { (testAction) -> Void in
+            gameControllerSingleton.completeHunt()
             self.gameController.currentHunt = nil
             self.gameController.currentLocation = nil
             buton.hidden = true

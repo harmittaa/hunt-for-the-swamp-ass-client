@@ -13,12 +13,15 @@ class GameScreenTabBarController: UITabBarController, ViewObserverProtocol {
     let gameController = gameControllerSingleton
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
         //disable back button so user can only go to main menu now
         self.navigationItem.hidesBackButton = true
         registerAsObserver()
         
+    }
+    
+    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+        print("[TAB BAR STuff]")
     }
     
     override func didReceiveMemoryWarning() {
