@@ -29,11 +29,11 @@ class JsonParser {
                 //print("[json] gamemodes get \(gameModes)")
                 for gameMode in gameModes {
                     //parse for hunts in gamemode
-                    let newGameModeObject = GameModeObject(gameDesc: gameMode["description"] as! String, gameTitle: (gameMode["title"] as? String)!, id: (gameMode["id"] as? Int)!)
+                    let newGameModeObject = GameModeObject(gameDesc: gameMode["description"] as! String, gameTitle: (gameMode["title"] as? String)!, id: (gameMode["id"] as? Int)!, gameModeMedia: gameMode["media"] as! String)
                     if let huntsOfGamemode = gameMode["Hunts"] as? [Payload]{
                         //print("[json] hunts get")
                         for hunt in huntsOfGamemode{
-                            let newHunt = HuntObject(title: hunt["title"] as! String, desc: hunt["description"] as! String, winTit: hunt["winTitle"] as! String, winDes: hunt["winDescription"] as! String)
+                            let newHunt = HuntObject(title: hunt["title"] as! String, desc: hunt["description"] as! String, winTit: hunt["winTitle"] as! String, winDes: hunt["winDescription"] as! String, huntMedia: hunt["media"] as! String)
                             //parse for locations in hunt
                             if let locationsList = hunt["Locations"] as? [Payload]{
                                 //print("[json] locations get")
@@ -63,13 +63,14 @@ class JsonParser {
                             }
                             gameControllerSingleton.allHunts.append(newHunt)
                             newGameModeObject.huntList.append(newHunt)
-                            //print("[json] size of gameMode Hunt list: \(newGameModeObject.huntList.count)")
                         }
                     }
                     gameControllerSingleton.allGameModes!.append(newGameModeObject)
                 }
             }
-            
+            // download images for hunts and gameModes
+            httpRequestControllerSingleton.getImagesForGameModes(gameControllerSingleton.allGameModes!)
+            httpRequestControllerSingleton.getImagesForHunts(gameControllerSingleton.allHunts)
         } catch {
             print(error)
         }

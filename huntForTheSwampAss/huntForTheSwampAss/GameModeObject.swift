@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class GameModeObject{
     var gameModeDescription: String?
@@ -14,11 +15,19 @@ class GameModeObject{
     var gameModeTitle: String?
     var gameModeId: Int
     var huntList: [HuntObject]
+    let gameModeMedia: String
+    var gameModeImage: UIImage?
     
-    init(gameDesc: String, gameTitle: String, id: Int){
+    init(gameDesc: String, gameTitle: String, id: Int, gameModeMedia: String){
         self.gameModeTitle = gameTitle
         self.gameModeDescription = gameDesc
         self.gameModeId = id
+        self.gameModeMedia = gameModeMedia
         self.huntList = [HuntObject]()
+    }
+    
+    // set image for the gamemode
+    func setImage(image: UIImage) {
+        self.gameModeImage = image
     }
 }
