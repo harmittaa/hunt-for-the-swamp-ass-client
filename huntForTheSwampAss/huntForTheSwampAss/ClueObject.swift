@@ -43,4 +43,10 @@ class ClueObject{
     func setImageBool(status: Bool) {
         self.hasImage = status;
     }
+    
+    func resetClue(){
+        if self.clueTier > 0{
+            self.lockedStatus = true
+        }
+    }
 }
