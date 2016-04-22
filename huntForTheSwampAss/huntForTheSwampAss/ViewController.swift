@@ -69,6 +69,7 @@ class ViewController: UIViewController, ViewObserverProtocol {
         let popCreator = PopupCreator()
         popCreator.createQuitHuntPopup(self, buton: quitHuntButton)
         gameControllerSingleton.completeHunt()
+
     }
     
     @IBAction func gameButtonAction(sender: UIButton) {
