@@ -30,7 +30,6 @@ class ClueObject{
         }else{
             self.lockedStatus = true
         }
-        print("[Clue] created a new clue with media \(self.clueMedia)")
     }
     
     // set the image for the clue

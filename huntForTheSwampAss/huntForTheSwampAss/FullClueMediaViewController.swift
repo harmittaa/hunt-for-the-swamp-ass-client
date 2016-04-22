@@ -17,8 +17,6 @@ class FullClueMediaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
         // if the clue doesn't have an image
         if passedClue?.hasImage != true {
             // hide the clueViewImage
@@ -34,6 +32,16 @@ class FullClueMediaViewController: UIViewController {
             let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius * 2.0, regionRadius * 2.0)
             // set the map on the certain location and zoom it.
             clueViewMap.setRegion(coordinateRegion, animated: true)
+            // set maptype as satellite
+            clueViewMap.mapType = MKMapType.Satellite
+            // with these settings user can't interact with the map
+            clueViewMap.zoomEnabled = false
+            clueViewMap.scrollEnabled = false
+            clueViewMap.pitchEnabled = false
+            clueViewMap.rotateEnabled = false
+            clueViewMap.showsPointsOfInterest = false
+            clueViewMap.userInteractionEnabled = false
+            
         } else {
             // the clue has an image
             clueViewMap.hidden = true
