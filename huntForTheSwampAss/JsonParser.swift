@@ -74,6 +74,6 @@ class JsonParser {
         } catch {
             print(error)
         }
-        
+        print("[json] DONE PARSING")
     }
 }

@@ -63,11 +63,26 @@ class GameModeTableViewController: UITableViewController {
         let cellIdentifier = "GameModeTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! GameModeTableViewCell
         let gameMode = gameModes[indexPath.row]
+        let listOfHunts = gameMode.huntList
         // set data for the hunt cells
         cell.gaemModeTitle.text = gameMode.gameModeTitle
         cell.gameModeDesc.text = gameMode.gameModeDescription
-        cell.gameModeImage.image = gameMode.gameModeImage
-        
+        //create the background images for the cell using the list of hunts that the gameMode has
+        var xCoord:CGFloat = 0
+        for i in listOfHunts{
+            print("[cell] making a BG")
+            let image = i.huntImage
+            let imageView = UIImageView(image: image!)
+            let newSize = calculateNewDimensionsOfImage(image!.size)
+            imageView.frame = CGRect(x: xCoord, y: 0, width: newSize.width, height: newSize.height)
+            //to get to the view of the cell, use self.contentView
+            cell.contentView.addSubview(imageView)
+            cell.contentView.sendSubviewToBack(imageView)
+            //self.contentView.bringSubviewToFront(gameModeDesc)
+            //self.contentView.bringSubviewToFront(gameModeImage)
+            cell.listOfBackgroundImages.append(imageView)
+            xCoord += newSize.width
+        }
         return cell
     }
     
@@ -75,6 +90,22 @@ class GameModeTableViewController: UITableViewController {
     //get the cell index and pass it into the segue for the new viewcontroller
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         passedIndex = indexPath.row
+    }
+    
+    func calculateNewDimensionsOfImage(imageDimension: CGSize) -> CGSize{
+        let currentSize = CGSize(width: 90, height: 90)
+        print("[sizecalc] received size: \(imageDimension.height)   \(imageDimension.width)")
+        print("[sizecalc] container size: \(currentSize.height)   \(currentSize.width)")
+        //check image dimensions, which way it will get cropped
+        if(imageDimension.height >= imageDimension.width){
+            //check if the image is smaller or bigger than the container, this determines if it will be shrunk or stretched
+            let aspectRatio = currentSize.height / imageDimension.height
+            return CGSize(width: (imageDimension.width * aspectRatio), height: currentSize.height)
+        }
+        else{
+            let aspectRatio = currentSize.width / imageDimension.width
+            return CGSize(width: currentSize.width, height: (imageDimension.height*aspectRatio))
+        }
     }
     
     

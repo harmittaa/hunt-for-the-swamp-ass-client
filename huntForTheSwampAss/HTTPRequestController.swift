@@ -109,7 +109,7 @@ class HTTPRequestController {
                 let addImageToGameMode = NSBlockOperation(block: {
                     // set the image for the clue
                     gameMode.setImage(UIImage(data: data!)!)
-                    print("[HTTP] setting image for Hunt \(gameMode.gameModeTitle)")
+                    print("[HTTP] setting image for GameMode \(gameMode.gameModeTitle)")
                 })
                 let queue = NSOperationQueue()
                 queue.maxConcurrentOperationCount = 1
