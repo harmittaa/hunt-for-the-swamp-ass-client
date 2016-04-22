@@ -6,7 +6,7 @@
 //  Copyright © 2016 iosdev. All rights reserved.
 
 
-// Daniel: isodev.example.huntForTheSwampAss
+// Daniel: iosdev.example.huntForTheSwampAss
 // matti: fi.metropolia.huntForTheSwampAss
 
 import UIKit
@@ -68,6 +68,7 @@ class ViewController: UIViewController, ViewObserverProtocol {
     @IBAction func quitCurrentHunt(sender: UIButton) {
         let popCreator = PopupCreator()
         popCreator.createQuitHuntPopup(self, buton: quitHuntButton)
+        gameControllerSingleton.completeHunt()
     }
     
     @IBAction func gameButtonAction(sender: UIButton) {
