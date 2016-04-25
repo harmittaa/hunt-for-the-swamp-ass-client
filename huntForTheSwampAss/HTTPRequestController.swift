@@ -48,6 +48,28 @@ class HTTPRequestController {
             }.resume()
     }
     
+    // gets images for the selected hunt's locations
+    func getImagesForLocations(locationList: [LocationObject]) {
+        print("[HTTP] getting images for locations!")
+        let downloadConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: downloadConfig)
+        for location in locationList {
+            let downloadTask = session.dataTaskWithURL(NSURL(string: location.locationMedia)!, completionHandler: {(data, response, error) -> Void in
+                let addImageToLocations = NSBlockOperation(block: {
+                    // set the image for the location
+                    location.setImage(UIImage(data: data!)!)
+                    print("[HTTP] setting image for clue \(location.locationTitle)")
+                })
+                let queue = NSOperationQueue()
+                queue.maxConcurrentOperationCount = 1
+                queue.addOperation(addImageToLocations)
+            })
+            // start the downloadTask
+            downloadTask.resume()
+        }
+    }
+    
+    
     // gets images for the selected hunt's locations clues
     func getImages(locationList: [LocationObject]) {
         print("[HTTP] getting images for all clues!")
@@ -101,7 +123,7 @@ class HTTPRequestController {
     
     // gets images for the gameModes
     func getImagesForGameModes(gameModeList: [GameModeObject]) {
-        print("[HTTP] getting images for all GameMode!")
+        print("[HTTP] getting images for all GameModes!")
         let downloadConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: downloadConfig)
         for gameMode in gameModeList {
@@ -119,7 +141,7 @@ class HTTPRequestController {
             downloadTask.resume()
         }
     }
-
+    
     
     // get image from url
     func getImageFromUrl(url:String) -> UIImage {

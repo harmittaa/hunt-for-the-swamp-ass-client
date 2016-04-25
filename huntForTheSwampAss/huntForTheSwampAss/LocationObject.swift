@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class LocationObject:Equatable{
     var beacon: BeaconObject?
@@ -16,12 +17,15 @@ class LocationObject:Equatable{
     var isFound: Bool
     var locationId: Int
     var locationTitle: String
+    var locationMedia: String
+    var locationImage: UIImage?
     
-    init(winTit:String,windDes: String, id: Int, title: String){
+    init(winTit:String,windDes: String, id: Int, title: String, locationMedia: String){
         self.isFound = false
         self.winDesc = windDes
         self.winTitle = winTit
         self.locationTitle = title
+        self.locationMedia = locationMedia
         clueList = [ClueObject]()
         locationId = id
     }
@@ -32,6 +36,10 @@ class LocationObject:Equatable{
             print("[LOCATION] resetting clues from location")
             c.resetClue()
         }
+    }
+    
+    func setImage(image: UIImage) {
+        self.locationImage = image
     }
 }
 
