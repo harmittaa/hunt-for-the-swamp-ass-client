@@ -62,7 +62,6 @@ class CluesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //check if clue is locked or not, configure accordingly
         if (!listOfClues![indexPath.row].lockedStatus){
-            print("[GameClueScreen] this cell is not locked")
             let textCellIdentifier = "clueCell"
             let cell = self.tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! GameScreenCluesTableViewCell
             cell.clueTitle.text = "Clue #\(listOfClues![indexPath.row].clueTier+1)"
