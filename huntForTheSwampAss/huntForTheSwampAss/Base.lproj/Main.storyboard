@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="MEu-Wn-Qxe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="P30-lE-Smh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -33,7 +33,7 @@
             <objects>
                 <tableViewController id="VhP-Zh-tKY" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="laT-ZG-MCQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -69,93 +69,26 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNh-2K-dkb">
-                                <rect key="frame" x="20" y="518" width="85" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNh-2K-dkb">
+                                <rect key="frame" x="20" y="454" width="85" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="vDJ-52-t1J"/>
+                                    <constraint firstAttribute="height" constant="30" id="vSv-N4-oIm"/>
+                                </constraints>
                                 <state key="normal" title="Cancel Hunt"/>
                                 <connections>
                                     <action selector="quitCurrentHunt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H5H-y0-NbE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="top" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMp-Y6-X2b">
-                                <rect key="frame" x="20" y="189" width="280" height="50"/>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="34"/>
-                                <size key="titleShadowOffset" width="2" height="2"/>
-                                <state key="normal" title="Game" image="game">
-                                    <color key="titleColor" red="0.45894026756286621" green="0.76938492059707642" blue="0.016787948086857796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.5065881609916687" green="0.7709687352180481" blue="0.0390799380838871" alpha="0.50355603449999997" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="gameButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A1b-LU-M2U"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="top" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoM-6K-8Jf">
-                                <rect key="frame" x="20" y="247" width="280" height="50"/>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
-                                <size key="titleShadowOffset" width="2" height="2"/>
-                                <state key="normal" title="Leaderboards" image="leaderboard">
-                                    <color key="titleColor" red="0.45894026756286621" green="0.76938492059707642" blue="0.016787948086857796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.5065881609916687" green="0.7709687352180481" blue="0.0390799380838871" alpha="0.50355603449999997" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="VhP-Zh-tKY" kind="push" id="t8a-Tj-iMi"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="top" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rto-Kx-sp7">
-                                <rect key="frame" x="20" y="305" width="280" height="50"/>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
-                                <size key="titleShadowOffset" width="2" height="2"/>
-                                <state key="normal" title="Achievements" image="achievements">
-                                    <color key="titleColor" red="0.45894026756286621" green="0.76938492059707642" blue="0.016787948086857796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.5065881609916687" green="0.7709687352180481" blue="0.0390799380838871" alpha="0.50355603449999997" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="hEg-1I-NZ2" kind="push" id="ANS-aH-z8J"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="top" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbh-Bl-Elv">
-                                <rect key="frame" x="20" y="363" width="280" height="50"/>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
-                                <size key="titleShadowOffset" width="2" height="2"/>
-                                <state key="normal" title="Profile" image="profile">
-                                    <color key="titleColor" red="0.45894026756286621" green="0.76938492059707642" blue="0.016787948086857796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.5065881609916687" green="0.7709687352180481" blue="0.0390799380838871" alpha="0.50355603449999997" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="hSU-Ul-Nhl" kind="push" id="jq9-C0-BxQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="top" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZd-FU-CP9">
-                                <rect key="frame" x="20" y="421" width="280" height="50"/>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
-                                <size key="titleShadowOffset" width="2" height="2"/>
-                                <state key="normal" title="Team" image="team">
-                                    <color key="titleColor" red="0.45894026756286621" green="0.76938492059707642" blue="0.016787948086857796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.5065881609916687" green="0.7709687352180481" blue="0.0390799380838871" alpha="0.50355603449999997" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Gxg-pQ-nkS" kind="push" id="PLa-4e-7Eo"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="top" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLC-7W-NJn">
-                                <rect key="frame" x="265" y="513" width="35" height="35"/>
+                            <button opaque="NO" contentMode="top" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLC-7W-NJn">
+                                <rect key="frame" x="265" y="449" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="OJX-6p-fkk"/>
+                                    <constraint firstAttribute="height" constant="35" id="i0C-wy-vfr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
                                 <size key="titleShadowOffset" width="2" height="2.2250738585072014e-308"/>
                                 <state key="normal" image="settings">
@@ -166,10 +99,103 @@
                                     <segue destination="jtf-NC-0je" kind="push" id="L2c-9b-gfQ"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ale-XL-oS7">
+                                <rect key="frame" x="20" y="137" width="290" height="270"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="top" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMp-Y6-X2b">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="50"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="34"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" title="Game" image="game">
+                                            <color key="titleColor" red="0.45894026756286621" green="0.76938492059707642" blue="0.016787948086857796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.5065881609916687" green="0.7709687352180481" blue="0.0390799380838871" alpha="0.50355603449999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gameButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A1b-LU-M2U"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="top" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoM-6K-8Jf">
+                                        <rect key="frame" x="0.0" y="55" width="290" height="50"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" title="Leaderboards" image="leaderboard">
+                                            <color key="titleColor" red="0.45894026756286621" green="0.76938492059707642" blue="0.016787948086857796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.5065881609916687" green="0.7709687352180481" blue="0.0390799380838871" alpha="0.50355603449999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="VhP-Zh-tKY" kind="push" id="t8a-Tj-iMi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="top" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rto-Kx-sp7">
+                                        <rect key="frame" x="0.0" y="110" width="290" height="50"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" title="Achievements" image="achievements">
+                                            <color key="titleColor" red="0.45894026756286621" green="0.76938492059707642" blue="0.016787948086857796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.5065881609916687" green="0.7709687352180481" blue="0.0390799380838871" alpha="0.50355603449999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="hEg-1I-NZ2" kind="push" id="ANS-aH-z8J"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="top" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbh-Bl-Elv">
+                                        <rect key="frame" x="0.0" y="165" width="290" height="50"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" title="Profile" image="profile">
+                                            <color key="titleColor" red="0.45894026756286621" green="0.76938492059707642" blue="0.016787948086857796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.5065881609916687" green="0.7709687352180481" blue="0.0390799380838871" alpha="0.50355603449999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="hSU-Ul-Nhl" kind="push" id="jq9-C0-BxQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="top" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZd-FU-CP9">
+                                        <rect key="frame" x="0.0" y="220" width="290" height="50"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" title="Team" image="team">
+                                            <color key="titleColor" red="0.45894026756286621" green="0.76938492059707642" blue="0.016787948086857796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.5065881609916687" green="0.7709687352180481" blue="0.0390799380838871" alpha="0.50355603449999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Gxg-pQ-nkS" kind="push" id="PLa-4e-7Eo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="D2H-1I-GdC"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MNh-2K-dkb" secondAttribute="bottom" constant="20" id="0a0-I5-suX"/>
+                            <constraint firstItem="MNh-2K-dkb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1WN-nc-04W"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NLC-7W-NJn" secondAttribute="bottom" constant="20" id="PEH-rp-3Km"/>
+                            <constraint firstItem="ale-XL-oS7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="190" id="i0w-os-meu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ale-XL-oS7" secondAttribute="trailing" constant="28" id="jUN-Nq-hQ3"/>
+                            <constraint firstItem="NLC-7W-NJn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="nOh-90-PgN"/>
+                            <constraint firstItem="ale-XL-oS7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="s3I-5G-fpS"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hunt for the Swamp Ass" id="efp-1c-dR6"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="quitHuntButton" destination="MNh-2K-dkb" id="pAp-P5-avb"/>
                         <segue destination="W5O-J3-E5f" kind="push" identifier="MainMenuToGameModes" id="vEO-Dq-B6V"/>
@@ -190,7 +216,7 @@
                         <viewControllerLayoutGuide type="bottom" id="DwW-Vn-opL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lz6-wo-IGY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ymS-cX-LKb">
@@ -237,7 +263,7 @@
             <objects>
                 <tableViewController id="Gxg-pQ-nkS" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="94v-Jn-rgV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -273,50 +299,64 @@
                         <viewControllerLayoutGuide type="bottom" id="nyf-2g-E0f"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="A4x-fq-R9v">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxx-oW-3x7">
-                                <rect key="frame" x="95" y="473" width="131" height="75"/>
+                                <rect key="frame" x="6" y="409" width="309" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="LmY-dW-lZR"/>
+                                    <constraint firstAttribute="height" constant="75" id="Gk3-fg-50a"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
-                                <state key="normal" title="Continue"/>
+                                <state key="normal" title="Start Next Location"/>
                                 <connections>
                                     <action selector="contienuButtonAction:" destination="gil-vj-rtF" eventType="touchUpInside" id="lbz-gc-ivE"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="7af-VA-rxn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="7af-VA-rxn">
                                 <rect key="frame" x="6" y="54" width="309" height="164"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="164" id="aLQ-xi-LH8"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Soa-Qn-cKH">
-                                <rect key="frame" x="6" y="226" width="309" height="239"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Soa-Qn-cKH">
+                                <rect key="frame" x="6" y="261" width="309" height="204"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="be7-6k-qqf">
+                                <rect key="frame" x="20" y="226" width="280" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="jFa-S2-2k9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7af-VA-rxn" firstAttribute="leading" secondItem="A4x-fq-R9v" secondAttribute="leadingMargin" constant="-10" id="3RF-Xv-0mn"/>
-                            <constraint firstAttribute="bottom" secondItem="Vxx-oW-3x7" secondAttribute="bottom" constant="20" symbolic="YES" id="AMT-QR-lRE"/>
-                            <constraint firstItem="7af-VA-rxn" firstAttribute="leading" secondItem="Soa-Qn-cKH" secondAttribute="leading" id="LLS-Jo-8M1"/>
-                            <constraint firstItem="Vxx-oW-3x7" firstAttribute="top" secondItem="Soa-Qn-cKH" secondAttribute="bottom" constant="8" symbolic="YES" id="O3u-b2-Yh9"/>
-                            <constraint firstItem="Vxx-oW-3x7" firstAttribute="leading" secondItem="A4x-fq-R9v" secondAttribute="leadingMargin" constant="79" id="XAb-QA-XCx"/>
+                            <constraint firstItem="Soa-Qn-cKH" firstAttribute="top" secondItem="be7-6k-qqf" secondAttribute="bottom" constant="8" symbolic="YES" id="47g-LO-3BC"/>
+                            <constraint firstItem="be7-6k-qqf" firstAttribute="leading" secondItem="A4x-fq-R9v" secondAttribute="leadingMargin" constant="4" id="SZK-iA-Sl2"/>
+                            <constraint firstItem="be7-6k-qqf" firstAttribute="top" secondItem="7af-VA-rxn" secondAttribute="bottom" constant="8" symbolic="YES" id="U3V-vL-ZSh"/>
                             <constraint firstItem="7af-VA-rxn" firstAttribute="centerX" secondItem="A4x-fq-R9v" secondAttribute="centerX" id="YG7-Id-89t"/>
+                            <constraint firstItem="be7-6k-qqf" firstAttribute="centerX" secondItem="7af-VA-rxn" secondAttribute="centerX" id="YQW-uP-kyT"/>
                             <constraint firstItem="7af-VA-rxn" firstAttribute="top" secondItem="97V-f3-PBc" secondAttribute="bottom" constant="34" id="YYK-yx-rsR"/>
-                            <constraint firstItem="Soa-Qn-cKH" firstAttribute="centerX" secondItem="Vxx-oW-3x7" secondAttribute="centerX" id="aU8-EP-8sj"/>
-                            <constraint firstItem="Soa-Qn-cKH" firstAttribute="top" secondItem="7af-VA-rxn" secondAttribute="bottom" constant="8" symbolic="YES" id="nEk-Oi-Eci"/>
-                            <constraint firstItem="7af-VA-rxn" firstAttribute="trailing" secondItem="Soa-Qn-cKH" secondAttribute="trailing" id="puU-AP-jzu"/>
+                            <constraint firstItem="Vxx-oW-3x7" firstAttribute="trailing" secondItem="Soa-Qn-cKH" secondAttribute="trailing" id="l0A-aL-95o"/>
+                            <constraint firstItem="Vxx-oW-3x7" firstAttribute="leading" secondItem="Soa-Qn-cKH" secondAttribute="leading" id="lxd-H4-Tr3"/>
+                            <constraint firstAttribute="bottom" secondItem="Vxx-oW-3x7" secondAttribute="bottom" constant="20" symbolic="YES" id="m8h-DZ-fgg"/>
+                            <constraint firstItem="be7-6k-qqf" firstAttribute="centerX" secondItem="Soa-Qn-cKH" secondAttribute="centerX" id="pIC-fa-TuO"/>
+                            <constraint firstItem="Vxx-oW-3x7" firstAttribute="leading" secondItem="7af-VA-rxn" secondAttribute="leading" id="zJY-wE-84C"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pyL-Do-Cph"/>
                     <connections>
+                        <outlet property="locationFoundImage" destination="7af-VA-rxn" id="39K-al-wcH"/>
+                        <outlet property="locationFoundTextField" destination="Soa-Qn-cKH" id="ygV-Zd-zIK"/>
+                        <outlet property="locationFoundTitle" destination="be7-6k-qqf" id="sOm-pQ-oTr"/>
                         <segue destination="yrv-B1-xw0" kind="push" identifier="HuntCompleteSegue" id="23v-tP-0n0"/>
                         <segue destination="DZv-cf-fVT" kind="push" identifier="LocationCompleteSegue" id="gq6-zr-jp6"/>
                     </connections>
@@ -334,23 +374,23 @@
                         <viewControllerLayoutGuide type="bottom" id="33W-7O-5Wn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DfA-00-gEh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="achievements" translatesAutoresizingMaskIntoConstraints="NO" id="Hih-2F-gB1">
                                 <rect key="frame" x="9" y="72" width="302" height="187"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Ch-Hc-Dy7">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="4Ch-Hc-Dy7">
                                 <rect key="frame" x="9" y="302" width="302" height="175"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="175" id="Fkd-68-MLN"/>
                                 </constraints>
                                 <string key="text">Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcz-bh-i84">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcz-bh-i84">
                                 <rect key="frame" x="95" y="485" width="131" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="AuU-rX-BwW"/>
@@ -362,12 +402,12 @@
                                     <segue destination="BYZ-38-t0r" kind="push" id="N0W-GU-jA6"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ren-zL-Eg4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ren-zL-Eg4">
                                 <rect key="frame" x="9" y="267" width="302" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="14y-QL-2IY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -404,7 +444,7 @@
             <objects>
                 <tableViewController id="W5O-J3-E5f" customClass="GameModeTableViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uhh-Ww-2aw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -470,30 +510,27 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="WhC-Cq-Kcq">
                                             <rect key="frame" x="0.0" y="0.0" width="89" height="89"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5Z-xH-JHS">
-                                            <rect key="frame" x="97" y="8" width="182" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P5Z-xH-JHS">
+                                            <rect key="frame" x="97" y="8" width="190" height="21"/>
+                                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="shadowOffset" width="1" height="1"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mc3-kS-Eip">
-                                            <rect key="frame" x="97" y="34" width="182" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="none" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mc3-kS-Eip">
+                                            <rect key="frame" x="97" y="34" width="190" height="47"/>
+                                            <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKQ-d5-kM1">
-                                            <rect key="frame" x="97" y="60" width="182" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="shadowOffset" width="0.0" height="0.0"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="huntDesc" destination="Mc3-kS-Eip" id="2DU-N3-laP"/>
                                     <outlet property="huntImage" destination="WhC-Cq-Kcq" id="Efp-ro-0TC"/>
-                                    <outlet property="huntStartDate" destination="aKQ-d5-kM1" id="CI0-vN-0fT"/>
                                     <outlet property="huntTitle" destination="P5Z-xH-JHS" id="IOn-la-sGE"/>
                                     <segue destination="DZv-cf-fVT" kind="push" id="EKk-IK-R0n"/>
                                 </connections>
@@ -519,11 +556,11 @@
                         <viewControllerLayoutGuide type="bottom" id="j6I-IL-9G6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7gE-W9-L60">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Wf-xK-kiZ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Wf-xK-kiZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <connections>
                                     <segue destination="cKV-I4-VWB" kind="embed" identifier="ClueTableContainerSegue" id="6kL-jd-Fl0"/>
                                 </connections>
@@ -556,11 +593,11 @@
                         <viewControllerLayoutGuide type="bottom" id="6Yk-G4-WUU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="N02-on-dwo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zX0-cp-aeU">
-                                <rect key="frame" x="20" y="28" width="280" height="522"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zX0-cp-aeU">
+                                <rect key="frame" x="20" y="28" width="280" height="478"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxq-KC-ZRI">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="178"/>
@@ -569,13 +606,13 @@
                                         </connections>
                                     </containerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB9-2G-Crx">
-                                        <rect key="frame" x="0.0" y="193" width="280" height="36"/>
+                                        <rect key="frame" x="0.0" y="193" width="280" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xdt-Q8-a8C">
-                                        <rect key="frame" x="0.0" y="244" width="280" height="278"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xdt-Q8-a8C">
+                                        <rect key="frame" x="0.0" y="208" width="280" height="270"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -614,7 +651,7 @@
                         <viewControllerLayoutGuide type="bottom" id="tae-0j-oDg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tok-Hw-K7j">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tpt-Va-cRZ">
@@ -644,13 +681,14 @@
             <objects>
                 <tabBarController id="DZv-cf-fVT" customClass="GameScreenTabBarController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="3y4-v0-msU">
-                        <barButtonItem key="leftBarButtonItem" title="Main Menu" id="sRi-Vu-EI0">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="sRi-Vu-EI0">
                             <connections>
                                 <action selector="goToMainMenu:" destination="DZv-cf-fVT" id="beH-as-KJV"/>
                                 <segue destination="BYZ-38-t0r" kind="push" id="fss-vp-0Lm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="L2j-IX-7Ua">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -671,7 +709,7 @@
             <objects>
                 <tableViewController id="hEg-1I-NZ2" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fh0-GX-2ef">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -725,7 +763,7 @@
                         <viewControllerLayoutGuide type="bottom" id="xvx-mY-IuN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="N3Q-WO-l1R">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="178"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EFA-mM-vc7">
@@ -773,7 +811,7 @@
             <objects>
                 <tableViewController id="cKV-I4-VWB" customClass="CluesTableViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="K2a-gy-Nsr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -872,7 +910,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="N0W-GU-jA6"/>
-        <segue reference="Cx5-ZO-ONX"/>
-        <segue reference="vI2-ZL-lSz"/>
+        <segue reference="xSD-WU-n2L"/>
+        <segue reference="gq6-zr-jp6"/>
     </inferredMetricsTieBreakers>
 </document>

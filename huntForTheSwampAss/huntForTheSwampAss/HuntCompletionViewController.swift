@@ -14,6 +14,7 @@ class HuntCompletionViewController: UIViewController {
     @IBOutlet weak var huntCompletionText: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Congratulations!"
         huntCompletionText.text = gameControllerSingleton.currentHunt!.winDesc
         huntCompletionTitle.text = gameControllerSingleton.currentHunt!.winTitle
         gameControllerSingleton.completeHunt()    }

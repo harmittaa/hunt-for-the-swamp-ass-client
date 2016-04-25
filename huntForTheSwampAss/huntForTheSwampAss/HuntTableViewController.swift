@@ -47,20 +47,15 @@ class HuntTableViewController: UITableViewController{
         print("[HuntTableViewCtrl]cell : \(cell)")
         // set data for the hunt cells
         cell.huntTitle.text = gameControllerSingleton.selectedGameMode!.huntList[indexPath.row].huntTitle
+        
         cell.huntDesc.text = gameControllerSingleton.selectedGameMode!.huntList[indexPath.row].huntDescription
+        
         cell.huntImage.image = gameControllerSingleton.selectedGameMode!.huntList[indexPath.row].huntImage
-        cell.huntStartDate.text = "Start Date Here"//String(listOfHunts[indexPath.row].huntStartDate)
+        //cell.huntStartDate.text = "Start Date Here"//String(listOfHunts[indexPath.row].huntStartDate)
         
         return cell
     }
     
-    /*override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-     print("delegate \(tableView.delegate)")
-     print("[HuntTableView] help pls \(indexPath.row)")
-     let cell = tableView.dequeueReusableCellWithIdentifier("HuntTableViewCell", forIndexPath: indexPath) as? HuntTableViewCell
-     //print(cell)
-     return indexPath
-     }*/
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("[HuntTableView] exiting hunt table view")
