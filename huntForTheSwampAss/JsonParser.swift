@@ -38,7 +38,7 @@ class JsonParser {
                             if let locationsList = hunt["Locations"] as? [Payload]{
                                 //print("[json] locations get")
                                 for locationn in locationsList{
-                                    let newLocation = LocationObject(winTit: locationn["winTitle"]! as! String, windDes: locationn["winDescription"]! as! String, id: locationn["id"]!.integerValue, title: locationn["title"]! as! String)
+                                    let newLocation = LocationObject(winTit: locationn["winTitle"]! as! String, windDes: locationn["winDescription"]! as! String, id: locationn["id"]!.integerValue, title: locationn["title"]! as! String, locationMedia: locationn["media"]! as! String)
                                     //parse for single beacon
                                     if let beeconi = locationn["Beacon"] as? [Payload]{
                                         //print("[json] beacon get")

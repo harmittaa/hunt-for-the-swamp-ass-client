@@ -62,6 +62,7 @@ class HuntTableViewController: UITableViewController{
         gameController.currentHunt = gameController.allHunts[indexPath.row]
         // get images for all of the clues in this hunt
         httpRequestControllerSingleton.getImages((gameControllerSingleton.currentHunt?.locationList)!)
+        httpRequestControllerSingleton.getImagesForLocations((gameControllerSingleton.currentHunt?.locationList)!)
         gameController.currentLocation = gameController.currentHunt!.locationList![0]
     }
     

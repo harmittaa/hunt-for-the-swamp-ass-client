@@ -7,6 +7,7 @@
 //
 
 //!!!! THIS VIEW IS NOT AN OBSERVER !!!!!!
+// this is shown when user finds a location
 
 import UIKit
 
