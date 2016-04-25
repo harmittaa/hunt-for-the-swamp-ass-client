@@ -17,11 +17,6 @@ class GameScreenTabBarController: UITabBarController, ViewObserverProtocol {
         //disable back button so user can only go to main menu now
         self.navigationItem.hidesBackButton = true
         registerAsObserver()
-        
-    }
-    
-    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
-        print("[TAB BAR STuff]")
     }
     
     override func didReceiveMemoryWarning() {

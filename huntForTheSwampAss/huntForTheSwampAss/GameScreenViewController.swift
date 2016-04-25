@@ -12,7 +12,7 @@
 import UIKit
 import MapKit
 import CoreLocation
-class GameScreenViewController: UIViewController, CLLocationManagerDelegate, UITabBarControllerDelegate, ViewObserverProtocol{
+class GameScreenViewController: UIViewController, CLLocationManagerDelegate, ViewObserverProtocol{
     @IBOutlet weak var gameScreenMap: MKMapView!
     
     let locationManager = CLLocationManager()
@@ -23,9 +23,6 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate, UIT
     //MARK: location manager shenanigans
     override func viewDidLoad() {
         super.viewDidLoad()
-        // register as a delegate
-        let asd = GameScreenTabBarController()
-        asd.delegate = self
         // ask the user to auth location always
         locationManager.requestAlwaysAuthorization()
         // set locationManager as the delegate for CLLocationManager to receive
@@ -35,25 +32,30 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate, UIT
         checkClueStatus()
     }
     
+    // This is called when the view appears, the check for any additional markers to be put on the map is done
+    override func viewDidAppear(animated: Bool) {
+        checkClueStatus()
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // if the third clue is unlocked sets a marker on the map
     func checkClueStatus() {
-        print("[GameScreenViewController] checking the clue status!")
-        print("[GameScreenViewController] the status is \(gameControllerSingleton.currentLocation?.clueList[2].lockedStatus)")
         if gameControllerSingleton.currentLocation?.clueList[2].lockedStatus == false {
-            // with these settings user can't interact with the map
+            // Create the marker
             marker = MKPointAnnotation()
+            // set coordinates from the cluemedia to the marker
             let coordinates: String = (gameControllerSingleton.currentLocation?.clueList[2].clueMedia)!
             let coordArr = coordinates.componentsSeparatedByString("/")
             marker!.coordinate = CLLocationCoordinate2D(
                 latitude: Double(coordArr[0])!,
                 longitude: Double(coordArr[1])!
             )
-            marker!.title = "name here"
+            marker!.title = gameControllerSingleton.currentLocation?.locationTitle
             gameScreenMap.addAnnotation(marker!)
         }
     }

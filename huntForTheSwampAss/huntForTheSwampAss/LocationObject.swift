@@ -15,11 +15,13 @@ class LocationObject:Equatable{
     var winTitle: String
     var isFound: Bool
     var locationId: Int
+    var locationTitle: String
     
-    init(winTit:String,windDes: String, id: Int){
+    init(winTit:String,windDes: String, id: Int, title: String){
         self.isFound = false
         self.winDesc = windDes
         self.winTitle = winTit
+        self.locationTitle = title
         clueList = [ClueObject]()
         locationId = id
     }
