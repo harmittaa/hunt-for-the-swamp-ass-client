@@ -37,6 +37,7 @@ class HuntCompletionViewController: UIViewController {
         if segue.identifier == "LocationMediaSegue"{
             let destCtrl = segue.destinationViewController as! LocationFoundMediaViewController
             destCtrl.passedSelf = mediaContainer
+            destCtrl.isHunt = true
         }
         
         

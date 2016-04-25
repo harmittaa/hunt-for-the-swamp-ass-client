@@ -10,10 +10,17 @@ import UIKit
 
 class LocationFoundMediaViewController: UIViewController {
     var passedSelf: UIView?
+    var isHunt: Bool?
     override func viewDidLoad() {
         super.viewDidLoad()
         //image and imageview
-        let imageToDisplay = gameControllerSingleton.currentHunt!.huntImage
+        var imageToDisplay: UIImage
+        if isHunt! {
+            imageToDisplay = gameControllerSingleton.currentHunt!.huntImage!
+        }
+        else{
+            imageToDisplay = gameControllerSingleton.currentLocation!.locationImage!
+        }
         let imageToDisplayView = UIImageView(image: imageToDisplay)
         //sizes
         let currentSizeOfView = imageToDisplayView.frame.size
