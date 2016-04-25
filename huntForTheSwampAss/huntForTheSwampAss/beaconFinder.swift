@@ -36,8 +36,8 @@ class BeaconFinder: NSObject, CLLocationManagerDelegate {
             if (knownBeacons.count > 0) {
                 for b in knownBeacons{
                     let convertedBeacon = BeaconObject(beaconmajor: b.major.integerValue, beaconminor: b.minor.integerValue)
-                    print("[beaconFinder] comparing beacons: -Current- \(gameController.currentLocation!.beacon!.beaconMajor) -found- \(convertedBeacon.beaconMajor)")
-                    print("[beaconFinder] comparing beacons: -Current- \(gameController.currentLocation!.beacon!.beaconMinor) -found- \(convertedBeacon.beaconMinor)")
+                    /*print("[beaconFinder] comparing beacons: -Current- \(gameController.currentLocation!.beacon!.beaconMajor) -found- \(convertedBeacon.beaconMajor)")
+                    print("[beaconFinder] comparing beacons: -Current- \(gameController.currentLocation!.beacon!.beaconMinor) -found- \(convertedBeacon.beaconMinor)")*/
                     if(gameController.currentLocation?.beacon == convertedBeacon){
                         if(!gameController.currentLocation!.isFound){
                             print("[BeaconFinder]!!!!! FOUND CORRECT BEACON !!!!!")
