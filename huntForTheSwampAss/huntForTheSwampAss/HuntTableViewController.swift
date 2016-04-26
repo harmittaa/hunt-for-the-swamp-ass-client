@@ -16,13 +16,8 @@ class HuntTableViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print("[HuntsTableViewController] \(listOfHunts)")
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        //MARK: sample data is loaded
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "hunts_bg"))
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,8 +46,8 @@ class HuntTableViewController: UITableViewController{
         cell.huntDesc.text = gameControllerSingleton.selectedGameMode!.huntList[indexPath.row].huntDescription
         
         cell.huntImage.image = gameControllerSingleton.selectedGameMode!.huntList[indexPath.row].huntImage
-        //cell.huntStartDate.text = "Start Date Here"//String(listOfHunts[indexPath.row].huntStartDate)
         
+        cell.backgroundColor = UIColor.clearColor()
         return cell
     }
     

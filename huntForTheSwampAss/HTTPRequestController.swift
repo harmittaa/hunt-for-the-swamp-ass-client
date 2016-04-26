@@ -14,7 +14,7 @@ let httpRequestControllerSingleton = HTTPRequestController()
 
 class HTTPRequestController {
     var url: String = "http://23.227.190.85:8080/webApp/path/generic/getAll"
-    
+    var splashScreen: SplashScreenViewController?
     private init() {
         print("[HTTPRequestController] Singleton created")
     }
@@ -139,9 +139,15 @@ class HTTPRequestController {
             })
             // start the downloadTask
             downloadTask.resume()
+            print("[HTTP] !!MOVETOGAMESCREEN!!")
+            
         }
+        splashScreen!.moveToGameScreen()
     }
     
+    func registerAsSplashScreen(splash: SplashScreenViewController){
+        self.splashScreen = splash
+    }
     
     // get image from url
     func getImageFromUrl(url:String) -> UIImage {

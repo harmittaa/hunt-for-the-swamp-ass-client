@@ -13,7 +13,6 @@ import Foundation
 class JsonParser {
     // make it easier for your fingers
     typealias Payload = [String: AnyObject]
-    
     init () {}
     
     // called from HTTPRequestController once some data has been fetched
@@ -71,6 +70,7 @@ class JsonParser {
             // download images for hunts and gameModes
             httpRequestControllerSingleton.getImagesForGameModes(gameControllerSingleton.allGameModes!)
             httpRequestControllerSingleton.getImagesForHunts(gameControllerSingleton.allHunts)
+            
         } catch {
             print(error)
         }

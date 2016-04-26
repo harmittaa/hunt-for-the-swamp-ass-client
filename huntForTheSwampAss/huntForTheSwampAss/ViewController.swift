@@ -17,6 +17,7 @@ class ViewController: UIViewController, ViewObserverProtocol {
     @IBOutlet weak var teamButton: UIButton!
     @IBOutlet weak var quitHuntButton: UIButton!
     @IBOutlet weak var testContainer: UIView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     //let 🌚:DataController = DataController.dataManagerSingleton
     let beaconFinder:BeaconFinder = beaconFinderSingleton
@@ -27,6 +28,9 @@ class ViewController: UIViewController, ViewObserverProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("[ViewController] init values of GC: \(gameController.currentHunt)")
+        //set BG image
+        backgroundImage.contentMode = UIViewContentMode.ScaleAspectFit
+        backgroundImage.image = UIImage(named: "main_menu_bg")
         //hide back button for the main menu
         self.navigationItem.hidesBackButton = true
         //hide the abandon hunt button if no hunt is currently going
@@ -36,7 +40,7 @@ class ViewController: UIViewController, ViewObserverProtocol {
             quitHuntButton.hidden = true
         }
         if let a = gameControllerSingleton.currentHunt {
-            print("[MainViewController] game is running")
+            print("[MainViewController] game is already running")
         } else {
             gameControllerSingleton.allGameModes = []
             httpController.getGameModes()

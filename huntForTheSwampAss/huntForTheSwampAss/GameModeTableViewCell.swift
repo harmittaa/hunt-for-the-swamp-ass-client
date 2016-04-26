@@ -18,7 +18,8 @@ class GameModeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        //gameModeImage.contentMode = UIViewContentMode.ScaleAspectFit
+
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

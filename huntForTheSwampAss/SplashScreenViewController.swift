@@ -9,16 +9,26 @@
 import UIKit
 
 class SplashScreenViewController: UIViewController {
-
+    
+    @IBOutlet weak var splashImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "splash_screen")!)
+        splashImage.contentMode = UIViewContentMode.ScaleAspectFit
+        splashImage.image = UIImage(named: "splash_screen")
+        httpRequestControllerSingleton.registerAsSplashScreen(self)
+        gameControllerSingleton.allGameModes = []
+        httpRequestControllerSingleton.getGameModes()
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func moveToGameScreen(){
+        self.performSegueWithIdentifier("StartGameSegue", sender: self)
     }
     
 

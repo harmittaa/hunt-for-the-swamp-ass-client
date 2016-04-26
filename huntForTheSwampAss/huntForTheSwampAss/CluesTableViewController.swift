@@ -19,6 +19,7 @@ class CluesTableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "gamemode_bg"))
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,12 +67,14 @@ class CluesTableViewController: UITableViewController {
             let cell = self.tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! GameScreenCluesTableViewCell
             cell.clueTitle.text = "Clue #\(listOfClues![indexPath.row].clueTier+1)"
             cell.clueSubTitle.text = listOfClues![indexPath.row].clueTitle
+            cell.backgroundColor = UIColor.clearColor()
             return cell
         }else{
             print("[GameClueScreen] this cell IS locked")
             let textCellIdentifier = "clueCellLocked"
             let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! GameScreenCluesLockedTableViewCell
             cell.clueTitle.text = "Clue #\(listOfClues![indexPath.row].clueTier+1)"
+            cell.backgroundColor = UIColor.clearColor()
             return cell
         }
     }

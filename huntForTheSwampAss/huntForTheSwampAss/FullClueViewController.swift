@@ -23,6 +23,16 @@ class FullClueViewController: UIViewController, ViewObserverProtocol {
         clueTitle.text = passedClue.clueTitle
         // Do any additional setup after loading the view.
         registerAsObserver()
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "hunts_bg")!)
+        //adding a shadow to text view
+        clueDesc.layer.shadowColor = UIColor.blackColor().CGColor
+        clueDesc.layer.shadowOffset = CGSizeMake(1, 1)
+        clueDesc.layer.shadowOpacity = 1
+        clueDesc.layer.shadowRadius = 0
+        clueDesc.backgroundColor = UIColor.clearColor()
+        clueDesc.textColor = UIColor.whiteColor()
+        clueDesc.font = UIFont(name: "courier", size: 18)
     }
 
     override func didReceiveMemoryWarning() {

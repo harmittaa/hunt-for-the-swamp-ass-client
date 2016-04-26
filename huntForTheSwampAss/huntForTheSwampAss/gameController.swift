@@ -18,6 +18,7 @@ class GameController{
     var allGameModes: [GameModeObject]?
     var allHunts: [HuntObject]
     var selectedGameMode: GameModeObject?
+    var splashScreen: SplashScreenViewController?
     //var dataManager:DataController
     
     
