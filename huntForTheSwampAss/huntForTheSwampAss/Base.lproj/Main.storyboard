@@ -72,23 +72,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNh-2K-dkb">
-                                <rect key="frame" x="20" y="454" width="85" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="vDJ-52-t1J"/>
-                                    <constraint firstAttribute="height" constant="30" id="vSv-N4-oIm"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNh-2K-dkb">
+                                <rect key="frame" x="20" y="518" width="85" height="30"/>
                                 <state key="normal" title="Cancel Hunt"/>
                                 <connections>
                                     <action selector="quitCurrentHunt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H5H-y0-NbE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="top" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLC-7W-NJn">
-                                <rect key="frame" x="265" y="449" width="35" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="OJX-6p-fkk"/>
-                                    <constraint firstAttribute="height" constant="35" id="i0C-wy-vfr"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="top" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLC-7W-NJn">
+                                <rect key="frame" x="275" y="513" width="35" height="35"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
                                 <size key="titleShadowOffset" width="2" height="2.2250738585072014e-308"/>
                                 <state key="normal" image="settings">
@@ -99,11 +91,11 @@
                                     <segue destination="jtf-NC-0je" kind="push" id="L2c-9b-gfQ"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ale-XL-oS7">
-                                <rect key="frame" x="20" y="137" width="290" height="270"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ale-XL-oS7">
+                                <rect key="frame" x="20" y="235" width="252" height="270"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="top" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMp-Y6-X2b">
-                                        <rect key="frame" x="0.0" y="0.0" width="290" height="50"/>
+                                    <button opaque="NO" contentMode="top" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMp-Y6-X2b">
+                                        <rect key="frame" x="0.0" y="0.0" width="252" height="50"/>
                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="34"/>
                                         <size key="titleShadowOffset" width="2" height="2"/>
                                         <state key="normal" title="Game" image="game">
@@ -117,8 +109,8 @@
                                             <action selector="gameButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A1b-LU-M2U"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="top" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoM-6K-8Jf">
-                                        <rect key="frame" x="0.0" y="55" width="290" height="50"/>
+                                    <button opaque="NO" contentMode="top" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoM-6K-8Jf">
+                                        <rect key="frame" x="0.0" y="55" width="252" height="50"/>
                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
                                         <size key="titleShadowOffset" width="2" height="2"/>
                                         <state key="normal" title="Leaderboards" image="leaderboard">
@@ -132,8 +124,8 @@
                                             <segue destination="VhP-Zh-tKY" kind="push" id="t8a-Tj-iMi"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="top" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rto-Kx-sp7">
-                                        <rect key="frame" x="0.0" y="110" width="290" height="50"/>
+                                    <button opaque="NO" contentMode="top" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rto-Kx-sp7">
+                                        <rect key="frame" x="0.0" y="110" width="252" height="50"/>
                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
                                         <size key="titleShadowOffset" width="2" height="2"/>
                                         <state key="normal" title="Achievements" image="achievements">
@@ -147,8 +139,8 @@
                                             <segue destination="hEg-1I-NZ2" kind="push" id="ANS-aH-z8J"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="top" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbh-Bl-Elv">
-                                        <rect key="frame" x="0.0" y="165" width="290" height="50"/>
+                                    <button opaque="NO" contentMode="top" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbh-Bl-Elv">
+                                        <rect key="frame" x="0.0" y="165" width="252" height="50"/>
                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
                                         <size key="titleShadowOffset" width="2" height="2"/>
                                         <state key="normal" title="Profile" image="profile">
@@ -162,8 +154,8 @@
                                             <segue destination="hSU-Ul-Nhl" kind="push" id="jq9-C0-BxQ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="top" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZd-FU-CP9">
-                                        <rect key="frame" x="0.0" y="220" width="290" height="50"/>
+                                    <button opaque="NO" contentMode="top" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZd-FU-CP9">
+                                        <rect key="frame" x="0.0" y="220" width="252" height="50"/>
                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
                                         <size key="titleShadowOffset" width="2" height="2"/>
                                         <state key="normal" title="Team" image="team">
@@ -178,21 +170,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="290" id="D2H-1I-GdC"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MNh-2K-dkb" secondAttribute="bottom" constant="20" id="0a0-I5-suX"/>
-                            <constraint firstItem="MNh-2K-dkb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1WN-nc-04W"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NLC-7W-NJn" secondAttribute="bottom" constant="20" id="PEH-rp-3Km"/>
-                            <constraint firstItem="ale-XL-oS7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="190" id="i0w-os-meu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ale-XL-oS7" secondAttribute="trailing" constant="28" id="jUN-Nq-hQ3"/>
-                            <constraint firstItem="NLC-7W-NJn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="nOh-90-PgN"/>
-                            <constraint firstItem="ale-XL-oS7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="s3I-5G-fpS"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hunt for the Swamp Ass" id="efp-1c-dR6"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -317,7 +297,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="be7-6k-qqf">
                                         <rect key="frame" x="0.0" y="210" width="288" height="22"/>
                                         <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Soa-Qn-cKH">
@@ -949,7 +929,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="N0W-GU-jA6"/>
-        <segue reference="xSD-WU-n2L"/>
-        <segue reference="gq6-zr-jp6"/>
+        <segue reference="Cx5-ZO-ONX"/>
+        <segue reference="vI2-ZL-lSz"/>
     </inferredMetricsTieBreakers>
 </document>
