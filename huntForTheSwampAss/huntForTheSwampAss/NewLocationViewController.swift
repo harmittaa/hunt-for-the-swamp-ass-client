@@ -13,6 +13,7 @@ import UIKit
 
 class NewLocationViewController: UIViewController {
 
+    @IBOutlet weak var newLocationBG: UIImageView!
     @IBOutlet weak var mediaContainer: UIView!
     @IBOutlet weak var locationFoundTitle: UILabel!
     @IBOutlet weak var locationFoundImage: UIImageView!
@@ -21,10 +22,24 @@ class NewLocationViewController: UIViewController {
         super.viewDidLoad()
         //disable back button so user has to advance to next clue
         self.navigationItem.hidesBackButton = true
-        // Do any additional setup after loading the view.
+        //set dscription
         locationFoundTextField.text = gameControllerSingleton.currentLocation?.winDesc
-        locationFoundTitle.text = gameControllerSingleton.currentLocation?.winTitle
-        
+        locationFoundTextField.backgroundColor = UIColor.clearColor()
+        //set shadows for description
+        locationFoundTextField.layer.shadowColor = UIColor.blackColor().CGColor
+        locationFoundTextField.layer.shadowOffset = CGSizeMake(1, 1)
+        locationFoundTextField.layer.shadowOpacity = 1
+        locationFoundTextField.layer.shadowRadius = 0
+        locationFoundTextField.backgroundColor = UIColor.clearColor()
+        locationFoundTextField.textColor = UIColor.whiteColor()
+        locationFoundTextField.font = UIFont(name: "courier", size: 18)
+        //set title
+        locationFoundTitle.text = gameControllerSingleton.currentLocation?.locationTitle
+        locationFoundImage.image = gameControllerSingleton.currentLocation!.locationImage
+        //set image and background
+        locationFoundImage.contentMode = UIViewContentMode.ScaleAspectFit
+        newLocationBG.image = UIImage(named: "hunts_bg")
+        //newLocationBG.contentMode = UIViewContentMode.ScaleAspectFit
         print("[locationFound] reference: size of paragraph: \(locationFoundTextField.frame.size)")
     }
 

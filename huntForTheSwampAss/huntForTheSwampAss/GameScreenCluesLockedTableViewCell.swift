@@ -10,7 +10,7 @@ import UIKit
 
 class GameScreenCluesLockedTableViewCell: UITableViewCell {
     @IBOutlet weak var clueTitle: UILabel!
-
+    @IBOutlet weak var clueCellImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

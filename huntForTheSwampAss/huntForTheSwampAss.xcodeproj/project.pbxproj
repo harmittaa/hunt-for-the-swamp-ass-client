@@ -161,8 +161,6 @@
 		6A0876BC1CB3AD9400A66047 = {
 			isa = PBXGroup;
 			children = (
-				6A161F041CCE413800C5EC03 /* SplashScreenViewController.swift */,
-				6A161F001CCE195600C5EC03 /* ImageResizer.swift */,
 				6A9FAF001CBD165D00D74C8B /* Main Stufs */,
 				6A6D983A1CB7B35300C7989D /* CoreData */,
 				6A0876C71CB3AD9400A66047 /* huntForTheSwampAss */,
@@ -302,6 +300,8 @@
 		6A9FAF001CBD165D00D74C8B /* Main Stufs */ = {
 			isa = PBXGroup;
 			children = (
+				6A161F041CCE413800C5EC03 /* SplashScreenViewController.swift */,
+				6A161F001CCE195600C5EC03 /* ImageResizer.swift */,
 				6A0876C81CB3AD9400A66047 /* AppDelegate.swift */,
 				6A148DD51CB64A7400D994D4 /* DataModel.xcdatamodeld */,
 				6A0876CA1CB3AD9400A66047 /* ViewController.swift */,

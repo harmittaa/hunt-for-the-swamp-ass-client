@@ -68,6 +68,8 @@ class CluesTableViewController: UITableViewController {
             cell.clueTitle.text = "Clue #\(listOfClues![indexPath.row].clueTier+1)"
             cell.clueSubTitle.text = listOfClues![indexPath.row].clueTitle
             cell.backgroundColor = UIColor.clearColor()
+            cell.clueCellImage.image = UIImage(named: "clue_full_inverted")
+            cell.clueCellImage.contentMode = UIViewContentMode.ScaleAspectFit
             return cell
         }else{
             print("[GameClueScreen] this cell IS locked")
@@ -75,6 +77,8 @@ class CluesTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! GameScreenCluesLockedTableViewCell
             cell.clueTitle.text = "Clue #\(listOfClues![indexPath.row].clueTier+1)"
             cell.backgroundColor = UIColor.clearColor()
+            cell.clueCellImage.image = UIImage(named: "clue_locked")
+            cell.clueCellImage.contentMode = UIViewContentMode.ScaleAspectFit
             return cell
         }
     }

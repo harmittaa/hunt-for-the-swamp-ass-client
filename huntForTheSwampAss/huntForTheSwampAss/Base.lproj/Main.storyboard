@@ -72,7 +72,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cN3-18-nWc">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             </imageView>
@@ -92,9 +91,24 @@
                                     <segue destination="jtf-NC-0je" kind="push" id="L2c-9b-gfQ"/>
                                 </connections>
                             </button>
-
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNh-2K-dkb">
+                                <rect key="frame" x="20" y="449" width="145" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="vDJ-52-t1J"/>
+                                    <constraint firstAttribute="height" constant="35" id="vSv-N4-oIm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" title="Cancel Hunt" image="cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="quitCurrentHunt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H5H-y0-NbE"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ale-XL-oS7">
-                                <rect key="frame" x="20" y="215" width="280" height="270"/>
+                                <rect key="frame" x="20" y="156" width="280" height="270"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="top" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMp-Y6-X2b">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
@@ -141,7 +155,6 @@
                                             <segue destination="hEg-1I-NZ2" kind="push" id="ANS-aH-z8J"/>
                                         </connections>
                                     </button>
-
                                     <button opaque="NO" contentMode="top" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbh-Bl-Elv">
                                         <rect key="frame" x="0.0" y="165" width="280" height="50"/>
                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
@@ -177,22 +190,6 @@
                                     <constraint firstAttribute="width" constant="280" id="Bdy-Z5-3ox"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNh-2K-dkb">
-                                <rect key="frame" x="20" y="449" width="145" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="145" id="vDJ-52-t1J"/>
-                                    <constraint firstAttribute="height" constant="35" id="vSv-N4-oIm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
-                                <size key="titleShadowOffset" width="2" height="2"/>
-                                <state key="normal" title="Cancel Hunt" image="cancel">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="quitCurrentHunt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H5H-y0-NbE"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -305,7 +302,7 @@
             </objects>
             <point key="canvasLocation" x="-537" y="-650"/>
         </scene>
-        <!--New Location View Controller-->
+        <!--Congratulations!-->
         <scene sceneID="hA6-B7-vLQ">
             <objects>
                 <viewController id="gil-vj-rtF" customClass="NewLocationViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
@@ -317,38 +314,42 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="r7A-Va-x1y">
-                                <rect key="frame" x="6" y="20" width="288" height="464"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cga-Sq-I2s">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6md-4o-4KD">
+                                <rect key="frame" x="16" y="20" width="288" height="464"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fa0-6N-WCt">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="200"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3TM-Ge-APW">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="184"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="Fgz-e0-b4j"/>
+                                            <constraint firstAttribute="height" constant="184" id="XSt-8o-Ac4"/>
+                                            <constraint firstAttribute="width" constant="288" id="iIA-Mp-BP7"/>
                                         </constraints>
-                                        <connections>
-                                            <segue destination="5hJ-b7-ZwN" kind="embed" identifier="LocationMediaSegue" id="85t-DH-bad"/>
-                                        </connections>
-                                    </containerView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="be7-6k-qqf">
-                                        <rect key="frame" x="0.0" y="210" width="288" height="0.0"/>
-                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XBl-No-ESE">
+                                        <rect key="frame" x="0.0" y="192" width="288" height="26"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="2" height="2"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Soa-Qn-cKH">
-                                        <rect key="frame" x="0.0" y="220" width="288" height="204"/>
+                                        <rect key="frame" x="0.0" y="226" width="288" height="189"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxx-oW-3x7">
-                                        <rect key="frame" x="0.0" y="434" width="288" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="bit-gh-eqT"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
-                                        <state key="normal" title="Start Next Location"/>
+                                        <rect key="frame" x="0.0" y="423" width="288" height="41"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" title="Start Next Location">
+                                            <color key="titleColor" red="0.47574184619054954" green="0.96070230007171631" blue="0.20902650437379977" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="contienuButtonAction:" destination="gil-vj-rtF" eventType="touchUpInside" id="lbz-gc-ivE"/>
                                         </connections>
@@ -358,18 +359,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="r7A-Va-x1y" firstAttribute="top" secondItem="97V-f3-PBc" secondAttribute="bottom" constant="20" id="MAS-ws-Rv6"/>
-                            <constraint firstItem="r7A-Va-x1y" firstAttribute="leading" secondItem="A4x-fq-R9v" secondAttribute="leadingMargin" id="Mzj-vJ-mjw"/>
-                            <constraint firstItem="nyf-2g-E0f" firstAttribute="top" secondItem="r7A-Va-x1y" secondAttribute="bottom" constant="20" id="ugg-RI-wcY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="r7A-Va-x1y" secondAttribute="trailing" id="zsn-y2-Jer"/>
+                            <constraint firstItem="nyf-2g-E0f" firstAttribute="top" secondItem="6md-4o-4KD" secondAttribute="bottom" constant="20" id="3DJ-Uo-F28"/>
+                            <constraint firstItem="6md-4o-4KD" firstAttribute="top" secondItem="97V-f3-PBc" secondAttribute="bottom" constant="20" id="6rQ-oa-cG2"/>
+                            <constraint firstItem="Cga-Sq-I2s" firstAttribute="bottom" secondItem="nyf-2g-E0f" secondAttribute="top" id="AXe-xT-31t"/>
+                            <constraint firstItem="Cga-Sq-I2s" firstAttribute="leading" secondItem="A4x-fq-R9v" secondAttribute="leading" id="Akz-ku-2uu"/>
+                            <constraint firstItem="Cga-Sq-I2s" firstAttribute="centerX" secondItem="6md-4o-4KD" secondAttribute="centerX" id="GM3-Ni-spS"/>
+                            <constraint firstItem="6md-4o-4KD" firstAttribute="leading" secondItem="A4x-fq-R9v" secondAttribute="leadingMargin" id="XUC-40-a6I"/>
+                            <constraint firstItem="6md-4o-4KD" firstAttribute="trailing" secondItem="A4x-fq-R9v" secondAttribute="trailingMargin" id="rZN-gl-S8Q"/>
+                            <constraint firstItem="Cga-Sq-I2s" firstAttribute="top" secondItem="97V-f3-PBc" secondAttribute="bottom" id="vMe-wJ-6s0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pyL-Do-Cph"/>
+                    <navigationItem key="navigationItem" title="Congratulations!" id="pyL-Do-Cph"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="locationFoundImage" destination="3TM-Ge-APW" id="JW4-CD-6Og"/>
                         <outlet property="locationFoundTextField" destination="Soa-Qn-cKH" id="ygV-Zd-zIK"/>
-                        <outlet property="locationFoundTitle" destination="be7-6k-qqf" id="sOm-pQ-oTr"/>
-                        <outlet property="mediaContainer" destination="Fa0-6N-WCt" id="sQs-yy-MXi"/>
+                        <outlet property="locationFoundTitle" destination="XBl-No-ESE" id="aUd-6T-7P7"/>
+                        <outlet property="newLocationBG" destination="Cga-Sq-I2s" id="w5W-Si-0rC"/>
                         <segue destination="yrv-B1-xw0" kind="push" identifier="HuntCompleteSegue" id="23v-tP-0n0"/>
                         <segue destination="DZv-cf-fVT" kind="push" identifier="LocationCompleteSegue" id="gq6-zr-jp6"/>
                     </connections>
@@ -390,67 +396,69 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="4Ch-Hc-Dy7">
-                                <rect key="frame" x="9" y="255" width="302" height="146"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="146" id="0sJ-z6-urT"/>
-                                </constraints>
-                                <string key="text">Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! </string>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ren-zL-Eg4">
-                                <rect key="frame" x="9" y="220" width="302" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="W7N-wE-PTN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbY-iA-C4O">
-                                <rect key="frame" x="9" y="8" width="302" height="204"/>
-                                <connections>
-                                    <segue destination="IGg-Np-3U7" kind="embed" identifier="LocationMediaSegue" id="fTN-Xk-g2K"/>
-                                </connections>
-                            </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcz-bh-i84">
-                                <rect key="frame" x="95" y="409" width="131" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="H1T-Of-REo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
-                                <state key="normal" title="Continue"/>
-                                <connections>
-                                    <action selector="contienuButtonAction:" destination="gil-vj-rtF" eventType="touchUpInside" id="c5u-jH-TbC"/>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="N0W-GU-jA6"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QMe-oZ-6Tr">
+                                <rect key="frame" x="0.0" y="-64" width="320" height="568"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AIY-hi-h4I">
+                                <rect key="frame" x="20" y="20" width="288" height="464"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zy1-ou-X55">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="192"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="288" id="8Or-00-mzN"/>
+                                            <constraint firstAttribute="height" constant="192" id="Tna-8f-25i"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ren-zL-Eg4">
+                                        <rect key="frame" x="0.0" y="200" width="288" height="26"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="2" height="2"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="4Ch-Hc-Dy7">
+                                        <rect key="frame" x="0.0" y="234" width="288" height="179"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! Winner Winner Chicken Dinner !! </string>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcz-bh-i84">
+                                        <rect key="frame" x="0.0" y="421" width="288" height="43"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" red="0.47574184619999998" green="0.96070230010000002" blue="0.20902650440000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="contienuButtonAction:" destination="gil-vj-rtF" eventType="touchUpInside" id="c5u-jH-TbC"/>
+                                            <segue destination="BYZ-38-t0r" kind="push" id="N0W-GU-jA6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fbY-iA-C4O" firstAttribute="centerX" secondItem="DfA-00-gEh" secondAttribute="centerX" id="9eq-QQ-FWZ"/>
-                            <constraint firstItem="ren-zL-Eg4" firstAttribute="trailing" secondItem="4Ch-Hc-Dy7" secondAttribute="trailing" id="Btw-ru-HQE"/>
-                            <constraint firstItem="ren-zL-Eg4" firstAttribute="leading" secondItem="4Ch-Hc-Dy7" secondAttribute="leading" id="CTZ-dT-aXZ"/>
-                            <constraint firstItem="4Ch-Hc-Dy7" firstAttribute="top" secondItem="ren-zL-Eg4" secondAttribute="bottom" constant="8" symbolic="YES" id="GQp-gt-RWI"/>
-                            <constraint firstItem="fbY-iA-C4O" firstAttribute="leading" secondItem="ren-zL-Eg4" secondAttribute="leading" id="HWM-Y8-prJ"/>
-                            <constraint firstItem="4Ch-Hc-Dy7" firstAttribute="centerX" secondItem="Kcz-bh-i84" secondAttribute="centerX" id="RVV-zR-YVg"/>
-                            <constraint firstItem="fbY-iA-C4O" firstAttribute="top" secondItem="9vY-pN-CDB" secondAttribute="bottom" constant="8" symbolic="YES" id="VAb-rw-VFH"/>
-                            <constraint firstItem="ren-zL-Eg4" firstAttribute="top" secondItem="fbY-iA-C4O" secondAttribute="bottom" constant="8" symbolic="YES" id="XS4-JH-4l1"/>
-                            <constraint firstItem="Kcz-bh-i84" firstAttribute="top" secondItem="4Ch-Hc-Dy7" secondAttribute="bottom" constant="8" symbolic="YES" id="eKE-Ao-iYv"/>
-                            <constraint firstItem="fbY-iA-C4O" firstAttribute="leading" secondItem="DfA-00-gEh" secondAttribute="leadingMargin" constant="-7" id="fyz-3d-ES5"/>
-                            <constraint firstAttribute="bottom" secondItem="Kcz-bh-i84" secondAttribute="bottom" constant="20" symbolic="YES" id="jVr-aC-f5O"/>
-                            <constraint firstItem="Kcz-bh-i84" firstAttribute="leading" secondItem="DfA-00-gEh" secondAttribute="leadingMargin" constant="79" id="lwR-qc-5aU"/>
-                            <constraint firstItem="fbY-iA-C4O" firstAttribute="trailing" secondItem="ren-zL-Eg4" secondAttribute="trailing" id="zQW-NH-CS6"/>
+                            <constraint firstItem="33W-7O-5Wn" firstAttribute="top" secondItem="AIY-hi-h4I" secondAttribute="bottom" constant="20" id="FHw-rF-0Nu"/>
+                            <constraint firstAttribute="trailing" secondItem="QMe-oZ-6Tr" secondAttribute="trailing" id="SQk-Bl-ZpJ"/>
+                            <constraint firstItem="QMe-oZ-6Tr" firstAttribute="bottom" secondItem="33W-7O-5Wn" secondAttribute="top" id="eaO-e0-qFN"/>
+                            <constraint firstItem="QMe-oZ-6Tr" firstAttribute="top" secondItem="DfA-00-gEh" secondAttribute="topMargin" constant="-64" id="kcy-BD-K8U"/>
+                            <constraint firstItem="AIY-hi-h4I" firstAttribute="top" secondItem="9vY-pN-CDB" secondAttribute="bottom" constant="20" id="muW-kb-rNN"/>
+                            <constraint firstItem="AIY-hi-h4I" firstAttribute="trailing" secondItem="DfA-00-gEh" secondAttribute="trailingMargin" id="q5d-IC-Ria"/>
+                            <constraint firstItem="AIY-hi-h4I" firstAttribute="leading" secondItem="DfA-00-gEh" secondAttribute="leadingMargin" id="ryj-pJ-s5G"/>
+                            <constraint firstItem="QMe-oZ-6Tr" firstAttribute="leading" secondItem="DfA-00-gEh" secondAttribute="leading" id="tV0-0n-Yqa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="l3l-jt-hjy"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="huntCompleteImage" destination="zy1-ou-X55" id="vck-p9-f1L"/>
+                        <outlet property="huntCompletionBG" destination="QMe-oZ-6Tr" id="hOj-6V-Pbq"/>
                         <outlet property="huntCompletionText" destination="4Ch-Hc-Dy7" id="cq6-Fv-48Q"/>
                         <outlet property="huntCompletionTitle" destination="ren-zL-Eg4" id="w2I-yw-y6O"/>
-                        <outlet property="mediaContainer" destination="fbY-iA-C4O" id="RTt-au-cUy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="61i-gv-fTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -518,11 +526,11 @@
             <objects>
                 <tableViewController id="2ha-2Q-lsJ" customClass="HuntTableViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="J0S-a1-fo0">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HuntTableViewCell" rowHeight="90" id="h28-bP-F8W" customClass="HuntTableViewCell" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HuntTableViewCell" rowHeight="90" id="h28-bP-F8W" customClass="HuntTableViewCell" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h28-bP-F8W" id="aZe-qQ-7U0">
@@ -841,7 +849,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="clueCell" rowHeight="90" id="ZhW-jL-GJb" customClass="GameScreenCluesTableViewCell" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="clueCell" rowHeight="90" id="ZhW-jL-GJb" customClass="GameScreenCluesTableViewCell" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZhW-jL-GJb" id="RyD-X4-2pn">
@@ -849,7 +857,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agA-Ia-yZ9">
-                                            <rect key="frame" x="8" y="16" width="304" height="21"/>
+                                            <rect key="frame" x="97" y="16" width="190" height="21"/>
                                             <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -857,37 +865,44 @@
                                             <size key="shadowOffset" width="2" height="2"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgw-bO-CJ9">
-                                            <rect key="frame" x="8" y="45" width="304" height="21"/>
+                                            <rect key="frame" x="97" y="45" width="190" height="21"/>
                                             <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <size key="shadowOffset" width="2" height="2"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ng4-Uy-nxV">
+                                            <rect key="frame" x="0.0" y="0.0" width="89" height="89"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="clueCellImage" destination="ng4-Uy-nxV" id="ztg-Mt-sL2"/>
                                     <outlet property="clueSubTitle" destination="pgw-bO-CJ9" id="jem-SA-yPM"/>
                                     <outlet property="clueTitle" destination="agA-Ia-yZ9" id="GJb-QJ-1FH"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="clueCellLocked" rowHeight="90" id="8g6-bK-p5N" customClass="GameScreenCluesLockedTableViewCell" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="clueCellLocked" rowHeight="90" id="8g6-bK-p5N" customClass="GameScreenCluesLockedTableViewCell" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="118" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8g6-bK-p5N" id="Xps-Il-Zba">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QE0-BP-4P6">
-                                            <rect key="frame" x="8" y="16" width="304" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QE0-BP-4P6">
+                                            <rect key="frame" x="8" y="16" width="215" height="21"/>
                                             <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <size key="shadowOffset" width="2" height="2"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Touch to Unlock Clue!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUw-va-Qyy">
-                                            <rect key="frame" x="8" y="60" width="304" height="21"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4hM-a7-qrd">
+                                            <rect key="frame" x="231" y="0.0" width="89" height="89"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Touch to Unlock Clue!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUw-va-Qyy">
+                                            <rect key="frame" x="8" y="45" width="215" height="21"/>
                                             <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -895,8 +910,14 @@
                                             <size key="shadowOffset" width="2" height="2"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="4hM-a7-qrd" secondAttribute="trailing" id="m9Q-YE-5nl"/>
+                                        <constraint firstItem="4hM-a7-qrd" firstAttribute="leading" secondItem="mUw-va-Qyy" secondAttribute="trailing" constant="8" id="o0m-rl-sTi"/>
+                                        <constraint firstItem="4hM-a7-qrd" firstAttribute="leading" secondItem="QE0-BP-4P6" secondAttribute="trailing" constant="8" id="sIT-Fi-xFE"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="clueCellImage" destination="4hM-a7-qrd" id="7df-Te-iru"/>
                                     <outlet property="clueTitle" destination="QE0-BP-4P6" id="Jem-KG-jFl"/>
                                 </connections>
                             </tableViewCell>
@@ -948,42 +969,6 @@
             </objects>
             <point key="canvasLocation" x="-1839" y="-407"/>
         </scene>
-        <!--Location Found Media View Controller-->
-        <scene sceneID="71C-kg-rzX">
-            <objects>
-                <viewController id="IGg-Np-3U7" customClass="LocationFoundMediaViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Pxn-W8-D2l"/>
-                        <viewControllerLayoutGuide type="bottom" id="eAq-G4-eob"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bdt-nI-LND">
-                        <rect key="frame" x="0.0" y="0.0" width="302" height="204"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Btr-nO-vgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1156" y="-1128"/>
-        </scene>
-        <!--Location Found Media View Controller-->
-        <scene sceneID="LpF-li-d0R">
-            <objects>
-                <viewController id="5hJ-b7-ZwN" customClass="LocationFoundMediaViewController" customModule="Hunt_for_the_Swamp_Ass" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3FO-RI-kB0"/>
-                        <viewControllerLayoutGuide type="bottom" id="TAx-XX-uHy"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="UpO-Mq-HGI">
-                        <rect key="frame" x="0.0" y="0.0" width="288" height="200"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jWt-es-TWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-118" y="-1636"/>
-        </scene>
     </scenes>
     <resources>
         <image name="achievements" width="50" height="50"/>
@@ -999,8 +984,8 @@
         <image name="test" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fss-vp-0Lm"/>
-        <segue reference="EKk-IK-R0n"/>
-        <segue reference="irJ-SN-LN1"/>
+        <segue reference="N0W-GU-jA6"/>
+        <segue reference="Cx5-ZO-ONX"/>
+        <segue reference="gq6-zr-jp6"/>
     </inferredMetricsTieBreakers>
 </document>

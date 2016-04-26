@@ -14,7 +14,7 @@ class GameScreenCluesTableViewCell: UITableViewCell {
     //MARK: ui elements
     @IBOutlet weak var clueTitle: UILabel!
     @IBOutlet weak var clueSubTitle: UILabel!
-    
+    @IBOutlet weak var clueCellImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
