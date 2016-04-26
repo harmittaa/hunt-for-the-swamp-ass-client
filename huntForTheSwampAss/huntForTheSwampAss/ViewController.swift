@@ -20,7 +20,6 @@ class ViewController: UIViewController, ViewObserverProtocol {
     @IBOutlet weak var backgroundImage: UIImageView!
     
     //let 🌚:DataController = DataController.dataManagerSingleton
-    let beaconFinder:BeaconFinder = beaconFinderSingleton
     let gameController = gameControllerSingleton
     let httpController = httpRequestControllerSingleton
     var isDisplayingPopup = false
@@ -45,9 +44,8 @@ class ViewController: UIViewController, ViewObserverProtocol {
             gameControllerSingleton.allGameModes = []
             httpController.getGameModes()
         }
-        
         registerAsObserver()
-        
+        beaconFinderSingleton.startScanningBeacon()
     }
     
     //MARK: Obeserver functions

@@ -72,7 +72,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cN3-18-nWc">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             </imageView>
@@ -92,7 +91,6 @@
                                     <segue destination="jtf-NC-0je" kind="push" id="L2c-9b-gfQ"/>
                                 </connections>
                             </button>
-
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ale-XL-oS7">
                                 <rect key="frame" x="20" y="215" width="280" height="270"/>
                                 <subviews>
@@ -141,7 +139,6 @@
                                             <segue destination="hEg-1I-NZ2" kind="push" id="ANS-aH-z8J"/>
                                         </connections>
                                     </button>
-
                                     <button opaque="NO" contentMode="top" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbh-Bl-Elv">
                                         <rect key="frame" x="0.0" y="165" width="280" height="50"/>
                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
@@ -329,7 +326,7 @@
                                             <segue destination="5hJ-b7-ZwN" kind="embed" identifier="LocationMediaSegue" id="85t-DH-bad"/>
                                         </connections>
                                     </containerView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="be7-6k-qqf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="be7-6k-qqf">
                                         <rect key="frame" x="0.0" y="210" width="288" height="0.0"/>
                                         <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -342,7 +339,7 @@
                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxx-oW-3x7">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxx-oW-3x7">
                                         <rect key="frame" x="0.0" y="434" width="288" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="bit-gh-eqT"/>

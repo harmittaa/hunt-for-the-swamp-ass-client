@@ -54,7 +54,9 @@ class HuntTableViewController: UITableViewController{
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("[HuntTableView] exiting hunt table view")
-        gameController.currentHunt = gameController.allHunts[indexPath.row]
+        gameController.currentHunt = gameController.selectedGameMode?.huntList[indexPath.row]
+        print("[HuntTableView]the following hunt is chosen \(gameController.currentHunt?.huntTitle)")
+        print("[HuntTableView]the row of the hunt is \(indexPath.row)")
         // get images for all of the clues in this hunt
         httpRequestControllerSingleton.getImages((gameControllerSingleton.currentHunt?.locationList)!)
         httpRequestControllerSingleton.getImagesForLocations((gameControllerSingleton.currentHunt?.locationList)!)

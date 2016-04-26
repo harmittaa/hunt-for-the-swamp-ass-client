@@ -15,7 +15,7 @@ class FullClueViewController: UIViewController, ViewObserverProtocol {
     @IBOutlet weak var clueMediaView: UIView!
     @IBOutlet weak var clueDesc: UITextView!
     let gameController = gameControllerSingleton
-    let beaconFinder = beaconFinderSingleton
+   // let beaconFinder = beaconFinderSingleton
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +54,7 @@ class FullClueViewController: UIViewController, ViewObserverProtocol {
     }
     
     func registerAsObserver() {
-        beaconFinder.registerAsObserver(self)
+        beaconFinderSingleton.registerAsObserver(self)
     }
     
     // MARK: - Navigation
