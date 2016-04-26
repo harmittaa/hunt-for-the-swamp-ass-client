@@ -44,9 +44,8 @@ class ViewController: UIViewController, ViewObserverProtocol {
             gameControllerSingleton.allGameModes = []
             httpController.getGameModes()
         }
-        beaconFinderSingleton.startScanningBeacon()
         registerAsObserver()
-        
+        beaconFinderSingleton.startScanningBeacon()
     }
     
     //MARK: Obeserver functions
