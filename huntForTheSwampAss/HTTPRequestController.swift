@@ -28,15 +28,20 @@ class HTTPRequestController {
         // with the data that is retrieved
         
         let sessionTask = session.dataTaskWithURL(NSURL(string: url)!, completionHandler: {(data, response, error) -> Void in
-            print("[HTTPRequestController] data fetched")
+            print("[HTTPRequestController] data fetched: \(data)")
+            if data != nil {
             let gameModeParsingOperation = NSBlockOperation(block: {
-                let jsonParser = JsonParser()
-                // call jsonParser to parse the data
-                jsonParser.parseGameModes(data!)
-            })
+                    let jsonParser = JsonParser()
+                    // call jsonParser to parse the data
+                    jsonParser.parseGameModes(data!)
+                })
+            
             let queue = NSOperationQueue()
             queue.maxConcurrentOperationCount = 1
             queue.addOperation(gameModeParsingOperation)
+            }else{
+                print("[httpCtrl] ERROR! data was nil")
+            }
         })
         // start the sessiontask
         sessionTask.resume()
