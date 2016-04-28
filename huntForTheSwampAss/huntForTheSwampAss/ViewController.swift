@@ -18,6 +18,7 @@ class ViewController: UIViewController, ViewObserverProtocol {
     @IBOutlet weak var quitHuntButton: UIButton!
     @IBOutlet weak var testContainer: UIView!
     @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var gameButton: UIButton!
     
     //let 🌚:DataController = DataController.dataManagerSingleton
     let gameController = gameControllerSingleton
@@ -40,7 +41,9 @@ class ViewController: UIViewController, ViewObserverProtocol {
         }
         if let a = gameControllerSingleton.currentHunt {
             print("[MainViewController] game is already running")
+        //    gameButton.setTitle("Continue", forState: .Normal)
         } else {
+       //     gameButton.setTitle("Game", forState: .Normal)
             gameControllerSingleton.allGameModes = []
             httpController.getGameModes()
         }
@@ -49,6 +52,9 @@ class ViewController: UIViewController, ViewObserverProtocol {
     }
     
     override func viewDidAppear(animated: Bool) {
+        if gameControllerSingleton.currentHunt != nil {
+            gameControllerSingleton.updateSavedHuntFromCurrentHunt()
+        }
         //let saveHunt = dataManagerSingleton.createSaveHunt(gameController.allGameModes![0].huntList[0])
         //print("[viewCtrl] this savebale hunt was created: \(saveHunt)")
     }
