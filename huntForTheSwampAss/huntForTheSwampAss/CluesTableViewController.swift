@@ -41,7 +41,7 @@ class CluesTableViewController: UITableViewController {
     
     func unlockClue(row: Int) {
         listOfClues![row].lockedStatus = false
-        print("[GameCluesScreen] ListOfClues: \(listOfClues![row].lockedStatus) GameCTRL: \(gameController.currentLocation!.clueList[row].lockedStatus)")
+        print("[ClueTableViewController] ListOfClues: \(listOfClues![row].lockedStatus) GameCTRL: \(gameController.currentLocation!.clueList[row].lockedStatus)")
         self.tableView.reloadData()
         
     }
@@ -49,31 +49,41 @@ class CluesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //get cell that was clicked by using the cellforrow method
         let celleroni = self.tableView(self.tableView, cellForRowAtIndexPath: indexPath)
-        print(celleroni.reuseIdentifier!)
-        
+        print("[ClueTableViewController] \(celleroni.reuseIdentifier!)")
         //if else depending on what kind of cell was clicked, checked by using the identifier
-        if(celleroni.reuseIdentifier == "clueCell"){
+        if !listOfClues![indexPath.row].lockedStatus {
             self.parentController!.tableIndex = indexPath.row
-        self.parentController?.performSegueWithIdentifier("MoveToFullClue", sender: self.parentController)
-        }else if(celleroni.reuseIdentifier == "clueCellLocked"){
-            unlockClue(indexPath.row)
+            self.parentController?.performSegueWithIdentifier("MoveToFullClue", sender: self.parentController)
+        } else if listOfClues![indexPath.row].lockedStatus {
+            // checks if previous clue is unlocked before letting user unlock a new clue
+            if listOfClues![indexPath.row-1].lockedStatus == true {
+                print("[ClueTableViewController] Not allowed to unlock this clue!")
+                print("[ClueTableViewController] The cell status is \(celleroni.reuseIdentifier!)")
+            } else {
+                print("[ClueTableViewController] Unlocking clue!")
+                unlockClue(indexPath.row)
+                print("[ClueTableViewController] Unlocking clue! The clue lockedStatus is now \(listOfClues![indexPath.row].lockedStatus)")
+            }
         }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //check if clue is locked or not, configure accordingly
         if (!listOfClues![indexPath.row].lockedStatus){
+            print("[ClueTableViewController] Unlocked cell")
             let textCellIdentifier = "clueCell"
             let cell = self.tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! GameScreenCluesTableViewCell
+            //    let cell = GameScreenCluesTableViewCell()
             cell.clueTitle.text = "Clue #\(listOfClues![indexPath.row].clueTier+1)"
             cell.clueSubTitle.text = listOfClues![indexPath.row].clueTitle
             cell.backgroundColor = UIColor.clearColor()
             cell.clueCellImage.image = UIImage(named: "clue_full")
             cell.clueCellImage.contentMode = UIViewContentMode.ScaleAspectFit
             return cell
-        }else{
-            print("[GameClueScreen] this cell IS locked")
+        } else {
+            print("[ClueTableViewController] Locked cell")
             let textCellIdentifier = "clueCellLocked"
+            //        let cell = GameScreenCluesTableViewCell()
             let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! GameScreenCluesLockedTableViewCell
             cell.clueTitle.text = "Clue #\(listOfClues![indexPath.row].clueTier+1)"
             cell.backgroundColor = UIColor.clearColor()

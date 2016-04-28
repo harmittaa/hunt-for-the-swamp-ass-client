@@ -149,6 +149,7 @@ class DataController: NSObject {
         for i in result{
             self.managedObjectContext.deleteObject(i as! HuntInProgress)
         }
+        saveCoreData()
     }
     
     // MARK: - Core Data Saving support
