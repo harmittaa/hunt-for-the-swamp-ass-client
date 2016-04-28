@@ -22,7 +22,7 @@ class BeaconFinder: NSObject, CLLocationManagerDelegate {
         //let locationManager = CLLocationManager()
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse) {
             locationManager.requestAlwaysAuthorization()
-            print("[beaconfinder] init auth status is \(CLLocationManager.authorizationStatus())")
+            print("[beaconfinder] init auth status is \(CLLocationManager.authorizationStatus().rawValue)")
         }
         self.locationManager.delegate = self
         locationManager.startRangingBeaconsInRegion(region)

@@ -14,7 +14,6 @@ import MapKit
 import CoreLocation
 class GameScreenViewController: UIViewController, CLLocationManagerDelegate, ViewObserverProtocol{
     @IBOutlet weak var gameScreenMap: MKMapView!
-    
     let locationManager = CLLocationManager()
     let gameController = gameControllerSingleton
     var isDisplayingPopup = false
@@ -33,9 +32,19 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate, Vie
     }
     
     // This is called when the view appears, the check for any additional markers to be put on the map is done
+    // also fethces images for clues and locations if the game has been resumed from CoreData
     override func viewDidAppear(animated: Bool) {
         checkClueStatus()
         gameController.updateSavedHunt()
+        if gameControllerSingleton.currentHunt?.dataFetched == nil || gameControllerSingleton.currentHunt?.dataFetched == false {
+            print("[GameScreenViewController]data for clues and locations hasn't been fetched")
+            httpRequestControllerSingleton.getImages((gameControllerSingleton.currentHunt?.locationList)!)
+            httpRequestControllerSingleton.getImagesForLocations((gameControllerSingleton.currentHunt?.locationList)!)
+            // sets the data as fetched
+            gameControllerSingleton.currentHunt?.setDataFetched(true)
+        } else {
+            print("[GameScreenViewController]data for clues and locatios has been fetched")
+        }
     }
     
     
@@ -102,13 +111,6 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate, Vie
             let settingsAction = UIAlertAction(title: "Location settings", style: .Default, handler: { (testAction) -> Void in
                 UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
             })
-            
-            let mapImage = UIImage(named: "map")
-            
-            let imageView = UIImageView(frame: CGRect(x: 40, y: 40, width: 40, height: 40))
-            imageView.image = mapImage
-            
-            noAuthAlert.view.addSubview(imageView)
             
             // create an action for the alert that cancels
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)

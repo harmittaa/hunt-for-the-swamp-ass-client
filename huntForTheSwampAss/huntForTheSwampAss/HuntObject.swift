@@ -21,6 +21,7 @@ class HuntObject{
     var locationList: [LocationObject]?
     var huntMedia: String
     var huntImage: UIImage?
+    var dataFetched: Bool?
     
     init(title: String, desc: String,winTit: String, winDes: String, huntMedia: String){
         self.huntTitle = title
@@ -41,5 +42,10 @@ class HuntObject{
     // set image for the hunt
     func setImage(image: UIImage) {
         self.huntImage = image
+    }
+    
+    // set the data as fetched
+    func setDataFetched(status: Bool) {
+        self.dataFetched = status
     }
 }
