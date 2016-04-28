@@ -11,14 +11,14 @@
 
 import UIKit
 import CoreData
-
-class ViewController: UIViewController, ViewObserverProtocol {
-
+import CoreBluetooth
+class ViewController: UIViewController, ViewObserverProtocol, CBCentralManagerDelegate{
+    
     @IBOutlet weak var teamButton: UIButton!
     @IBOutlet weak var quitHuntButton: UIButton!
     @IBOutlet weak var testContainer: UIView!
     @IBOutlet weak var backgroundImage: UIImageView!
-    
+    var bluetoothChecker: CBCentralManager?
     //let 🌚:DataController = DataController.dataManagerSingleton
     let gameController = gameControllerSingleton
     let httpController = httpRequestControllerSingleton
@@ -26,6 +26,7 @@ class ViewController: UIViewController, ViewObserverProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var bluetoothChecker = CBCentralManager(delegate: self, queue: nil)
         print("[ViewController] init values of GC: \(gameController.currentHunt)")
         //set BG image
         backgroundImage.contentMode = UIViewContentMode.ScaleAspectFit
@@ -51,6 +52,18 @@ class ViewController: UIViewController, ViewObserverProtocol {
     override func viewDidAppear(animated: Bool) {
         //let saveHunt = dataManagerSingleton.createSaveHunt(gameController.allGameModes![0].huntList[0])
         //print("[viewCtrl] this savebale hunt was created: \(saveHunt)")
+        /*var bluetoothIsOn = false
+         while !bluetoothIsOn{//bluetoothChecker.state != CBCentralManagerState.PoweredOn{
+         print("[viewctrl] bluetooth is off, looping + \(bluetoothIsOn)")
+         if bluetoothChecker.state != CBCentralManagerState.PoweredOn {
+         print("[viewctrl] making new centralmanager")
+         //bluetoothChecker = CBCentralManager(delegate: self, queue: nil)
+         }
+         else{
+         print("[viewctrl] bluetooth is on, should stop looping")
+         bluetoothIsOn = true
+         }
+         }*/
     }
     
     //MARK: Obeserver functions
@@ -70,24 +83,32 @@ class ViewController: UIViewController, ViewObserverProtocol {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        }
+    }
     
     @IBAction func quitCurrentHunt(sender: UIButton) {
         let popCreator = PopupCreator()
         popCreator.createQuitHuntPopup(self, buton: quitHuntButton)
         //gameControllerSingleton.completeHunt()
-
+        
     }
     
     @IBAction func gameButtonAction(sender: UIButton) {
-        var segueId: String
-        if let z = gameController.currentHunt{
-            segueId = "MainMenuToGameScreen"
+        if bluetoothChecker == nil {
+            bluetoothChecker = CBCentralManager(delegate: self, queue: nil)
         }
-        else{
-            segueId = "MainMenuToGameModes"
+        if bluetoothChecker!.state != CBCentralManagerState.PoweredOn{
+            bluetoothChecker = CBCentralManager(delegate: self, queue: nil)
+        }else {
+            print("[viewctrl] seguenow!")
+            var segueId: String
+            if let z = gameController.currentHunt{
+                segueId = "MainMenuToGameScreen"
+            }
+            else{
+                segueId = "MainMenuToGameModes"
+            }
+            performSegueWithIdentifier(segueId, sender: self)
         }
-        performSegueWithIdentifier(segueId, sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -96,6 +117,29 @@ class ViewController: UIViewController, ViewObserverProtocol {
             destinationSegue?.passefSelf = testContainer
         }
     }
-
+    
+    func centralManagerDidUpdateState(central: CBCentralManager) {
+        if central.state == CBCentralManagerState.PoweredOff{
+            print("[viewctrl] BL is powered off")
+        }
+        else if central.state == CBCentralManagerState.PoweredOn{
+            print("[viewctrl] BL is powered on")
+        }
+    }
+    
+    /*
+     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager) {
+     print("[viewctrl] start of did update state")
+     if peripheral.state == CBPeripheralManagerState.PoweredOn {
+     print("[ViewCtrl] Bluetooth is turned on")
+     } else if peripheral.state == CBPeripheralManagerState.PoweredOff {
+     print("[viewctrl] bluetooth is off")
+     } else if peripheral.state == CBPeripheralManagerState.Unsupported {
+     print("[viewctrl] bluetooth is Unsupported")
+     } else if peripheral.state == CBPeripheralManagerState.Unauthorized {
+     print("[viewctrl] bluetooth is unauthorized")
+     }
+     }
+     */
 }
 

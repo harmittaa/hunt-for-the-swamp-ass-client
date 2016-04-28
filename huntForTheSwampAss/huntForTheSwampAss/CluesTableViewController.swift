@@ -54,7 +54,7 @@ class CluesTableViewController: UITableViewController {
         //if else depending on what kind of cell was clicked, checked by using the identifier
         if(celleroni.reuseIdentifier == "clueCell"){
             self.parentController!.tableIndex = indexPath.row
-        self.parentController?.performSegueWithIdentifier("MoveToFullClue", sender: self.parentController)
+            self.parentController?.performSegueWithIdentifier("MoveToFullClue", sender: self.parentController)
         }else if(celleroni.reuseIdentifier == "clueCellLocked"){
             unlockClue(indexPath.row)
         }
