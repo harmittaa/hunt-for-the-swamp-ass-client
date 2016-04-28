@@ -36,6 +36,7 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate, Vie
     override func viewDidAppear(animated: Bool) {
         checkClueStatus()
         gameController.updateSavedHunt()
+        gameControllerSingleton.updateSavedHuntFromCurrentHunt()
         if gameControllerSingleton.currentHunt?.dataFetched == nil || gameControllerSingleton.currentHunt?.dataFetched == false {
             print("[GameScreenViewController]data for clues and locations hasn't been fetched")
             httpRequestControllerSingleton.getImages((gameControllerSingleton.currentHunt?.locationList)!)

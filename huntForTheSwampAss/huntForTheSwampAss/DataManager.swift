@@ -41,13 +41,13 @@ class DataController: NSObject {
         }
     }
     /*
- 
-#
- #
- #  DONT TOUCH THESE METHODS!!!!!!!!!!!!!!!! THEY ARE VITAL TO CORE DATA FUNCTIONALITY!!!!!!!!!!!!!!!!!!
- #  ACTUAL USABLE METHODS ARE BELOW THESE!!!!!!!!!!!!!!!
- #
-#   
+     
+     #
+     #
+     #  DONT TOUCH THESE METHODS!!!!!!!!!!!!!!!! THEY ARE VITAL TO CORE DATA FUNCTIONALITY!!!!!!!!!!!!!!!!!!
+     #  ACTUAL USABLE METHODS ARE BELOW THESE!!!!!!!!!!!!!!!
+     #
+     #
      */
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "isodev.example.huntForTheSwampAss" in the application's documents Application Support directory.
@@ -95,15 +95,15 @@ class DataController: NSObject {
     }()
     
     /*
- #          actual methods
- #
- #
- #
- #
- #
- */
+     #          actual methods
+     #
+     #
+     #
+     #
+     #
+     */
     
-  
+    
     
     //MARK: fetch object with a string
     func fetchObject(objectClassName: String)->[NSManagedObject]{
@@ -130,6 +130,14 @@ class DataController: NSObject {
             }
         }
         nsHuntInProgress.locationProgress = huntLocationProgress
+        var clueProgress = 0
+        for clue in huntToSave.locationList![huntLocationProgress].clueList {
+            if !clue.lockedStatus {
+                clueProgress += 1
+                print("[DataController] Saving Clue, getting the progress, current clue progress is \(clueProgress) for the clue \(clue.clueTitle)")
+            }
+        }
+        nsHuntInProgress.clueProgress = clueProgress
         return nsHuntInProgress
     }
     
@@ -149,6 +157,7 @@ class DataController: NSObject {
         for i in result{
             self.managedObjectContext.deleteObject(i as! HuntInProgress)
         }
+        // save the empty core data to reflect that no game is in progress
         saveCoreData()
     }
     
