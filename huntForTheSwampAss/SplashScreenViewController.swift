@@ -19,7 +19,8 @@ class SplashScreenViewController: UIViewController {
         httpRequestControllerSingleton.registerAsSplashScreen(self)
         gameControllerSingleton.allGameModes = []
         httpRequestControllerSingleton.getGameModes()
-        // Do any additional setup after loading the view.
+        //IF core data has objects, load them into memory
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +29,9 @@ class SplashScreenViewController: UIViewController {
     }
     
     func moveToGameScreen(){
+        if DataController.dataManagerSingleton.fetchObject("HuntInProgress").count > 0{
+            gameControllerSingleton.loadCurrentHuntFromCoreData()
+        }
         self.performSegueWithIdentifier("StartGameSegue", sender: self)
     }
     

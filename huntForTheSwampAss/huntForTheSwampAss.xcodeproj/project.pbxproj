@@ -29,26 +29,6 @@
 		6A6C5CB71CB68D5900841E40 /* GameScreenClueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C5CB61CB68D5900841E40 /* GameScreenClueViewController.swift */; };
 		6A6D7C271CBE366800C14BA1 /* viewObeserverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D7C261CBE366800C14BA1 /* viewObeserverProtocol.swift */; };
 		6A6D7C291CBE4F0800C14BA1 /* NewLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D7C281CBE4F0800C14BA1 /* NewLocationViewController.swift */; };
-		6A6D98261CB7B34800C7989D /* HuntCompletion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D98121CB7B34800C7989D /* HuntCompletion+CoreDataProperties.swift */; };
-		6A6D98271CB7B34800C7989D /* HuntCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D98131CB7B34800C7989D /* HuntCompletion.swift */; };
-		6A6D98281CB7B34800C7989D /* ImageClue+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D98141CB7B34800C7989D /* ImageClue+CoreDataProperties.swift */; };
-		6A6D98291CB7B34800C7989D /* ImageClue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D98151CB7B34800C7989D /* ImageClue.swift */; };
-		6A6D982A1CB7B34800C7989D /* Beacon+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D98161CB7B34800C7989D /* Beacon+CoreDataProperties.swift */; };
-		6A6D982B1CB7B34800C7989D /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D98171CB7B34800C7989D /* Beacon.swift */; };
-		6A6D982C1CB7B34800C7989D /* GameMode+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D98181CB7B34800C7989D /* GameMode+CoreDataProperties.swift */; };
-		6A6D982D1CB7B34800C7989D /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D98191CB7B34800C7989D /* GameMode.swift */; };
-		6A6D982F1CB7B34800C7989D /* Hunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D981B1CB7B34800C7989D /* Hunt.swift */; };
-		6A6D98301CB7B34800C7989D /* LocationCompletion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D981C1CB7B34800C7989D /* LocationCompletion+CoreDataProperties.swift */; };
-		6A6D98311CB7B34800C7989D /* LocationCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D981D1CB7B34800C7989D /* LocationCompletion.swift */; };
-		6A6D98321CB7B34800C7989D /* Completion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D981E1CB7B34800C7989D /* Completion+CoreDataProperties.swift */; };
-		6A6D98331CB7B34800C7989D /* Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D981F1CB7B34800C7989D /* Completion.swift */; };
-		6A6D98341CB7B34800C7989D /* MapClue+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D98201CB7B34800C7989D /* MapClue+CoreDataProperties.swift */; };
-		6A6D98351CB7B34800C7989D /* MapClue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D98211CB7B34800C7989D /* MapClue.swift */; };
-		6A6D98361CB7B34800C7989D /* Clue+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D98221CB7B34800C7989D /* Clue+CoreDataProperties.swift */; };
-		6A6D98371CB7B34800C7989D /* Clue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D98231CB7B34800C7989D /* Clue.swift */; };
-		6A6D98381CB7B34800C7989D /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D98241CB7B34800C7989D /* Location+CoreDataProperties.swift */; };
-		6A6D98391CB7B34800C7989D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D98251CB7B34800C7989D /* Location.swift */; };
-		6A6D983E1CB7C24E00C7989D /* Hunt+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D983D1CB7C24E00C7989D /* Hunt+CoreDataProperties.swift */; };
 		6A82CA6D1CC4FB7400707D01 /* HTTPRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82CA6C1CC4FB7400707D01 /* HTTPRequestController.swift */; };
 		6A82CA6F1CC5023100707D01 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82CA6E1CC5023100707D01 /* JsonParser.swift */; };
 		6A9076151CB5354C00068792 /* GameModeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9076141CB5354C00068792 /* GameModeTableViewCell.swift */; };
@@ -61,6 +41,8 @@
 		6A9FAEFD1CBD0CE100D74C8B /* BeaconObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9FAEFC1CBD0CE100D74C8B /* BeaconObject.swift */; };
 		6A9FAEFF1CBD0F8700D74C8B /* GameModeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9FAEFE1CBD0F8700D74C8B /* GameModeObject.swift */; };
 		6A9FAF021CBD23F000D74C8B /* FullClueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9FAF011CBD23F000D74C8B /* FullClueViewController.swift */; };
+		6AA2A6E61CD0B6BE0070C697 /* HuntInProgress+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA2A6E41CD0B6BE0070C697 /* HuntInProgress+CoreDataProperties.swift */; };
+		6AA2A6E71CD0B6BE0070C697 /* HuntInProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA2A6E51CD0B6BE0070C697 /* HuntInProgress.swift */; };
 		6AF847821CBE23E8008DB3AE /* GameScreenCluesLockedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF847811CBE23E8008DB3AE /* GameScreenCluesLockedTableViewCell.swift */; };
 		6AFADF001CC8BE9800F0B38C /* TestImageContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFADEFF1CC8BE9800F0B38C /* TestImageContainerViewController.swift */; };
 		6AFADF021CC8E4BC00F0B38C /* HuntCompletionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFADF011CC8E4BC00F0B38C /* HuntCompletionViewController.swift */; };
@@ -103,26 +85,6 @@
 		6A6C5CB61CB68D5900841E40 /* GameScreenClueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScreenClueViewController.swift; sourceTree = "<group>"; };
 		6A6D7C261CBE366800C14BA1 /* viewObeserverProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = viewObeserverProtocol.swift; sourceTree = "<group>"; };
 		6A6D7C281CBE4F0800C14BA1 /* NewLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewLocationViewController.swift; sourceTree = "<group>"; };
-		6A6D98121CB7B34800C7989D /* HuntCompletion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HuntCompletion+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6A6D98131CB7B34800C7989D /* HuntCompletion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuntCompletion.swift; sourceTree = "<group>"; };
-		6A6D98141CB7B34800C7989D /* ImageClue+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageClue+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6A6D98151CB7B34800C7989D /* ImageClue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageClue.swift; sourceTree = "<group>"; };
-		6A6D98161CB7B34800C7989D /* Beacon+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Beacon+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6A6D98171CB7B34800C7989D /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
-		6A6D98181CB7B34800C7989D /* GameMode+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameMode+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6A6D98191CB7B34800C7989D /* GameMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
-		6A6D981B1CB7B34800C7989D /* Hunt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hunt.swift; sourceTree = "<group>"; };
-		6A6D981C1CB7B34800C7989D /* LocationCompletion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationCompletion+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6A6D981D1CB7B34800C7989D /* LocationCompletion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCompletion.swift; sourceTree = "<group>"; };
-		6A6D981E1CB7B34800C7989D /* Completion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Completion+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6A6D981F1CB7B34800C7989D /* Completion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Completion.swift; sourceTree = "<group>"; };
-		6A6D98201CB7B34800C7989D /* MapClue+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapClue+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6A6D98211CB7B34800C7989D /* MapClue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapClue.swift; sourceTree = "<group>"; };
-		6A6D98221CB7B34800C7989D /* Clue+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Clue+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6A6D98231CB7B34800C7989D /* Clue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clue.swift; sourceTree = "<group>"; };
-		6A6D98241CB7B34800C7989D /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6A6D98251CB7B34800C7989D /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		6A6D983D1CB7C24E00C7989D /* Hunt+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hunt+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6A82CA6C1CC4FB7400707D01 /* HTTPRequestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestController.swift; sourceTree = "<group>"; };
 		6A82CA6E1CC5023100707D01 /* JsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		6A9076141CB5354C00068792 /* GameModeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModeTableViewCell.swift; sourceTree = "<group>"; };
@@ -135,6 +97,8 @@
 		6A9FAEFC1CBD0CE100D74C8B /* BeaconObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconObject.swift; sourceTree = "<group>"; };
 		6A9FAEFE1CBD0F8700D74C8B /* GameModeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModeObject.swift; sourceTree = "<group>"; };
 		6A9FAF011CBD23F000D74C8B /* FullClueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullClueViewController.swift; sourceTree = "<group>"; };
+		6AA2A6E41CD0B6BE0070C697 /* HuntInProgress+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HuntInProgress+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6AA2A6E51CD0B6BE0070C697 /* HuntInProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuntInProgress.swift; sourceTree = "<group>"; };
 		6AF847811CBE23E8008DB3AE /* GameScreenCluesLockedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScreenCluesLockedTableViewCell.swift; sourceTree = "<group>"; };
 		6AFADEFF1CC8BE9800F0B38C /* TestImageContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestImageContainerViewController.swift; sourceTree = "<group>"; };
 		6AFADF011CC8E4BC00F0B38C /* HuntCompletionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuntCompletionViewController.swift; sourceTree = "<group>"; };
@@ -161,8 +125,8 @@
 		6A0876BC1CB3AD9400A66047 = {
 			isa = PBXGroup;
 			children = (
+				6AA2A6E81CD0B6CB0070C697 /* CoreData */,
 				6A9FAF001CBD165D00D74C8B /* Main Stufs */,
-				6A6D983A1CB7B35300C7989D /* CoreData */,
 				6A0876C71CB3AD9400A66047 /* huntForTheSwampAss */,
 				6A0876DF1CB3AD9400A66047 /* huntForTheSwampAssTests */,
 				6A0876C61CB3AD9400A66047 /* Products */,
@@ -240,33 +204,6 @@
 			name = NewLocation;
 			sourceTree = "<group>";
 		};
-		6A6D983A1CB7B35300C7989D /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				6A6D98121CB7B34800C7989D /* HuntCompletion+CoreDataProperties.swift */,
-				6A6D98131CB7B34800C7989D /* HuntCompletion.swift */,
-				6A6D98141CB7B34800C7989D /* ImageClue+CoreDataProperties.swift */,
-				6A6D98151CB7B34800C7989D /* ImageClue.swift */,
-				6A6D98161CB7B34800C7989D /* Beacon+CoreDataProperties.swift */,
-				6A6D98171CB7B34800C7989D /* Beacon.swift */,
-				6A6D98181CB7B34800C7989D /* GameMode+CoreDataProperties.swift */,
-				6A6D98191CB7B34800C7989D /* GameMode.swift */,
-				6A6D983D1CB7C24E00C7989D /* Hunt+CoreDataProperties.swift */,
-				6A6D981B1CB7B34800C7989D /* Hunt.swift */,
-				6A6D981C1CB7B34800C7989D /* LocationCompletion+CoreDataProperties.swift */,
-				6A6D981D1CB7B34800C7989D /* LocationCompletion.swift */,
-				6A6D981E1CB7B34800C7989D /* Completion+CoreDataProperties.swift */,
-				6A6D981F1CB7B34800C7989D /* Completion.swift */,
-				6A6D98201CB7B34800C7989D /* MapClue+CoreDataProperties.swift */,
-				6A6D98211CB7B34800C7989D /* MapClue.swift */,
-				6A6D98221CB7B34800C7989D /* Clue+CoreDataProperties.swift */,
-				6A6D98231CB7B34800C7989D /* Clue.swift */,
-				6A6D98241CB7B34800C7989D /* Location+CoreDataProperties.swift */,
-				6A6D98251CB7B34800C7989D /* Location.swift */,
-			);
-			name = CoreData;
-			sourceTree = "<group>";
-		};
 		6A90761C1CB53BA000068792 /* GameMode */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +253,15 @@
 				6AFADEFF1CC8BE9800F0B38C /* TestImageContainerViewController.swift */,
 			);
 			name = "Main Stufs";
+			sourceTree = "<group>";
+		};
+		6AA2A6E81CD0B6CB0070C697 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				6AA2A6E41CD0B6BE0070C697 /* HuntInProgress+CoreDataProperties.swift */,
+				6AA2A6E51CD0B6BE0070C697 /* HuntInProgress.swift */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		6AF847801CBE1D59008DB3AE /* Singletons */ = {
@@ -432,32 +378,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A6D98301CB7B34800C7989D /* LocationCompletion+CoreDataProperties.swift in Sources */,
 				6A161F011CCE195600C5EC03 /* ImageResizer.swift in Sources */,
 				6A148DD71CB64A7400D994D4 /* DataModel.xcdatamodeld in Sources */,
 				6A0876CB1CB3AD9400A66047 /* ViewController.swift in Sources */,
-				6A6D98321CB7B34800C7989D /* Completion+CoreDataProperties.swift in Sources */,
 				6A9FAEFD1CBD0CE100D74C8B /* BeaconObject.swift in Sources */,
 				6A9076151CB5354C00068792 /* GameModeTableViewCell.swift in Sources */,
 				6A9076171CB537BE00068792 /* GameModeTableViewController.swift in Sources */,
-				6A6D982D1CB7B34800C7989D /* GameMode.swift in Sources */,
 				6A30C51E1CBB8FAA00C28AC6 /* gameController.swift in Sources */,
-				6A6D982A1CB7B34800C7989D /* Beacon+CoreDataProperties.swift in Sources */,
 				6A9076211CB53D0700068792 /* HuntTableViewController.swift in Sources */,
-				6A6D98351CB7B34800C7989D /* MapClue.swift in Sources */,
 				6A161F031CCE1B1D00C5EC03 /* LocationFoundMediaViewController.swift in Sources */,
 				6A3FC3911CC78D8C00B69E4F /* CluesTableViewController.swift in Sources */,
+				6AA2A6E71CD0B6BE0070C697 /* HuntInProgress.swift in Sources */,
 				6A6D7C271CBE366800C14BA1 /* viewObeserverProtocol.swift in Sources */,
-				6A6D98261CB7B34800C7989D /* HuntCompletion+CoreDataProperties.swift in Sources */,
-				6A6D98381CB7B34800C7989D /* Location+CoreDataProperties.swift in Sources */,
 				6A6C5CAA1CB6719500841E40 /* GameScreenViewController.swift in Sources */,
-				6A6D98331CB7B34800C7989D /* Completion.swift in Sources */,
 				6A65EA331CC4DADB006D7408 /* popupCreator.swift in Sources */,
 				6A161F051CCE413800C5EC03 /* SplashScreenViewController.swift in Sources */,
+				6AA2A6E61CD0B6BE0070C697 /* HuntInProgress+CoreDataProperties.swift in Sources */,
 				6A9FAEF81CBD052500D74C8B /* LocationObject.swift in Sources */,
-				6A6D982F1CB7B34800C7989D /* Hunt.swift in Sources */,
-				6A6D982B1CB7B34800C7989D /* Beacon.swift in Sources */,
-				6A6D98291CB7B34800C7989D /* ImageClue.swift in Sources */,
 				6AFADF021CC8E4BC00F0B38C /* HuntCompletionViewController.swift in Sources */,
 				6A9FAEFF1CBD0F8700D74C8B /* GameModeObject.swift in Sources */,
 				6A9FAF021CBD23F000D74C8B /* FullClueViewController.swift in Sources */,
@@ -469,20 +406,11 @@
 				6A6D7C291CBE4F0800C14BA1 /* NewLocationViewController.swift in Sources */,
 				6A6C5CB11CB6893800841E40 /* GameScreenCluesTableViewCell.swift in Sources */,
 				6A82CA6F1CC5023100707D01 /* JsonParser.swift in Sources */,
-				6A6D98271CB7B34800C7989D /* HuntCompletion.swift in Sources */,
-				6A6D98371CB7B34800C7989D /* Clue.swift in Sources */,
 				6AFADF001CC8BE9800F0B38C /* TestImageContainerViewController.swift in Sources */,
-				6A6D98391CB7B34800C7989D /* Location.swift in Sources */,
-				6A6D98341CB7B34800C7989D /* MapClue+CoreDataProperties.swift in Sources */,
 				6A0876C91CB3AD9400A66047 /* AppDelegate.swift in Sources */,
-				6A6D98311CB7B34800C7989D /* LocationCompletion.swift in Sources */,
 				6A9FAEFB1CBD0C7000D74C8B /* ClueObject.swift in Sources */,
-				6A6D98361CB7B34800C7989D /* Clue+CoreDataProperties.swift in Sources */,
-				6A6D98281CB7B34800C7989D /* ImageClue+CoreDataProperties.swift in Sources */,
-				6A6D982C1CB7B34800C7989D /* GameMode+CoreDataProperties.swift in Sources */,
 				6AF847821CBE23E8008DB3AE /* GameScreenCluesLockedTableViewCell.swift in Sources */,
 				6A82CA6D1CC4FB7400707D01 /* HTTPRequestController.swift in Sources */,
-				6A6D983E1CB7C24E00C7989D /* Hunt+CoreDataProperties.swift in Sources */,
 				6A90761F1CB53C3600068792 /* HuntTableViewCell.swift in Sources */,
 				6A30C5201CBBA62200C28AC6 /* beaconFinder.swift in Sources */,
 			);

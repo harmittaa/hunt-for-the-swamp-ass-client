@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class HuntObject{
-    
+    var huntID: Int?
     var huntDescription: String?
     var huntEndDate: NSDate?
     var huntStartDate: NSDate?

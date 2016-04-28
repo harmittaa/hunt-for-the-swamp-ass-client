@@ -1,64 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
-    <entity name="Achievement" syncable="YES"/>
-    <entity name="Beacon" representedClassName=".Beacon" syncable="YES">
-        <attribute name="beaconMajor" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="beaconMinor" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="beaconRSSI" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="beaconUUID" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="HuntInProgress" representedClassName=".HuntInProgress" syncable="YES">
+        <attribute name="huntId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="locationProgress" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
-    <entity name="Clue" representedClassName=".Clue" syncable="YES">
-        <attribute name="clueDescription" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="clueTier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-    </entity>
-    <entity name="Completion" representedClassName=".Completion" syncable="YES">
-        <attribute name="completionDescription" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="completionThumbnail" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="completionTitle" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
-    <entity name="GameMode" representedClassName=".GameMode" syncable="YES">
-        <attribute name="gameModeDescription" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="gameModeThumbnailPath" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="gameModeTitle" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="hunt" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Hunt" syncable="YES"/>
-    </entity>
-    <entity name="Hunt" representedClassName=".Hunt" syncable="YES">
-        <attribute name="huntDescription" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="huntEndDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="huntStartDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="huntThumbnailPath" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="huntTitle" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="completion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Completion" syncable="YES"/>
-        <relationship name="location" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Location" syncable="YES"/>
-    </entity>
-    <entity name="HuntCompletion" representedClassName=".HuntCompletion" parentEntity="Completion" syncable="YES"/>
-    <entity name="ImageClue" representedClassName=".ImageClue" parentEntity="Clue" syncable="YES">
-        <attribute name="clueImagePath" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
-    <entity name="Location" representedClassName=".Location" syncable="YES">
-        <attribute name="locationTitle" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="beacon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Beacon" syncable="YES"/>
-        <relationship name="clue" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Clue" syncable="YES"/>
-        <relationship name="completion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Completion" syncable="YES"/>
-    </entity>
-    <entity name="LocationCompletion" representedClassName=".LocationCompletion" parentEntity="Completion" syncable="YES"/>
-    <entity name="MapClue" representedClassName=".MapClue" parentEntity="Clue" syncable="YES">
-        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-    </entity>
-    <entity name="User" syncable="YES"/>
     <elements>
-        <element name="Achievement" positionX="367" positionY="180" width="128" height="43"/>
-        <element name="Beacon" positionX="-191" positionY="81" width="128" height="103"/>
-        <element name="Clue" positionX="-45" positionY="81" width="128" height="73"/>
-        <element name="Completion" positionX="144" positionY="-189" width="128" height="88"/>
-        <element name="GameMode" positionX="-191" positionY="-405" width="137" height="103"/>
-        <element name="Hunt" positionX="-189" positionY="-270" width="128" height="148"/>
-        <element name="HuntCompletion" positionX="225" positionY="-52" width="128" height="43"/>
-        <element name="ImageClue" positionX="-56" positionY="201" width="128" height="58"/>
-        <element name="Location" positionX="-191" positionY="-81" width="128" height="103"/>
-        <element name="LocationCompletion" positionX="79" positionY="-45" width="128" height="43"/>
-        <element name="MapClue" positionX="97" positionY="204" width="128" height="73"/>
-        <element name="User" positionX="358" positionY="117" width="128" height="43"/>
+        <element name="HuntInProgress" positionX="-126" positionY="-27" width="128" height="73"/>
     </elements>
 </model>

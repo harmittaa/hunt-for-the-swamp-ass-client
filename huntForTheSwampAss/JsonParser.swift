@@ -33,6 +33,7 @@ class JsonParser {
                         //print("[json] hunts get")
                         for hunt in huntsOfGamemode{
                             let newHunt = HuntObject(title: hunt["title"] as! String, desc: hunt["description"] as! String, winTit: hunt["winTitle"] as! String, winDes: hunt["winDescription"] as! String, huntMedia: hunt["media"] as! String)
+                            newHunt.huntID = hunt["id"]!.integerValue
                             //parse for locations in hunt
                             if let locationsList = hunt["Locations"] as? [Payload]{
                                 //print("[json] locations get")

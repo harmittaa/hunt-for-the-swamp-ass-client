@@ -35,6 +35,7 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate, Vie
     // This is called when the view appears, the check for any additional markers to be put on the map is done
     override func viewDidAppear(animated: Bool) {
         checkClueStatus()
+        gameController.updateSavedHunt()
     }
     
     

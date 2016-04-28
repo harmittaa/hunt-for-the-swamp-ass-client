@@ -68,7 +68,7 @@ class CluesTableViewController: UITableViewController {
             cell.clueTitle.text = "Clue #\(listOfClues![indexPath.row].clueTier+1)"
             cell.clueSubTitle.text = listOfClues![indexPath.row].clueTitle
             cell.backgroundColor = UIColor.clearColor()
-            cell.clueCellImage.image = UIImage(named: "clue_full_inverted")
+            cell.clueCellImage.image = UIImage(named: "clue_full")
             cell.clueCellImage.contentMode = UIViewContentMode.ScaleAspectFit
             return cell
         }else{

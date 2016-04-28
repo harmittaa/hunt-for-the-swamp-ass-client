@@ -12,7 +12,7 @@
 import UIKit
 
 class NewLocationViewController: UIViewController {
-
+    
     @IBOutlet weak var newLocationBG: UIImageView!
     @IBOutlet weak var mediaContainer: UIView!
     @IBOutlet weak var locationFoundTitle: UILabel!
@@ -42,7 +42,7 @@ class NewLocationViewController: UIViewController {
         //newLocationBG.contentMode = UIViewContentMode.ScaleAspectFit
         print("[locationFound] reference: size of paragraph: \(locationFoundTextField.frame.size)")
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,20 +50,21 @@ class NewLocationViewController: UIViewController {
     
     @IBAction func contienuButtonAction(sender: UIButton) {
         if(!gameController.isAllLocationFound()){
-        let newLocationIndex = gameController.currentHunt?.locationList!.indexOf(gameController.currentLocation!)
-        print("[newLocation] index is: \(newLocationIndex!)")
-        gameController.currentLocation = gameController.currentHunt?.locationList![newLocationIndex!+1]
-        print("[newLocation] new location is \(gameController.currentLocation?.locationId)")
-        performSegueWithIdentifier("LocationCompleteSegue", sender: self)
+            let newLocationIndex = gameController.currentHunt?.locationList!.indexOf(gameController.currentLocation!)
+            print("[newLocation] index is: \(newLocationIndex!)")
+            gameController.currentLocation = gameController.currentHunt?.locationList![newLocationIndex!+1]
+            print("[newLocation] new location is \(gameController.currentLocation?.locationId)")
+            gameControllerSingleton.updateSavedHuntFromCurrentHunt()
+            performSegueWithIdentifier("LocationCompleteSegue", sender: self)
         }
         else{
             performSegueWithIdentifier("HuntCompleteSegue", sender: self)
         }
     }
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
@@ -72,8 +73,8 @@ class NewLocationViewController: UIViewController {
             let destCtrl = segue.destinationViewController as! LocationFoundMediaViewController
             destCtrl.passedSelf = mediaContainer
             destCtrl.isHunt = false
-    }
-    
-
+        }
+        
+        
     }
 }

@@ -48,6 +48,11 @@ class ViewController: UIViewController, ViewObserverProtocol {
         beaconFinderSingleton.startScanningBeacon()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        //let saveHunt = dataManagerSingleton.createSaveHunt(gameController.allGameModes![0].huntList[0])
+        //print("[viewCtrl] this savebale hunt was created: \(saveHunt)")
+    }
+    
     //MARK: Obeserver functions
     func registerAsObserver() {
         beaconFinderSingleton.registerAsObserver(self)
