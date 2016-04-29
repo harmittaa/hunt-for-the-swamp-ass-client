@@ -72,7 +72,7 @@ class GameController{
         DataController.dataManagerSingleton.clearCoreData()
     }
     
-    //MARK: create core adata object
+    //MARK: create core data object
     func updateSavedHunt(){
         let testFetch = DataController.dataManagerSingleton.fetchObject("HuntInProgress") as! [NSManagedObject]
         if testFetch.count > 0{
@@ -91,20 +91,29 @@ class GameController{
         //print("[gamectrl] current status of game: \((testFetch[0] as! HuntInProgress).locationProgress)")
     }
     
-    //chenge the values of the hunt in core data to reflect the current hunt that is in progress
+    //change the values of the hunt in core data to reflect the current hunt that is in progress
     func updateSavedHuntFromCurrentHunt(){
+        print("[GameController] Updating the state of the hunt to the CoreData")
         let testFetch = DataController.dataManagerSingleton.fetchObject("HuntInProgress")
         let huntToChange = testFetch[0] as! HuntInProgress
         huntToChange.huntId = self.currentHunt!.huntID
         huntToChange.locationProgress = self.getCurrentHuntLocationProgress()
+        huntToChange.clueProgress = self.getCurrentClueProgress()
         DataController.dataManagerSingleton.saveCoreData()
     }
+    
     //get the hunt from core data and set the current hunt of gamectrl as the corresponding HuntObject
     func loadCurrentHuntFromCoreData(){
         var testFetch = DataController.dataManagerSingleton.fetchObject("HuntInProgress")
         let coreHunt = testFetch[0] as! HuntInProgress
         self.currentHunt = self.getHuntById(coreHunt.huntId as! Int)
         self.currentLocation = currentHunt!.locationList![coreHunt.locationProgress as! Int]
+        print("[GameController] There are \(coreHunt.clueProgress) clues unlocked!")
+        for i in 0..<Int(coreHunt.clueProgress!) {
+            print("[GameController] Unlocking clue \(currentLocation?.clueList[i].clueTitle)")
+            print("[GameController] Clue list size \(currentLocation?.clueList.count)")
+            currentLocation?.clueList[i].lockedStatus = false
+        }
         self.setLocationFoundStatusForHuntWithProgress(self.currentHunt!, progress: coreHunt.locationProgress as! Int)
     }
     
@@ -137,4 +146,16 @@ class GameController{
         }
         return returnValue
     }
+    
+    func getCurrentClueProgress() -> Int{
+        var clueProgress = 0
+        for clue in (currentLocation?.clueList)! {
+            if !clue.lockedStatus {
+                clueProgress += 1
+                print("[GameController] Saving Clue, getting the progress, current clue progress is \(clueProgress) for the clue \(clue.clueTitle)")
+            }
+        }
+        return clueProgress
+    }
+
 }

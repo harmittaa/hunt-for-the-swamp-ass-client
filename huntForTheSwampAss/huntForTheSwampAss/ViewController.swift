@@ -19,6 +19,8 @@ class ViewController: UIViewController, ViewObserverProtocol, CBCentralManagerDe
     @IBOutlet weak var testContainer: UIView!
     @IBOutlet weak var backgroundImage: UIImageView!
     var bluetoothChecker: CBCentralManager?
+    @IBOutlet weak var gameButton: UIButton!
+
     //let 🌚:DataController = DataController.dataManagerSingleton
     let gameController = gameControllerSingleton
     let httpController = httpRequestControllerSingleton
@@ -41,7 +43,9 @@ class ViewController: UIViewController, ViewObserverProtocol, CBCentralManagerDe
         }
         if let a = gameControllerSingleton.currentHunt {
             print("[MainViewController] game is already running")
+        //    gameButton.setTitle("Continue", forState: .Normal)
         } else {
+       //     gameButton.setTitle("Game", forState: .Normal)
             gameControllerSingleton.allGameModes = []
             httpController.getGameModes()
         }
@@ -50,6 +54,9 @@ class ViewController: UIViewController, ViewObserverProtocol, CBCentralManagerDe
     }
     
     override func viewDidAppear(animated: Bool) {
+        if gameControllerSingleton.currentHunt != nil {
+            gameControllerSingleton.updateSavedHuntFromCurrentHunt()
+        }
         //let saveHunt = dataManagerSingleton.createSaveHunt(gameController.allGameModes![0].huntList[0])
         //print("[viewCtrl] this savebale hunt was created: \(saveHunt)")
         /*var bluetoothIsOn = false

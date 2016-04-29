@@ -36,6 +36,7 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate, Vie
     override func viewDidAppear(animated: Bool) {
         checkClueStatus()
         gameController.updateSavedHunt()
+        gameControllerSingleton.updateSavedHuntFromCurrentHunt()
         if gameControllerSingleton.currentHunt?.dataFetched == nil || gameControllerSingleton.currentHunt?.dataFetched == false {
             print("[GameScreenViewController]data for clues and locations hasn't been fetched")
             httpRequestControllerSingleton.getImages((gameControllerSingleton.currentHunt?.locationList)!)
@@ -88,18 +89,7 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate, Vie
             //create a starting location for the map, use current position to center map on user
             let startLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
             centerMapOnLocation(startLocation)
-            
-            //MARK: creating a blip on the map
-            let mapBlip = MKPointAnnotation()
-            mapBlip.coordinate = CLLocationCoordinate2D(
-                latitude: 60.21846,
-                longitude: 24.810916
-            )
-            mapBlip.title = "Sello"
-            mapBlip.subtitle = "On kauppa"
-            gameScreenMap.addAnnotation(mapBlip)
-            
-            // if the user has declined the auth poop up screen
+        // if the user has declined the auth poop up screen
         } else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.NotDetermined {
             print("[GameScreenViewController] Location has not been authorized")
             print(CLLocationManager.authorizationStatus().rawValue)
