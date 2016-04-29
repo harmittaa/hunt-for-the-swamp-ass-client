@@ -20,7 +20,7 @@ class ViewController: UIViewController, ViewObserverProtocol, CBCentralManagerDe
     @IBOutlet weak var backgroundImage: UIImageView!
     var bluetoothChecker: CBCentralManager?
     @IBOutlet weak var gameButton: UIButton!
-
+    
     //let 🌚:DataController = DataController.dataManagerSingleton
     let gameController = gameControllerSingleton
     let httpController = httpRequestControllerSingleton
@@ -35,6 +35,18 @@ class ViewController: UIViewController, ViewObserverProtocol, CBCentralManagerDe
         backgroundImage.image = UIImage(named: "main_menu_bg")
         //hide back button for the main menu
         self.navigationItem.hidesBackButton = true
+        //check for a ongoin hunt, load images if present
+        if gameControllerSingleton.currentHunt != nil{
+            if gameControllerSingleton.currentHunt?.dataFetched == nil || gameControllerSingleton.currentHunt?.dataFetched == false {
+                print("[GameScreenViewController]data for clues and locations hasn't been fetched")
+                httpRequestControllerSingleton.getImages((gameControllerSingleton.currentHunt?.locationList)!)
+                httpRequestControllerSingleton.getImagesForLocations((gameControllerSingleton.currentHunt?.locationList)!)
+                // sets the data as fetched
+                gameControllerSingleton.currentHunt?.setDataFetched(true)
+            } else {
+                print("[GameScreenViewController]data for clues and locatios has been fetched")
+            }
+        }
         //hide the abandon hunt button if no hunt is currently going
         if let a = gameController.currentHunt{
             quitHuntButton.hidden = false
@@ -43,9 +55,9 @@ class ViewController: UIViewController, ViewObserverProtocol, CBCentralManagerDe
         }
         if let a = gameControllerSingleton.currentHunt {
             print("[MainViewController] game is already running")
-        //    gameButton.setTitle("Continue", forState: .Normal)
+            //    gameButton.setTitle("Continue", forState: .Normal)
         } else {
-       //     gameButton.setTitle("Game", forState: .Normal)
+            //     gameButton.setTitle("Game", forState: .Normal)
             gameControllerSingleton.allGameModes = []
             httpController.getGameModes()
         }
@@ -105,6 +117,7 @@ class ViewController: UIViewController, ViewObserverProtocol, CBCentralManagerDe
         }
         if bluetoothChecker!.state != CBCentralManagerState.PoweredOn{
             bluetoothChecker = CBCentralManager(delegate: self, queue: nil)
+            print("[viewctrl] BL not powered on")
         }else {
             print("[viewctrl] seguenow!")
             var segueId: String
@@ -131,6 +144,14 @@ class ViewController: UIViewController, ViewObserverProtocol, CBCentralManagerDe
         }
         else if central.state == CBCentralManagerState.PoweredOn{
             print("[viewctrl] BL is powered on")
+            var segueId: String
+            if let z = gameController.currentHunt{
+                segueId = "MainMenuToGameScreen"
+            }
+            else{
+                segueId = "MainMenuToGameModes"
+            }
+            performSegueWithIdentifier(segueId, sender: self)
         }
     }
     

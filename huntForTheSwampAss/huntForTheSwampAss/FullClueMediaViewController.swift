@@ -66,6 +66,9 @@ class FullClueMediaViewController: UIViewController {
             // the clue has an image
             clueViewMap.hidden = true
             clueViewImage.image = passedClue?.clueImage
+            clueViewImage.contentMode = UIViewContentMode.ScaleAspectFit
+            clueViewImage.backgroundColor = UIColor.clearColor()
+            clueViewImage.frame = CGRectMake(0, 0, clueViewImage.image!.size.width, clueViewImage.image!.size.height)
         }
     }
     

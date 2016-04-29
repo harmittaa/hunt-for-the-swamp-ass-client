@@ -14,12 +14,14 @@ class HuntCompletionViewController: UIViewController {
     @IBOutlet weak var mediaContainer: UIView!
     @IBOutlet weak var huntCompletionTitle: UILabel!
     @IBOutlet weak var huntCompletionText: UITextView!
-    
+    @IBOutlet weak var totalPointsLabel: UILabel!
     @IBOutlet weak var huntCompleteImage: UIImageView!
+    @IBOutlet weak var timeToComplete: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
-        self.title = "You Did It!"
+        self.title = "You Won!"
         //set image
         huntCompleteImage.image = gameControllerSingleton.currentHunt!.huntImage
         huntCompleteImage.contentMode = UIViewContentMode.ScaleAspectFit
@@ -38,6 +40,11 @@ class HuntCompletionViewController: UIViewController {
         huntCompletionTitle.text = gameControllerSingleton.currentHunt!.winTitle
         //set background
         huntCompletionBG.image = UIImage(named: "gamemode_bg")
+        //set time to complete to label
+        timeToComplete.text = "Time: \(stringFromTimeInterval(NSDate().timeIntervalSinceDate(gameControllerSingleton.huntStartDate!)))"
+        //set total points to label
+        totalPointsLabel.text = "Total Points: \(gameControllerSingleton.playerPoints + Int(gameControllerSingleton.pointsCalculateTimePointsForFinishedHunt()))"
+        print("[huntcompletion] Time points for this round: \(Int(gameControllerSingleton.pointsCalculateTimePointsForFinishedHunt()))")
         gameControllerSingleton.completeHunt()
     }
 
@@ -61,5 +68,18 @@ class HuntCompletionViewController: UIViewController {
         }
         
         
+        
+    }
+    func stringFromTimeInterval(interval:NSTimeInterval) -> NSString {
+        
+        var ti = NSInteger(interval)
+        
+        var ms = Int((interval % 1) * 1000)
+        
+        var seconds = ti % 60
+        var minutes = (ti / 60) % 60
+        var hours = (ti / 3600)
+        
+        return NSString(format: "%0.2d:%0.2d:%0.2d",hours,minutes,seconds)
     }
 }

@@ -20,25 +20,27 @@ class GameController{
     var selectedGameMode: GameModeObject?
     var splashScreen: SplashScreenViewController?
     //var dataManager:DataController =
-    
+    var playerPoints: Int
+    var huntStartDate: NSDate?
     
     private init(){
-        /*print("[gameController Init] before dataManager init")
+        /*//print("[gameController Init] before dataManager init")
          dataManager = DataController.dataManagerSingleton
-         print("[gameController Init] fetch request")
+         //print("[gameController Init] fetch request")
          var huntsList = dataManager.fetchObject("GameMode")
          huntsList = dataManager.fetchObject("GameMode")
-         print("[gameController Init] count of objects in list of Hunts: \(huntsList.count)")
+         //print("[gameController Init] count of objects in list of Hunts: \(huntsList.count)")
          if huntsList.count > 0{
          //currentHunt = huntsList[0] as! Hunt
-         //print("[gameController Init] current Hunt: \(currentHunt)")
+         ////print("[gameController Init] current Hunt: \(currentHunt)")
          }
          else {
-         print("[gameController Init] no data found")
+         //print("[gameController Init] no data found")
          
          }*/
         //generatePlaceHolders()
         allHunts = [HuntObject]()
+        playerPoints = 0
     }
     
     func setCurrentHunt(newHunt: HuntObject){
@@ -76,29 +78,30 @@ class GameController{
     func updateSavedHunt(){
         let testFetch = DataController.dataManagerSingleton.fetchObject("HuntInProgress") as! [NSManagedObject]
         if testFetch.count > 0{
-            print("[gamectrl] there is a game in progress")
+            //print("[gamectrl] there is a game in progress")
             /*let gottedHunt = testFetch[0] as! HuntInProgress
-             print("[gamectrl] \(gottedHunt.huntId) \(gottedHunt.locationProgress)")
+             //print("[gamectrl] \(gottedHunt.huntId) \(gottedHunt.locationProgress)")
              gottedHunt.setValue(gameControllerSingleton.currentHunt!.huntID, forKey: "huntId")
              gottedHunt.setValue(0, forKey: "locationProgress")
              DataController.dataManagerSingleton.saveCoreData()*/
         }
         else{
-            print("[gamectrl] no game in progress creating new one now")
+            //print("[gamectrl] no game in progress creating new one now")
             DataController.dataManagerSingleton.createSaveHunt(self.currentHunt!)
             DataController.dataManagerSingleton.saveCoreData()
         }
-        //print("[gamectrl] current status of game: \((testFetch[0] as! HuntInProgress).locationProgress)")
+        ////print("[gamectrl] current status of game: \((testFetch[0] as! HuntInProgress).locationProgress)")
     }
     
     //change the values of the hunt in core data to reflect the current hunt that is in progress
     func updateSavedHuntFromCurrentHunt(){
-        print("[GameController] Updating the state of the hunt to the CoreData")
+        //print("[GameController] Updating the state of the hunt to the CoreData")
         let testFetch = DataController.dataManagerSingleton.fetchObject("HuntInProgress")
         let huntToChange = testFetch[0] as! HuntInProgress
         huntToChange.huntId = self.currentHunt!.huntID
         huntToChange.locationProgress = self.getCurrentHuntLocationProgress()
         huntToChange.clueProgress = self.getCurrentClueProgress()
+        huntToChange.startDate = self.huntStartDate
         DataController.dataManagerSingleton.saveCoreData()
     }
     
@@ -108,10 +111,11 @@ class GameController{
         let coreHunt = testFetch[0] as! HuntInProgress
         self.currentHunt = self.getHuntById(coreHunt.huntId as! Int)
         self.currentLocation = currentHunt!.locationList![coreHunt.locationProgress as! Int]
-        print("[GameController] There are \(coreHunt.clueProgress) clues unlocked!")
+        self.huntStartDate = coreHunt.startDate
+        //print("[GameController] There are \(coreHunt.clueProgress) clues unlocked!")
         for i in 0..<Int(coreHunt.clueProgress!) {
-            print("[GameController] Unlocking clue \(currentLocation?.clueList[i].clueTitle)")
-            print("[GameController] Clue list size \(currentLocation?.clueList.count)")
+            //print("[GameController] Unlocking clue \(currentLocation?.clueList[i].clueTitle)")
+            //print("[GameController] Clue list size \(currentLocation?.clueList.count)")
             currentLocation?.clueList[i].lockedStatus = false
         }
         self.setLocationFoundStatusForHuntWithProgress(self.currentHunt!, progress: coreHunt.locationProgress as! Int)
@@ -152,10 +156,51 @@ class GameController{
         for clue in (currentLocation?.clueList)! {
             if !clue.lockedStatus {
                 clueProgress += 1
-                print("[GameController] Saving Clue, getting the progress, current clue progress is \(clueProgress) for the clue \(clue.clueTitle)")
+                //print("[GameController] Saving Clue, getting the progress, current clue progress is \(clueProgress) for the clue \(clue.clueTitle)")
             }
         }
         return clueProgress
+    }
+    
+    //points functions
+    //set initial starting value for points with formula hunt.locations.coiunt x 100
+    func pointsInitForNewHunt(){
+        self.playerPoints = 0//self.playerPoints = self.currentHunt!.locationList!.count*100
+        self.huntStartDate = NSDate()
+        print("[gamectrl] new hunt started: starting points for this game \(self.playerPoints)")
+    }
+    
+    func pointsUpdateTotalPoints(pointsToAdd: Int){
+        self.playerPoints += pointsToAdd
+    }
+    //compare start time and end time of hunt and calculate points accoriding to percentage of 24hours
+    func pointsCalculateTimePointsForFinishedHunt() -> Double{
+        var currentTime = NSDate()
+        var timeDifference = currentTime.timeIntervalSinceDate(self.huntStartDate!)
+        var timePoints:Double = 0
+        print("[gamectrl] timeDifference \(10/timeDifference)")
+        if timeDifference <= 86400{
+            let percentOf24 = timeDifference / 86400
+            var maxTimePointsForHunt = Double(self.currentHunt!.locationList!.count*50)
+            timePoints = (maxTimePointsForHunt-maxTimePointsForHunt*percentOf24)
+            return floor(timePoints)
+        }else{
+            return floor(timePoints)
+        }
+    }
+    //calculate points for a single location, deductions come from unlocking clues
+    func pointsCalculateForFinishedLocation() -> Int{
+        var returnPoints:Int = 0
+        for i in self.currentLocation!.clueList{
+            if i.lockedStatus{
+                if i.clueTier == 1{
+                returnPoints += 30
+                }else if i.clueTier == 2{
+                    returnPoints += 70
+                }
+            }
+        }
+        return returnPoints
     }
 
 }

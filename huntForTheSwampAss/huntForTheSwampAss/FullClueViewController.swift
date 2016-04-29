@@ -33,6 +33,9 @@ class FullClueViewController: UIViewController, ViewObserverProtocol {
         clueDesc.backgroundColor = UIColor.clearColor()
         clueDesc.textColor = UIColor.whiteColor()
         clueDesc.font = UIFont(name: "courier", size: 18)
+        //set media container BG to transparent
+        clueMediaView.backgroundColor = UIColor.clearColor()
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -63,6 +63,7 @@ class HuntTableViewController: UITableViewController{
         // sets the data as fetched so it won't be fetched again
         gameControllerSingleton.currentHunt?.setDataFetched(true)
         gameController.currentLocation = gameController.currentHunt!.locationList![0]
+        gameControllerSingleton.pointsInitForNewHunt()
     }
     
     /*

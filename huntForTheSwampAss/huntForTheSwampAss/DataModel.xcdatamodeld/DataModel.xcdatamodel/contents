@@ -4,8 +4,9 @@
         <attribute name="clueProgress" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="huntId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="locationProgress" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="HuntInProgress" positionX="-126" positionY="-27" width="128" height="90"/>
+        <element name="HuntInProgress" positionX="-126" positionY="-27" width="128" height="105"/>
     </elements>
 </model>

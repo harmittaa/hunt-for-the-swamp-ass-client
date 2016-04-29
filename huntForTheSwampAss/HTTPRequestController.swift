@@ -16,11 +16,11 @@ class HTTPRequestController {
     var url: String = "http://23.227.190.85:8080/webApp/path/generic/getAll"
     var splashScreen: SplashScreenViewController?
     private init() {
-        print("[HTTPRequestController] Singleton created")
+        //print("[HTTPRequestController] Singleton created")
     }
     
     func getGameModes() {
-        print("[HTTP] getgamemodes called")
+        //print("[HTTP] getgamemodes called")
         // creates a default config
         let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfig)
@@ -28,7 +28,7 @@ class HTTPRequestController {
         // with the data that is retrieved
         
         let sessionTask = session.dataTaskWithURL(NSURL(string: url)!, completionHandler: {(data, response, error) -> Void in
-            print("[HTTPRequestController] data fetched: \(data)")
+            //print("[HTTPRequestController] data fetched: \(data)")
             if data != nil {
             let gameModeParsingOperation = NSBlockOperation(block: {
                     let jsonParser = JsonParser()
@@ -40,7 +40,7 @@ class HTTPRequestController {
             queue.maxConcurrentOperationCount = 1
             queue.addOperation(gameModeParsingOperation)
             }else{
-                print("[httpCtrl] ERROR! data was nil")
+                //print("[httpCtrl] ERROR! data was nil")
             }
         })
         // start the sessiontask
@@ -55,7 +55,7 @@ class HTTPRequestController {
     
     // gets images for the selected hunt's locations
     func getImagesForLocations(locationList: [LocationObject]) {
-        print("[HTTP] getting images for locations!")
+        //print("[HTTP] getting images for locations!")
         let downloadConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: downloadConfig)
         for location in locationList {
@@ -63,7 +63,7 @@ class HTTPRequestController {
                 let addImageToLocations = NSBlockOperation(block: {
                     // set the image for the location
                     location.setImage(UIImage(data: data!)!)
-                    print("[HTTP] setting image for clue \(location.locationTitle)")
+                    //print("[HTTP] setting image for clue \(location.locationTitle)")
                 })
                 let queue = NSOperationQueue()
                 queue.maxConcurrentOperationCount = 1
@@ -77,7 +77,7 @@ class HTTPRequestController {
     
     // gets images for the selected hunt's locations clues
     func getImages(locationList: [LocationObject]) {
-        print("[HTTP] getting images for all clues!")
+        //print("[HTTP] getting images for all clues!")
         let downloadConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: downloadConfig)
         for location in locationList {
@@ -89,7 +89,7 @@ class HTTPRequestController {
                         let addImageToClues = NSBlockOperation(block: {
                             // set the image for the clue
                             clue.setImage(UIImage(data: data!)!)
-                            print("[HTTP] setting image for clue \(clue.clueTitle)")
+                            //print("[HTTP] setting image for clue \(clue.clueTitle)")
                         })
                         let queue = NSOperationQueue()
                         queue.maxConcurrentOperationCount = 1
@@ -107,7 +107,7 @@ class HTTPRequestController {
     
     // gets images for the selected hunt's locations clues
     func getImagesForHunts(huntList: [HuntObject]) {
-        print("[HTTP] getting images for all hunts!")
+        //print("[HTTP] getting images for all hunts!")
         let downloadConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: downloadConfig)
         for hunt in huntList {
@@ -115,7 +115,7 @@ class HTTPRequestController {
                 let addImageToHunt = NSBlockOperation(block: {
                     // set the image for the clue
                     hunt.setImage(UIImage(data: data!)!)
-                    print("[HTTP] setting image for Hunt \(hunt.huntTitle)")
+                    //print("[HTTP] setting image for Hunt \(hunt.huntTitle)")
                 })
                 let queue = NSOperationQueue()
                 queue.maxConcurrentOperationCount = 1
@@ -128,7 +128,7 @@ class HTTPRequestController {
     
     // gets images for the gameModes
     func getImagesForGameModes(gameModeList: [GameModeObject]) {
-        print("[HTTP] getting images for all GameModes!")
+        //print("[HTTP] getting images for all GameModes!")
         let downloadConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: downloadConfig)
         for gameMode in gameModeList {
@@ -136,7 +136,7 @@ class HTTPRequestController {
                 let addImageToGameMode = NSBlockOperation(block: {
                     // set the image for the clue
                     gameMode.setImage(UIImage(data: data!)!)
-                    print("[HTTP] setting image for GameMode \(gameMode.gameModeTitle)")
+                    //print("[HTTP] setting image for GameMode \(gameMode.gameModeTitle)")
                 })
                 let queue = NSOperationQueue()
                 queue.maxConcurrentOperationCount = 1
@@ -144,7 +144,7 @@ class HTTPRequestController {
             })
             // start the downloadTask
             downloadTask.resume()
-            print("[HTTP] !!MOVETOGAMESCREEN!!")
+            //print("[HTTP] !!MOVETOGAMESCREEN!!")
             
         }
         splashScreen!.moveToGameScreen()
@@ -156,7 +156,7 @@ class HTTPRequestController {
     
     // get image from url
     func getImageFromUrl(url:String) -> UIImage {
-        print("[HTTP Image] getting an image from url!")
+        //print("[HTTP Image] getting an image from url!")
         let imageUrl = NSURL(string: url)
         let imageData = NSData(contentsOfURL: imageUrl!)
         return UIImage(data: imageData!)!

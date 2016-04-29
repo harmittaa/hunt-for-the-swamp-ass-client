@@ -19,24 +19,24 @@ class DataController: NSObject {
         do {
             let fetchRequest = NSFetchRequest(entityName: "HuntInProgress")
             let result:NSArray? = try self.managedObjectContext.executeFetchRequest(fetchRequest)
-            print("[dataCtrl] result: \(result)")
+            //print("[dataCtrl] result: \(result)")
             if let ress = result{
                 if ress.count > 0{
                     if let gettedHunt = ress[0] as? HuntInProgress{
-                        print("[dataCtrl] found a hunt inside coredata \(gettedHunt)")
+                        //print("[dataCtrl] found a hunt inside coredata \(gettedHunt)")
                         return true
                     }else{
-                        print("[dataCtrl] couldnt cast as huntinprog")
+                        //print("[dataCtrl] couldnt cast as huntinprog")
                         return false
                     }
                 }
                 else{
-                    print("[dataCtrl] array was empty in check for savegame")
+                    //print("[dataCtrl] array was empty in check for savegame")
                     return false
                 }
             }
         } catch let error as NSError{
-            print(error)
+            //print(error)
             return false
         }
     }
@@ -75,7 +75,7 @@ class DataController: NSObject {
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
             
-            dict[NSUnderlyingErrorKey] = error as NSError
+            dict[NSUnderlyingErrorKey] = error as! NSError
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
             // Replace this with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -107,7 +107,7 @@ class DataController: NSObject {
     
     //MARK: fetch object with a string
     func fetchObject(objectClassName: String)->[NSManagedObject]{
-        print("[datamanager] fetch method")
+        //print("[datamanager] fetch method")
         let objectFetch = NSFetchRequest(entityName: objectClassName)
         let fetchedObjects: [NSManagedObject]
         do {
@@ -115,7 +115,7 @@ class DataController: NSObject {
         } catch {
             fatalError("\(error)")
         }
-        print("[DataManager] return value: \(fetchedObjects)")
+        //print("[DataManager] return value: \(fetchedObjects)")
         return fetchedObjects
     }
     
@@ -134,7 +134,7 @@ class DataController: NSObject {
         for clue in huntToSave.locationList![huntLocationProgress].clueList {
             if !clue.lockedStatus {
                 clueProgress += 1
-                print("[DataController] Saving Clue, getting the progress, current clue progress is \(clueProgress) for the clue \(clue.clueTitle)")
+                //print("[DataController] Saving Clue, getting the progress, current clue progress is \(clueProgress) for the clue \(clue.clueTitle)")
             }
         }
         nsHuntInProgress.clueProgress = clueProgress
@@ -143,7 +143,7 @@ class DataController: NSObject {
     
     //MARK: Save CoreData
     func saveCoreData(){
-        print("[datamanager] save method custom")
+        //print("[datamanager] save method custom")
         do {
             try managedObjectContext.save()
         }catch{
@@ -163,7 +163,7 @@ class DataController: NSObject {
     
     // MARK: - Core Data Saving support
     func saveContext () {
-        print("[datamanager] save method")
+        //print("[datamanager] save method")
         if managedObjectContext.hasChanges {
             do {
                 try managedObjectContext.save()

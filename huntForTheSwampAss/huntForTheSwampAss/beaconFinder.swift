@@ -18,11 +18,11 @@ class BeaconFinder: NSObject, CLLocationManagerDelegate {
     
     private override init(){
         super.init()
-        print("[beaconfinder] init")
+        //print("[beaconfinder] init")
         //let locationManager = CLLocationManager()
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse) {
             locationManager.requestAlwaysAuthorization()
-            print("[beaconfinder] init auth status is \(CLLocationManager.authorizationStatus().rawValue)")
+            //print("[beaconfinder] init auth status is \(CLLocationManager.authorizationStatus().rawValue)")
         }
         self.locationManager.delegate = self
         locationManager.startRangingBeaconsInRegion(region)
@@ -31,20 +31,20 @@ class BeaconFinder: NSObject, CLLocationManagerDelegate {
     
     //MARK: beacon found
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
-       // print("[beaconfider] location manager method")
+       // //print("[beaconfider] location manager method")
         //filer out uknown beacon, they are too far
         let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown }
         //perform actions if beacons are found
-       // print(knownBeacons)
+       // //print(knownBeacons)
         if let asd = gameController.currentLocation{
             if (knownBeacons.count > 0) {
                 for b in knownBeacons{
                     let convertedBeacon = BeaconObject(beaconmajor: b.major.integerValue, beaconminor: b.minor.integerValue)
-              /*      print("[beaconFinder] comparing beacons: -Current- \(gameController.currentLocation!.beacon!.beaconMajor) -found- \(convertedBeacon.beaconMajor)")
-                    print("[beaconFinder] comparing beacons: -Current- \(gameController.currentLocation!.beacon!.beaconMinor) -found- \(convertedBeacon.beaconMinor)") */
+              /*      //print("[beaconFinder] comparing beacons: -Current- \(gameController.currentLocation!.beacon!.beaconMajor) -found- \(convertedBeacon.beaconMajor)")
+                    //print("[beaconFinder] comparing beacons: -Current- \(gameController.currentLocation!.beacon!.beaconMinor) -found- \(convertedBeacon.beaconMinor)") */
                     if(gameController.currentLocation?.beacon == convertedBeacon){
                         if(!gameController.currentLocation!.isFound){
-                            print("[BeaconFinder]!!!!! FOUND CORRECT BEACON !!!!!")
+                            //print("[BeaconFinder]!!!!! FOUND CORRECT BEACON !!!!!")
                             updateObservers()
                         }
                     }
@@ -54,34 +54,34 @@ class BeaconFinder: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didDetermineState state: CLRegionState, forRegion region: CLRegion) {
-        print("[BeaconFinder] state: \(state) and region is \(region)")
+        //print("[BeaconFinder] state: \(state) and region is \(region)")
     }
     
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        print("[BeaconFinder] region is \(region)")
+        //print("[BeaconFinder] region is \(region)")
     }
     
     func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
-        print("[BeaconFinder] exit region is \(region)")
+        //print("[BeaconFinder] exit region is \(region)")
     }
     
     func startScanningBeacon(){
-        print("[BeaconFinder] starting beacon scan")
+        //print("[BeaconFinder] starting beacon scan")
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedAlways) {
-         /*   print("bluetooth not on")
-            print("[beaconfinder] scanning auth status is \(CLLocationManager.authorizationStatus().rawValue)") */
+         /*   //print("bluetooth not on")
+            //print("[beaconfinder] scanning auth status is \(CLLocationManager.authorizationStatus().rawValue)") */
            // locationManager.requestWhenInUseAuthorization()
             locationManager.requestAlwaysAuthorization()
         }
         else {
-            print("[BeaconFinder] bluetooth on")
+            //print("[BeaconFinder] bluetooth on")
         }
        // locationManager.requestWhenInUseAuthorization()
         locationManager.startMonitoringForRegion(region)
         locationManager.startRangingBeaconsInRegion(region)
         locationManager.startUpdatingLocation()
         
-      //  print("[BeaconFinder]Monitoring the following regions: \(locationManager.monitoredRegions)")
+      //  //print("[BeaconFinder]Monitoring the following regions: \(locationManager.monitoredRegions)")
     }
     
     func registerAsObserver(observer: ViewObserverProtocol){
@@ -91,7 +91,7 @@ class BeaconFinder: NSObject, CLLocationManagerDelegate {
     func updateObservers(){
         for a in listOfObservers{
             a.receiveNotification()
-            //print("[BeaconFinder] sending notification to: \(a)")
+            ////print("[BeaconFinder] sending notification to: \(a)")
         }
     }
 }

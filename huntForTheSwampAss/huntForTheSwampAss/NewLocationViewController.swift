@@ -13,6 +13,7 @@ import UIKit
 
 class NewLocationViewController: UIViewController {
     
+    @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var newLocationBG: UIImageView!
     @IBOutlet weak var mediaContainer: UIView!
     @IBOutlet weak var locationFoundTitle: UILabel!
@@ -40,6 +41,8 @@ class NewLocationViewController: UIViewController {
         locationFoundImage.contentMode = UIViewContentMode.ScaleAspectFit
         newLocationBG.image = UIImage(named: "hunts_bg")
         //newLocationBG.contentMode = UIViewContentMode.ScaleAspectFit
+        //set points label text
+        pointsLabel.text = "Points: \(gameControllerSingleton.pointsCalculateForFinishedLocation())"
         print("[locationFound] reference: size of paragraph: \(locationFoundTextField.frame.size)")
     }
     
@@ -50,6 +53,8 @@ class NewLocationViewController: UIViewController {
     
     @IBAction func contienuButtonAction(sender: UIButton) {
         if(!gameController.isAllLocationFound()){
+            //add to current points
+            gameControllerSingleton.pointsUpdateTotalPoints(gameControllerSingleton.pointsCalculateForFinishedLocation())
             let newLocationIndex = gameController.currentHunt?.locationList!.indexOf(gameController.currentLocation!)
             print("[newLocation] index is: \(newLocationIndex!)")
             gameController.currentLocation = gameController.currentHunt?.locationList![newLocationIndex!+1]
@@ -58,6 +63,7 @@ class NewLocationViewController: UIViewController {
             performSegueWithIdentifier("LocationCompleteSegue", sender: self)
         }
         else{
+            gameControllerSingleton.pointsUpdateTotalPoints(gameControllerSingleton.pointsCalculateForFinishedLocation())
             performSegueWithIdentifier("HuntCompleteSegue", sender: self)
         }
     }

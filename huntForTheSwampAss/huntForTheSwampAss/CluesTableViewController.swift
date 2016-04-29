@@ -52,6 +52,12 @@ class CluesTableViewController: UITableViewController {
         print("[ClueTableViewController] \(celleroni.reuseIdentifier!)")
         //if else depending on what kind of cell was clicked, checked by using the identifier
         if !listOfClues![indexPath.row].lockedStatus {
+            /*if gameControllerSingleton.currentLocation?.clueList[indexPath.row].clueTier == 1{
+                gameControllerSingleton.pointsUnlockFirstClue()
+            }
+            else if gameControllerSingleton.currentLocation?.clueList[indexPath.row].clueTier == 2{
+                gameControllerSingleton.pointsUnlockSecondClue()
+            }*/
             self.parentController!.tableIndex = indexPath.row
             self.parentController?.performSegueWithIdentifier("MoveToFullClue", sender: self.parentController)
         } else if listOfClues![indexPath.row].lockedStatus {
