@@ -11,14 +11,21 @@
 import Foundation
 
 class JsonParser {
-    // make it easier for your fingers
     typealias Payload = [String: AnyObject]
     init () {}
     
     func parseUser(data: NSData) {
         do {
             let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-            
+            if let users = json["user"] as? [Payload] {
+                for user in users {
+                    let username = user["username"] as! String
+                    print("[Parser] parsed username \(username)")
+                    let newUser = UserObject(usrID: (user["id"] as? Int)!, usrName: user["username"] as! String, usrDesc: user["description"] as! String, userImagePath: user["media"] as! String)
+                    DataController.dataManagerSingleton.createUser(newUser)
+                    gameControllerSingleton.setUser(newUser)
+                }
+            }
         } catch {
             print(error)
         }

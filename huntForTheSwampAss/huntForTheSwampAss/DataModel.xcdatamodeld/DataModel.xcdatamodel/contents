@@ -6,7 +6,7 @@
         <attribute name="locationProgress" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
-    <entity name="LoggedUser" syncable="YES">
+    <entity name="LoggedUser" representedClassName=".LoggedUser" syncable="YES">
         <attribute name="userDesc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="userImagePath" optional="YES" attributeType="String" syncable="YES"/>

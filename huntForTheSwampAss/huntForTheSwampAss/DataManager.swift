@@ -141,6 +141,16 @@ class DataController: NSObject {
         return nsHuntInProgress
     }
     
+    // creates new core data for User
+    func createUser(user: UserObject){
+        let nsLoggedUser = NSEntityDescription.insertNewObjectForEntityForName("LoggedUser", inManagedObjectContext: self.managedObjectContext) as! LoggedUser
+        nsLoggedUser.userId = user.userID
+        nsLoggedUser.userName = user.userName
+        nsLoggedUser.userDesc = user.userDesc
+        print("[DataManager] New user object created into context")
+    }
+
+    
     //MARK: Save CoreData
     func saveCoreData(){
         //print("[datamanager] save method custom")
