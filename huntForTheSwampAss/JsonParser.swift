@@ -15,9 +15,17 @@ class JsonParser {
     typealias Payload = [String: AnyObject]
     init () {}
     
+    func parseUser(data: NSData) {
+        do {
+            let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+            
+        } catch {
+            print(error)
+        }
+    }
+    
     // called from HTTPRequestController once some data has been fetched
     func parseGameModes(data: NSData) {
-        
         do {
             //print("[JSON] parsing should start")
             // Turns JSON data into a foundation objects

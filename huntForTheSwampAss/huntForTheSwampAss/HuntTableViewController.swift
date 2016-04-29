@@ -60,9 +60,11 @@ class HuntTableViewController: UITableViewController{
         // get images for all of the clues in this hunt
         httpRequestControllerSingleton.getImages((gameControllerSingleton.currentHunt?.locationList)!)
         httpRequestControllerSingleton.getImagesForLocations((gameControllerSingleton.currentHunt?.locationList)!)
-        // sets the data as fetched so it won't be fetched again
+        // sets the image data as fetched so it won't be fetched again
         gameControllerSingleton.currentHunt?.setDataFetched(true)
         gameController.currentLocation = gameController.currentHunt!.locationList![0]
+        // creates a new object into the core data
+        gameController.updateSavedHunt()
     }
     
     /*

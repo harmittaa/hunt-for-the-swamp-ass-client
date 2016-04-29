@@ -33,6 +33,8 @@ class FullClueMediaViewController: UIViewController {
             let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius * 2.0, regionRadius * 2.0)
             // set the map on the certain location and zoom it.
             clueViewMap.setRegion(coordinateRegion, animated: true)
+            // If the clue tier is 1 it means that the map will be static without any information
+            // if the tier is 3, then drops a pin on the correct location
             if passedClue?.clueTier == 0 {
                 // set maptype as satellite
                 clueViewMap.mapType = MKMapType.Satellite
@@ -52,13 +54,13 @@ class FullClueMediaViewController: UIViewController {
                     latitude: Double(coordArr[0])!,
                     longitude: Double(coordArr[1])!
                 )
-                marker!.title = "name here"
+               // marker!.title = "name here"
                 clueViewMap.addAnnotation(marker!)
                 clueViewMap.zoomEnabled = false
                 clueViewMap.scrollEnabled = false
                 clueViewMap.pitchEnabled = false
                 clueViewMap.rotateEnabled = false
-                clueViewMap.showsPointsOfInterest = false
+                clueViewMap.showsPointsOfInterest = true
                 clueViewMap.userInteractionEnabled = false
             }
             

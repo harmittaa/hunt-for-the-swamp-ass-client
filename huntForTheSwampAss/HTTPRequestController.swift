@@ -14,9 +14,30 @@ let httpRequestControllerSingleton = HTTPRequestController()
 
 class HTTPRequestController {
     var url: String = "http://23.227.190.85:8080/webApp/path/generic/getAll"
+    var registerUrl: String = "http://23.227.190.85:8080/webApp/path/generic/addUser/"
     var splashScreen: SplashScreenViewController?
+    
     private init() {
         print("[HTTPRequestController] Singleton created")
+    }
+    
+    // for registering a user
+    func registerUser(username: String, password: String, media: String, description: String) {
+        let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfig)
+        // creating the url
+        registerUrl = registerUrl + username + "/" + password + "/" + media + "/" + description
+        let sessionTask = session.dataTaskWithURL(NSURL(string: registerUrl)!, completionHandler: {(data, response, error) -> Void in
+            let statusCode = (response as! NSHTTPURLResponse).statusCode
+            print("[HTTP]status code is \(statusCode)")
+            if statusCode == 200 {
+                print("[HTTP] the user was created")
+            } else if statusCode == 402 {
+                print("[HTTP] The request failed")
+            }
+        })
+        // start the sessiontask
+        sessionTask.resume()
     }
     
     func getGameModes() {
@@ -30,16 +51,15 @@ class HTTPRequestController {
         let sessionTask = session.dataTaskWithURL(NSURL(string: url)!, completionHandler: {(data, response, error) -> Void in
             print("[HTTPRequestController] data fetched: \(data)")
             if data != nil {
-            let gameModeParsingOperation = NSBlockOperation(block: {
+                let gameModeParsingOperation = NSBlockOperation(block: {
                     let jsonParser = JsonParser()
                     // call jsonParser to parse the data
                     jsonParser.parseGameModes(data!)
                 })
-            
-            let queue = NSOperationQueue()
-            queue.maxConcurrentOperationCount = 1
-            queue.addOperation(gameModeParsingOperation)
-            }else{
+                let queue = NSOperationQueue()
+                queue.maxConcurrentOperationCount = 1
+                queue.addOperation(gameModeParsingOperation)
+            } else {
                 print("[httpCtrl] ERROR! data was nil")
             }
         })

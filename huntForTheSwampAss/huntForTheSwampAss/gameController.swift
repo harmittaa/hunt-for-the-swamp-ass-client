@@ -75,7 +75,7 @@ class GameController{
     //MARK: create core data object
     func updateSavedHunt(){
         let testFetch = DataController.dataManagerSingleton.fetchObject("HuntInProgress") as! [NSManagedObject]
-        if testFetch.count > 0{
+        if testFetch.count > 0 {
             print("[gamectrl] there is a game in progress")
             /*let gottedHunt = testFetch[0] as! HuntInProgress
              print("[gamectrl] \(gottedHunt.huntId) \(gottedHunt.locationProgress)")
