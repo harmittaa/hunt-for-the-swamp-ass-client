@@ -42,9 +42,10 @@ class CluesTableViewController: UITableViewController {
     func unlockClue(row: Int) {
         listOfClues![row].lockedStatus = false
         print("[ClueTableViewController] ListOfClues: \(listOfClues![row].lockedStatus) GameCTRL: \(gameController.currentLocation!.clueList[row].lockedStatus)")
+        gameControllerSingleton.updateSavedHuntFromCurrentHunt()
         self.tableView.reloadData()
-        
     }
+    
     //MARK: select a cell
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //get cell that was clicked by using the cellforrow method

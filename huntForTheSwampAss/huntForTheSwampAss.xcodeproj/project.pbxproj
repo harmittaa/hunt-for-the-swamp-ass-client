@@ -342,7 +342,7 @@
 				TargetAttributes = {
 					6A0876C41CB3AD9400A66047 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 395RX3A9NB;
+						DevelopmentTeam = BLU3VGRB8H;
 					};
 					6A0876DB1CB3AD9400A66047 = {
 						CreatedOnToolsVersion = 7.3;
@@ -570,7 +570,7 @@
 				INFOPLIST_FILE = huntForTheSwampAss/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iosdev.example.huntForTheSwampAss;
+				PRODUCT_BUNDLE_IDENTIFIER = fi.metropolia.huntForTheSwampAss;
 				PRODUCT_NAME = "Hunt for the Swamp Ass";
 				PROVISIONING_PROFILE = "";
 			};
@@ -585,7 +585,7 @@
 				INFOPLIST_FILE = huntForTheSwampAss/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iosdev.example.huntForTheSwampAss;
+				PRODUCT_BUNDLE_IDENTIFIER = fi.metropolia.huntForTheSwampAss;
 				PRODUCT_NAME = "Hunt for the Swamp Ass";
 				PROVISIONING_PROFILE = "";
 			};

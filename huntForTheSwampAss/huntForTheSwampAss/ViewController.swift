@@ -28,6 +28,8 @@ class ViewController: UIViewController, ViewObserverProtocol, CBCentralManagerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        httpRequestControllerSingleton.registerUser("swift", password: "123", media: "asddas", description: "this_is_a_swift_test")
+        
         var bluetoothChecker = CBCentralManager(delegate: self, queue: nil)
         print("[ViewController] init values of GC: \(gameController.currentHunt)")
         //set BG image
@@ -67,7 +69,7 @@ class ViewController: UIViewController, ViewObserverProtocol, CBCentralManagerDe
     
     override func viewDidAppear(animated: Bool) {
         if gameControllerSingleton.currentHunt != nil {
-            gameControllerSingleton.updateSavedHuntFromCurrentHunt()
+          //  gameControllerSingleton.updateSavedHuntFromCurrentHunt()
         }
         //let saveHunt = dataManagerSingleton.createSaveHunt(gameController.allGameModes![0].huntList[0])
         //print("[viewCtrl] this savebale hunt was created: \(saveHunt)")

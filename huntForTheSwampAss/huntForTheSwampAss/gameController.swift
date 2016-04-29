@@ -79,6 +79,7 @@ class GameController{
         let testFetch = DataController.dataManagerSingleton.fetchObject("HuntInProgress") as! [NSManagedObject]
         if testFetch.count > 0{
             //print("[gamectrl] there is a game in progress")
+
             /*let gottedHunt = testFetch[0] as! HuntInProgress
              //print("[gamectrl] \(gottedHunt.huntId) \(gottedHunt.locationProgress)")
              gottedHunt.setValue(gameControllerSingleton.currentHunt!.huntID, forKey: "huntId")

@@ -36,8 +36,8 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate, Vie
     // also fethces images for clues and locations if the game has been resumed from CoreData
     override func viewDidAppear(animated: Bool) {
         checkClueStatus()
-        gameController.updateSavedHunt()
-        gameControllerSingleton.updateSavedHuntFromCurrentHunt()
+       // gameController.updateSavedHunt()
+      //  gameControllerSingleton.updateSavedHuntFromCurrentHunt()
         if gameControllerSingleton.currentHunt?.dataFetched == nil || gameControllerSingleton.currentHunt?.dataFetched == false {
             print("[GameScreenViewController]data for clues and locations hasn't been fetched")
             httpRequestControllerSingleton.getImages((gameControllerSingleton.currentHunt?.locationList)!)
