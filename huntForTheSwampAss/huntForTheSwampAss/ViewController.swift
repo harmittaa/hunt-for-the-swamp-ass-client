@@ -28,8 +28,6 @@ class ViewController: UIViewController, ViewObserverProtocol, CBCentralManagerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        httpRequestControllerSingleton.registerUser("swift", password: "123", media: "asddas", description: "this_is_a_swift_test")
-        
         var bluetoothChecker = CBCentralManager(delegate: self, queue: nil)
         print("[ViewController] init values of GC: \(gameController.currentHunt)")
         //set BG image

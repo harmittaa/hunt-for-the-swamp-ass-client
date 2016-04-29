@@ -107,7 +107,6 @@
                         <outlet property="loginButton" destination="GWe-km-fFK" id="j8U-4Q-iOt"/>
                         <outlet property="loginPassword" destination="cR0-Hy-QtZ" id="YHQ-Pb-CWt"/>
                         <outlet property="loginUsername" destination="5j9-Gk-9S8" id="fsY-aH-Igb"/>
-                        <outlet property="signUpFunction" destination="Xgw-Nr-yIK" id="ZgU-WM-7sv"/>
                         <outlet property="signUpPassword" destination="YW8-RZ-mwk" id="TJZ-hv-Pnm"/>
                         <outlet property="signUpUsername" destination="0hb-CK-aDV" id="10x-bE-e3w"/>
                         <segue destination="gil-vj-rtF" kind="push" identifier="LocationDiscoveredSegue" id="ogA-TQ-4f3"/>

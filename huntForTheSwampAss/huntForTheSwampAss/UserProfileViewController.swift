@@ -27,11 +27,33 @@ class UserProfileViewController: UIViewController {
     }
     
     @IBAction func loginFunction(sender: UIButton) {
-        
+        print("[UserProfileVC] login called")
+        handleLogin()
     }
 
     @IBAction func signUpFunction(sender: UIButton) {
+        print("[UserProfileVC] signup called")
+        handleRegistration()
     }
+    
+    func handleLogin() {
+        if loginUsername.text != nil && loginPassword.text != nil {
+            print("[UserProfileVC] Logging in will happen")
+            httpRequestControllerSingleton.login(loginUsername.text!, password: loginPassword.text!)
+        } else {
+            print("[UserProfileVC] user didn't fill all login fields")
+        }
+    }
+    
+    func handleRegistration() {
+        if signUpUsername.text != nil && signUpPassword.text != nil {
+            print("[UserProfileVC] pass & username found, registering...")
+            httpRequestControllerSingleton.registerUser(signUpUsername.text!, password: signUpPassword.text!, media: "media_here", description: "desc_here")
+        } else {
+            print("[UserProfileVC] user didn't fill all registration fields")
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

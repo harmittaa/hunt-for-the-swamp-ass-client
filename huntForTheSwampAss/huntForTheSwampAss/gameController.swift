@@ -22,6 +22,7 @@ class GameController{
     //var dataManager:DataController =
     var playerPoints: Int
     var huntStartDate: NSDate?
+    var currentUser: UserObject?
     
     private init(){
         /*//print("[gameController Init] before dataManager init")
@@ -41,6 +42,10 @@ class GameController{
         //generatePlaceHolders()
         allHunts = [HuntObject]()
         playerPoints = 0
+    }
+    
+    func setUser(user: UserObject) {
+        self.currentUser = user
     }
     
     func setCurrentHunt(newHunt: HuntObject){

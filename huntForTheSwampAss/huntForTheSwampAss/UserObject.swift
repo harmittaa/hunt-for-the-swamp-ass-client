@@ -8,17 +8,18 @@
 
 import Foundation
 import UIKit
-class UserObject{
-    
+
+class UserObject {
     var userID: Int
     var userName: String
     var userDesc: String
-    var userImage: UIImage
+    var userImage: UIImage?
+    var userImagePath: String
     
-    init(usrID: Int,usrName: String,usrDesc:String,usrImg:UIImage){
+    init(usrID: Int, usrName: String, usrDesc: String, userImagePath: String){
         self.userDesc = usrDesc
         self.userID = usrID
-        self.userImage = usrImg
+        self.userImagePath = userImagePath
         self.userName = usrName
     }
 }
