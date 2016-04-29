@@ -16,6 +16,7 @@ class GameScreenTabBarController: UITabBarController, ViewObserverProtocol {
         // Do any additional setup after loading the view.
         //disable back button so user can only go to main menu now
         self.navigationItem.hidesBackButton = true
+        self.tabBar.barTintColor = UIColor(red: 153/255, green: 240/255, blue: 153/255, alpha: 0.5)
         registerAsObserver()
     }
     

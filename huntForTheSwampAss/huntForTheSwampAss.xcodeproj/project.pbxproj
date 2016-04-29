@@ -36,6 +36,9 @@
 		6A90761F1CB53C3600068792 /* HuntTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A90761E1CB53C3600068792 /* HuntTableViewCell.swift */; };
 		6A9076211CB53D0700068792 /* HuntTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9076201CB53D0700068792 /* HuntTableViewController.swift */; };
 		6A98DF2A1CD3721E00634AC1 /* HuntInProgress+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A98DF291CD3721E00634AC1 /* HuntInProgress+CoreDataProperties.swift */; };
+		6A98DF2C1CD374FA00634AC1 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A98DF2B1CD374FA00634AC1 /* MainNavigationController.swift */; };
+		6A98DF2E1CD3834C00634AC1 /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A98DF2D1CD3834C00634AC1 /* UserObject.swift */; };
+		6A98DF311CD38BAE00634AC1 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A98DF301CD38BAE00634AC1 /* UserProfileViewController.swift */; };
 		6A9FAEF51CBD037600D74C8B /* HuntObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9FAEF41CBD037600D74C8B /* HuntObject.swift */; };
 		6A9FAEF81CBD052500D74C8B /* LocationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9FAEF71CBD052500D74C8B /* LocationObject.swift */; };
 		6A9FAEFB1CBD0C7000D74C8B /* ClueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9FAEFA1CBD0C7000D74C8B /* ClueObject.swift */; };
@@ -92,6 +95,9 @@
 		6A90761E1CB53C3600068792 /* HuntTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuntTableViewCell.swift; sourceTree = "<group>"; };
 		6A9076201CB53D0700068792 /* HuntTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuntTableViewController.swift; sourceTree = "<group>"; };
 		6A98DF291CD3721E00634AC1 /* HuntInProgress+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HuntInProgress+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6A98DF2B1CD374FA00634AC1 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		6A98DF2D1CD3834C00634AC1 /* UserObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
+		6A98DF301CD38BAE00634AC1 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		6A9FAEF41CBD037600D74C8B /* HuntObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuntObject.swift; sourceTree = "<group>"; };
 		6A9FAEF71CBD052500D74C8B /* LocationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationObject.swift; sourceTree = "<group>"; };
 		6A9FAEFA1CBD0C7000D74C8B /* ClueObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClueObject.swift; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 		6A0876BC1CB3AD9400A66047 = {
 			isa = PBXGroup;
 			children = (
+				6A98DF2B1CD374FA00634AC1 /* MainNavigationController.swift */,
 				6AA2A6E81CD0B6CB0070C697 /* CoreData */,
 				6A9FAF001CBD165D00D74C8B /* Main Stufs */,
 				6A0876C71CB3AD9400A66047 /* huntForTheSwampAss */,
@@ -145,6 +152,7 @@
 		6A0876C71CB3AD9400A66047 /* huntForTheSwampAss */ = {
 			isa = PBXGroup;
 			children = (
+				6A98DF2F1CD3841800634AC1 /* User/profile */,
 				6A6D7C2A1CBE53ED00C14BA1 /* NewLocation */,
 				6A9FAEF61CBD051600D74C8B /* Location */,
 				6A6C5CA81CB6717200841E40 /* GameScreen */,
@@ -222,6 +230,15 @@
 				6A9FAEF41CBD037600D74C8B /* HuntObject.swift */,
 			);
 			name = Hunt;
+			sourceTree = "<group>";
+		};
+		6A98DF2F1CD3841800634AC1 /* User/profile */ = {
+			isa = PBXGroup;
+			children = (
+				6A98DF2D1CD3834C00634AC1 /* UserObject.swift */,
+				6A98DF301CD38BAE00634AC1 /* UserProfileViewController.swift */,
+			);
+			name = User/profile;
 			sourceTree = "<group>";
 		};
 		6A9FAEF61CBD051600D74C8B /* Location */ = {
@@ -380,6 +397,7 @@
 			files = (
 				6A161F011CCE195600C5EC03 /* ImageResizer.swift in Sources */,
 				6A148DD71CB64A7400D994D4 /* DataModel.xcdatamodeld in Sources */,
+				6A98DF2E1CD3834C00634AC1 /* UserObject.swift in Sources */,
 				6A0876CB1CB3AD9400A66047 /* ViewController.swift in Sources */,
 				6A9FAEFD1CBD0CE100D74C8B /* BeaconObject.swift in Sources */,
 				6A98DF2A1CD3721E00634AC1 /* HuntInProgress+CoreDataProperties.swift in Sources */,
@@ -396,7 +414,9 @@
 				6A161F051CCE413800C5EC03 /* SplashScreenViewController.swift in Sources */,
 				6A9FAEF81CBD052500D74C8B /* LocationObject.swift in Sources */,
 				6AFADF021CC8E4BC00F0B38C /* HuntCompletionViewController.swift in Sources */,
+				6A98DF2C1CD374FA00634AC1 /* MainNavigationController.swift in Sources */,
 				6A9FAEFF1CBD0F8700D74C8B /* GameModeObject.swift in Sources */,
+				6A98DF311CD38BAE00634AC1 /* UserProfileViewController.swift in Sources */,
 				6A9FAF021CBD23F000D74C8B /* FullClueViewController.swift in Sources */,
 				6A3FC38F1CC77C5800B69E4F /* FullClueMediaViewController.swift in Sources */,
 				6A6C5CA71CB664B400841E40 /* DataManager.swift in Sources */,

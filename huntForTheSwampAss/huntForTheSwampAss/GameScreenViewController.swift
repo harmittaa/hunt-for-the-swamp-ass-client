@@ -22,6 +22,7 @@ class GameScreenViewController: UIViewController, CLLocationManagerDelegate, Vie
     //MARK: location manager shenanigans
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Map"
         // ask the user to auth location always
         locationManager.requestAlwaysAuthorization()
         // set locationManager as the delegate for CLLocationManager to receive
