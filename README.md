@@ -2,16 +2,18 @@ Hunt for the Swamp Ass
 ====
 ###### by Matti Mäki-Kihniä & Daniel Zakharin
 
-Hunt for the Swamp Ass a treasure hunt style application for the iOS.
+Hunt for the Swamp Ass a treasure hunt style application for iOS.
 The application can be used with all iOS devices that support Bluetooth LE.
 In Hunt for the Swamp Ass users try to find predefined locations based on clues provided for them.
 At each location there is a hidden beacon, which sends out a broadcast, that the users’ device can pick up.
-Once the user's device picks up the signal, the application marks that location as visited and gives the user a new clue.
+Once the user's device picks up the signal, the application marks that location as visited and gives the user a clue for the next location.
 
-Each Hunt has multiple Hunt Locations which the users need to discover in order to complete the hunt.
+Each Hunt has multiple hunt locations which the user needs to discover in order to complete the hunt.
 Once a user finishes a hunt, they are given points based on the amount of time they’ve spent on the hunt and the amount of clues they've unlocked.
 
-###### Functionalities
+The code for the Restful API, that is used to fetch information from the back end, can be found [here](https://github.com/harmittaa/hunt-for-swamp-ass-API).
+
+###### Features
 * Logging in
 * Checking login data from the server
 * Logging out
@@ -42,13 +44,5 @@ Once a user finishes a hunt, they are given points based on the amount of time t
 * Data is fetched from the server
 
 ###### Screenshots
-1.
-![alt text](https://i.imgur.com/HCq3oAe.jpg "Main menu")
-2.
-[[https://github.com/harmittaa/hunt-for-the-swamp-ass-client/blob/master/images/screens.png]]
-3.
-[[https://github.com/harmittaa/hunt-for-the-swamp-ass-client/blob/master/images/screens.jpg]]
-4.
-(https://github.com/harmittaa/hunt-for-the-swamp-ass-client/blob/master/images/screens.jpg "screens")
-5.
-(https://github.com/harmittaa/hunt-for-the-swamp-ass-client/blob/master/images/screens.png "screens")
+
+![alt text](https://github.com/harmittaa/hunt-for-the-swamp-ass-client/blob/master/images/screenshots.jpg?raw=true "Main menu")
