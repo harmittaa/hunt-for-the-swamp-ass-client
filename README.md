@@ -44,3 +44,4 @@ Once a user finishes a hunt, they are given points based on the amount of time t
 ###### Screenshots
 
 ![alt text](https://i.imgur.com/HCq3oAe.jpg "Main menu")
+[[https://github.com/harmittaa/hunt-for-the-swamp-ass-client/blob/master/images/screens.png]]
