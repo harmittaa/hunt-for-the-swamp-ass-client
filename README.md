@@ -42,6 +42,13 @@ Once a user finishes a hunt, they are given points based on the amount of time t
 * Data is fetched from the server
 
 ###### Screenshots
-
+1.
 ![alt text](https://i.imgur.com/HCq3oAe.jpg "Main menu")
+2.
 [[https://github.com/harmittaa/hunt-for-the-swamp-ass-client/blob/master/images/screens.png]]
+3.
+[[https://github.com/harmittaa/hunt-for-the-swamp-ass-client/blob/master/images/screens.jpg]]
+4.
+(https://github.com/harmittaa/hunt-for-the-swamp-ass-client/blob/master/images/screens.jpg "screens")
+5.
+(https://github.com/harmittaa/hunt-for-the-swamp-ass-client/blob/master/images/screens.png "screens")
